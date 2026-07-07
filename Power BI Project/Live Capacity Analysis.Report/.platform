@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Live Capacity Analysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6dbb9527-50b3-4bf4-9e8c-bb8af5d3a446"
+  }
+}

@@ -1,0 +1,42 @@
+table Workspace
+	lineageTag: 2b3c4d5e-6f7g-8a9b-0c1d-2e3f4a5b6c7d
+	sourceLineageTag: [Source]
+
+	column 'Workspace ID'
+		dataType: string
+		lineageTag: 3b4c5d6e-7f8g-9a0b-1c2d-3e4f5a6b7c8d
+		sourceColumn: WorkspaceID
+
+	column 'Workspace Name'
+		dataType: string
+		lineageTag: 4b5c6d7e-8f9g-0a1b-2c3d-4e5f6a7b8c9d
+		sourceColumn: WorkspaceName
+
+	column 'Capacity Pool'
+		dataType: string
+		lineageTag: 5b6c7d8e-9f0g-1a2b-3c4d-5e6f7a8b9c0d
+		sourceColumn: CapacityPool
+
+	column Department
+		dataType: string
+		lineageTag: 6b7c8d9e-0f1g-2a3b-4c5d-6e7f8a9b0c1d
+		sourceColumn: Department
+
+	column Owner
+		dataType: string
+		lineageTag: 7b8c9d0e-1f2g-3a4b-5c6d-7e8f9a0b1c2d
+		sourceColumn: Owner
+
+	partition 'Workspace' = m
+		mode: import
+		source = 
+			let
+				Source = Table.FromRecords({
+					[WorkspaceID = "WS-001", WorkspaceName = "Analytics Team", CapacityPool = "Premium", Department = "BI", Owner = "John Doe"],
+					[WorkspaceID = "WS-002", WorkspaceName = "Data Engineering", CapacityPool = "Standard", Department = "Engineering", Owner = "Jane Smith"],
+					[WorkspaceID = "WS-003", WorkspaceName = "Executive Reports", CapacityPool = "Premium", Department = "Finance", Owner = "Bob Johnson"]
+				})
+			in
+				Source
+
+	annotation PBI_Id = "2b3c4d5e-6f7g-8a9b-0c1d-2e3f4a5b6c7d"

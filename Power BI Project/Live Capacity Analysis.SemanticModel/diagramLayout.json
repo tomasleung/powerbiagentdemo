@@ -1,0 +1,86 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "Live Capacity Community Animal Centres",
+          "nodeLineageTag": "1b4cbd50-c799-42ad-acf0-1d2ac312eb11",
+          "size": {
+            "height": 346,
+            "width": 325
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 542,
+            "y": 0
+          },
+          "nodeIndex": "Live Capacity Space Area Mapping",
+          "nodeLineageTag": "f8f7668c-243d-4b82-be29-e5ad09f6966b",
+          "size": {
+            "height": 206,
+            "width": 374
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 545,
+            "y": 310
+          },
+          "nodeIndex": "Live Capacity Manager Update",
+          "nodeLineageTag": "6ba9dd83-d249-432e-ac13-07df9db5070b",
+          "size": {
+            "height": 384,
+            "width": 349
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 49,
+            "y": 458.5
+          },
+          "nodeIndex": "Live Capacity Measures",
+          "nodeLineageTag": "e86a1c70-4496-427f-acd0-4b12299399fc",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1060,
+            "y": 0
+          },
+          "nodeIndex": "ShelterBuddy Report In Care Inventory",
+          "size": {
+            "height": 602,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 77.3936170212766,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

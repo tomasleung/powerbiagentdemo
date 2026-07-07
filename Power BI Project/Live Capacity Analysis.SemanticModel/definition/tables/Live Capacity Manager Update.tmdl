@@ -1,0 +1,178 @@
+table 'Live Capacity Manager Update'
+	lineageTag: 6ba9dd83-d249-432e-ac13-07df9db5070b
+
+	column 'Dog Open Kennels'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0da62268-8ee9-4c45-a963-d6726430cbcc
+		summarizeBy: sum
+		sourceColumn: Dog Open Kennels
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cat Open Portals'
+		dataType: int64
+		formatString: 0
+		lineageTag: ae3e2afb-f54c-4e56-8e34-b661150cb86d
+		summarizeBy: sum
+		sourceColumn: Cat Open Portals
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dog In Use Kennels'
+		dataType: int64
+		formatString: 0
+		lineageTag: b32e7f55-fca1-4d8e-a7e9-6b4950a3218d
+		summarizeBy: sum
+		sourceColumn: Dog In Use Kennels
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dog Hold Kennels'
+		dataType: int64
+		formatString: 0
+		lineageTag: 997a9e6b-7676-404f-98b6-cd61f81a7ae8
+		summarizeBy: sum
+		sourceColumn: Dog Hold Kennels
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dog Unavailable Kennels'
+		dataType: int64
+		formatString: 0
+		lineageTag: aab5bb55-80ec-4296-82c4-10c029fb1ccd
+		summarizeBy: sum
+		sourceColumn: Dog Unavailable Kennels
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cat In Use Portals'
+		dataType: int64
+		formatString: 0
+		lineageTag: cd638b46-970b-495d-8097-2e53bf5aed95
+		summarizeBy: sum
+		sourceColumn: Cat In Use Portals
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cat Unavailable Portals'
+		dataType: int64
+		formatString: 0
+		lineageTag: 84551dfc-b14a-4389-9b21-77043b3c06c0
+		summarizeBy: sum
+		sourceColumn: Cat Unavailable Portals
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cat Hold Portals'
+		dataType: int64
+		formatString: 0
+		lineageTag: d7991ded-ff90-4535-9227-433e61123478
+		summarizeBy: sum
+		sourceColumn: Cat Hold Portals
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Community Animal Centre'
+		dataType: string
+		lineageTag: 6a22c111-d98a-4a62-a0d8-fba1565f49cf
+		summarizeBy: none
+		sourceColumn: Community Animal Centre
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Live Capacity Manager Update' = m
+		mode: import
+		source =
+				let
+				    Source =
+				        SharePoint.Tables(
+				            "https://bcspca.sharepoint.com/sites/ACS-HUB",
+				            [ApiVersion = 15]
+				        ),
+				
+				    CACSpaceAreaRaw =
+				        Source{
+				            [Id = "6875a563-2e5a-4ce5-8594-7e5fa658822a"]
+				        }[Items],
+				
+				    ExpandedCommunityAnimalCentre =
+				        Table.ExpandRecordColumn(
+				            CACSpaceAreaRaw,
+				            "CommunityAnimalCentre",
+				            {"Title"},
+				            {"CommunityAnimalCentre"}
+				        ),
+				
+				    SelectedColumns =
+				        Table.SelectColumns(
+				            ExpandedCommunityAnimalCentre,
+				            {
+						"CommunityAnimalCentre",
+				                "DogOpenKennels",
+				                "DogInUseKennels",
+				                "DogUnavailableKennels",
+				                "DogHoldKennels",
+				                "CatOpenPortals",
+				                "CatInUsePortals",
+				                "CatUnavailablePortals",
+				                "CatHoldPortals"
+				            }
+				        ),
+				
+				  ChangedTypes =
+				        Table.TransformColumnTypes(
+				            SelectedColumns,
+				            {
+				                {"DogOpenKennels", Int64.Type},
+				                {"DogInUseKennels", Int64.Type},
+				                {"DogUnavailableKennels", Int64.Type},
+				                {"DogHoldKennels", Int64.Type},
+				                {"CatOpenPortals", Int64.Type},
+				                {"CatInUsePortals", Int64.Type},
+				                {"CatUnavailablePortals", Int64.Type},
+				                {"CatHoldPortals", Int64.Type}
+				            }
+				        ),
+				
+				    RenamedColumns =
+				        Table.RenameColumns(
+				            ChangedTypes,
+				            {
+				                {"CommunityAnimalCentre", "Community Animal Centre"},
+				                {"DogOpenKennels", "Dog Open Kennels"},
+				                {"DogInUseKennels", "Dog In Use Kennels"},
+				                {"DogUnavailableKennels", "Dog Unavailable Kennels"},
+				                {"DogHoldKennels", "Dog Hold Kennels"},
+				                {"CatOpenPortals", "Cat Open Portals"},
+				                {"CatInUsePortals", "Cat In Use Portals"},
+				                {"CatUnavailablePortals", "Cat Unavailable Portals"},
+				                {"CatHoldPortals", "Cat Hold Portals"}
+				            }
+				        )
+				
+				in
+				    RenamedColumns
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

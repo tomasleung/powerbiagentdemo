@@ -1,0 +1,21 @@
+model 'Live Capacity Analysis'
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Capacity", "Workspace", "Date", "Measures"]
+
+annotation PBI_ProTooling = ["TMDLView_Desktop", "DevMode"]
+
+ref table Capacity
+ref table Workspace
+ref table Date
+ref table Measures
+
+ref cultureInfo en-US
+

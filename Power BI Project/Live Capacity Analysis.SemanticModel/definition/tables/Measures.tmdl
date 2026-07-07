@@ -1,0 +1,51 @@
+table Measures
+	lineageTag: 4d5e6f7g-8h9i-0a1b-2c3d-4e5f6a7b8c9d
+	isHidden
+
+	measure 'Total Capacity'
+		expression = SUMX(Capacity, Capacity[Capacity Allocated])
+		formatString: "#,0.00"
+		lineageTag: 5d6e7f8g-9h0i-1a2b-3c4d-5e6f7a8b9c0d
+
+	measure 'Current Usage'
+		expression = SUMX(Capacity, Capacity[Capacity Used])
+		formatString: "#,0.00"
+		lineageTag: 6d7e8f9g-0h1i-2a3b-4c5d-6e7f8a9b0c0d
+
+	measure 'Usage %'
+		expression = 
+			DIVIDE(
+				[Current Usage],
+				[Total Capacity],
+				0
+			)
+		formatString: "0.0%"
+		lineageTag: 7d8e9f0g-1h2i-3a4b-5c6d-7e8f9a0b1c1d
+
+	measure 'Peak Period Usage'
+		expression = 
+			CALCULATE(
+				[Current Usage],
+				FILTER(
+					Capacity,
+					Capacity[Peak Period Indicator] = 1
+				)
+			)
+		formatString: "#,0.00"
+		lineageTag: 8d9e0f1g-2h3i-4a5b-6c7d-8e9f0a1b2c2d
+
+	measure 'Average Daily Usage'
+		expression = 
+			AVERAGEX(
+				VALUES(Date[Date]),
+				[Current Usage]
+			)
+		formatString: "#,0.00"
+		lineageTag: 9d0e1f2g-3h4i-5a6b-7c8d-9e0f1a2b3c3d
+
+	measure 'Workspace Count'
+		expression = DISTINCTCOUNT(Capacity[Workspace ID])
+		formatString: "0"
+		lineageTag: 0d1e2f3g-4h5i-6a7b-8c9d-0e1f2a3b4c4d
+
+	annotation PBI_Id = "4d5e6f7g-8h9i-0a1b-2c3d-4e5f6a7b8c9d"

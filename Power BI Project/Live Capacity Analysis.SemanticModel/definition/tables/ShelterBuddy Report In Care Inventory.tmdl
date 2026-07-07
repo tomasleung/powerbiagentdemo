@@ -1,0 +1,412 @@
+table 'ShelterBuddy Report In Care Inventory'
+	lineageTag: 49bd5dc0-52e4-494c-9f49-b9d85718e550
+
+	measure 'Animal Count' = ```
+			COUNTROWS('ShelterBuddy Report In Care Inventory') 
+			```
+		formatString: 0
+		lineageTag: b03dea9e-0347-4e78-a795-944a7ab870ec
+
+	column Region
+		dataType: string
+		lineageTag: 327e0b6c-c8cc-4f10-a660-9f972a64181f
+		summarizeBy: none
+		sourceColumn: Region
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shelter Location'
+		dataType: string
+		lineageTag: 36b498a7-0c73-409d-9b42-b7212b256a00
+		summarizeBy: none
+		sourceColumn: Shelter Location
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AnimalId
+		dataType: string
+		lineageTag: ae098a2f-3d0d-43ce-8d83-508b23b05439
+		summarizeBy: none
+		sourceColumn: AnimalId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Animal Name'
+		dataType: string
+		lineageTag: b2a889a2-a498-4c9d-a7a9-32c2770663da
+		summarizeBy: none
+		sourceColumn: Animal Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source
+		dataType: string
+		lineageTag: d0795e5a-d04a-4e37-92aa-9bb094c6fd9a
+		summarizeBy: none
+		sourceColumn: Source
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 1797856a-49e9-4d33-83fc-fc5f1eae1ffe
+		summarizeBy: none
+		sourceColumn: Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sub Status'
+		dataType: string
+		lineageTag: 29d72684-072c-4059-82c2-f5ddbcb9df31
+		summarizeBy: none
+		sourceColumn: Sub Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shelter Loc. / Kennel'
+		dataType: string
+		lineageTag: 29e56eeb-ea41-48f2-83ff-75a5c53793a8
+		summarizeBy: none
+		sourceColumn: Shelter Loc. / Kennel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Animal Type'
+		dataType: string
+		lineageTag: 5db0fbe9-2e39-46cc-bef6-b9a1dc92e562
+		summarizeBy: none
+		sourceColumn: Animal Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Breed'
+		dataType: string
+		lineageTag: 8b12260d-8cb5-45a0-8a04-d9ebc4d557f1
+		summarizeBy: none
+		sourceColumn: Primary Breed
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		lineageTag: 4adbd502-1626-4f4b-8534-19a2990a06b7
+		summarizeBy: none
+		sourceColumn: Color
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '2nd Color'
+		dataType: string
+		lineageTag: 891c0299-2a76-4fa0-b4a6-f41cbbc1cb83
+		summarizeBy: none
+		sourceColumn: 2nd Color
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lost/Found Address'
+		dataType: string
+		lineageTag: 3c3cfb81-b0f0-4377-8003-c94ef7c60e10
+		summarizeBy: none
+		sourceColumn: Lost/Found Address
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Animal''s Jurisdiction'
+		dataType: string
+		lineageTag: 869b2b19-723e-4e37-80e9-8fa25c110494
+		summarizeBy: none
+		sourceColumn: Animal's Jurisdiction
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sex
+		dataType: string
+		lineageTag: 408343c6-856b-44a8-8830-8e39ecbb150f
+		summarizeBy: none
+		sourceColumn: Sex
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Spay / Neuter'
+		dataType: string
+		lineageTag: e2b67523-ad40-4928-8fc8-8331f6d52724
+		summarizeBy: none
+		sourceColumn: Spay / Neuter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: string
+		lineageTag: 368eaf5a-4adf-4865-a75b-28d678776566
+		summarizeBy: none
+		sourceColumn: Age
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age Group'
+		dataType: string
+		lineageTag: a50bcc47-9fbd-486f-b9de-ab44e41f1336
+		summarizeBy: none
+		sourceColumn: Age Group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weight
+		dataType: string
+		lineageTag: 54fc5f50-5d38-46c5-ab24-8e13444905f7
+		summarizeBy: none
+		sourceColumn: Weight
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date In'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d9db3190-9c4f-4714-b5d0-e13d0b75b220
+		summarizeBy: none
+		sourceColumn: Date In
+
+		variation Variation
+			isDefault
+			relationship: 8244d48d-d00a-4069-8496-eddaa09b382c
+			defaultHierarchy: LocalDateTable_e4fb5195-1180-40a0-bb99-4fd2264a3cbe.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Days Here'
+		dataType: string
+		lineageTag: 39c2a6e8-4e2e-407a-a891-a574bac0c665
+		summarizeBy: none
+		sourceColumn: Days Here
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days In Foster'
+		dataType: string
+		lineageTag: 872c0bf5-71e7-4904-af6f-f2cdedfadfef
+		summarizeBy: none
+		sourceColumn: Days In Foster
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days at Current Status'
+		dataType: string
+		lineageTag: cf2586e6-d770-41bb-afcf-8908d0dbc2ea
+		summarizeBy: none
+		sourceColumn: Days at Current Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Vet Treatment Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4959ead0-b8c4-4c20-bfa6-9d175927e62a
+		summarizeBy: none
+		sourceColumn: Last Vet Treatment Date
+
+		variation Variation
+			isDefault
+			relationship: 552dd52f-b799-468c-a625-54da372f4e2c
+			defaultHierarchy: LocalDateTable_8df221a7-2535-44c6-bad3-66586ade4ed3.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Due Date Out'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9f396cd6-16d0-4ffe-8b04-279f64409e1b
+		summarizeBy: none
+		sourceColumn: Due Date Out
+
+		variation Variation
+			isDefault
+			relationship: 80e75e15-f968-476d-a5e7-399ca16d074b
+			defaultHierarchy: LocalDateTable_7e8fc96c-6f41-444f-b38e-0d5c76086e58.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Microchip#
+		dataType: string
+		lineageTag: 270b8fe6-912d-4e7c-aaab-489557709741
+		summarizeBy: none
+		sourceColumn: Microchip#
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Other Identification'
+		dataType: string
+		lineageTag: 2f40bb67-9fdf-47b1-917d-9b897d941e2b
+		summarizeBy: none
+		sourceColumn: Other Identification
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Physical Location'
+		dataType: string
+		lineageTag: b400ecf5-abdd-4559-abd0-371535b1803d
+		summarizeBy: none
+		sourceColumn: Physical Location
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Has Photo'
+		dataType: string
+		lineageTag: f5ed0876-47d8-4e42-8192-27a4a77ac4ca
+		summarizeBy: none
+		sourceColumn: Has Photo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size
+		dataType: string
+		lineageTag: cc655f04-bcf9-4ff0-82ef-27711218b7c3
+		summarizeBy: none
+		sourceColumn: Size
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Evaluation Category'
+		dataType: string
+		lineageTag: cf4a36d4-9666-4125-9f9b-ae2d04fb7d9d
+		summarizeBy: none
+		sourceColumn: Evaluation Category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AreaMappingKey
+		dataType: string
+		isHidden
+		lineageTag: ba952aca-b672-47d1-98a0-80d2943ea41d
+		summarizeBy: none
+		sourceColumn: AreaMappingKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'ShelterBuddy Report In Care Inventory' = m
+		mode: import
+		source =
+				let
+				    Source =
+				        SharePoint.Files(
+				            "https://bcspca.sharepoint.com/sites/ACS-HUB"
+				        ),
+				
+				    FilteredFolder =
+				        Table.SelectRows(
+				            Source,
+				            each
+				                [Folder Path]
+				                    = "https://bcspca.sharepoint.com/sites/ACS-HUB/Live Capacity  Floor Plan Image/"
+				                and [Name] = "Report226.xlsx"
+				        ),
+				
+				    FileBinary =
+				        FilteredFolder{0}[Content],
+				
+				    Workbook =
+				        Excel.Workbook(FileBinary, null, true),
+				
+				    Worksheet =
+				        Workbook{
+				            [
+				                Item = "Sheet1",   // ← change if needed
+				                Kind = "Sheet"
+				            ]
+				        }[Data],
+				
+				    PromotedHeaders =
+				        Table.PromoteHeaders(Worksheet, [PromoteAllScalars = true]),
+				
+				    RemovedLastRow =
+				        Table.RemoveLastN(PromotedHeaders, 1),
+				
+				    AddedAreaMappingKey =
+				        Table.AddColumn(
+				            RemovedLastRow,
+				            "AreaMappingKey",
+				            each Text.Combine({[Region], [Shelter Location]}, "-"),
+				            type text
+				        ),
+				    #"Changed Type" = Table.TransformColumnTypes(AddedAreaMappingKey,{{"Date In", type number}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type",{{"Date In", type date}, {"Last Vet Treatment Date", type date}, {"Due Date Out", type date}})
+				in
+				    #"Changed Type1"
+
+	changedProperty = Name
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

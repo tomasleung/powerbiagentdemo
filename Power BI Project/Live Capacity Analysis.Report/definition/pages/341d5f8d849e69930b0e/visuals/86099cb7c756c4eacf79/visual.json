@@ -1,0 +1,94 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "86099cb7c756c4eacf79",
+  "position": {
+    "x": 48,
+    "y": 112,
+    "z": 0,
+    "height": 176.00000000000003,
+    "width": 944,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Live Capacity Space Area Mapping"
+                    }
+                  },
+                  "Property": "Community Animal Centre"
+                }
+              },
+              "queryRef": "Live Capacity Space Area Mapping.Community Animal Centre",
+              "nativeQueryRef": "Community Animal Centre"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Live Capacity Space Area Mapping"
+                    }
+                  },
+                  "Property": "Animal Type"
+                }
+              },
+              "queryRef": "Live Capacity Space Area Mapping.Animal Type",
+              "nativeQueryRef": "Animal Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Live Capacity Space Area Mapping"
+                    }
+                  },
+                  "Property": "Area"
+                }
+              },
+              "queryRef": "Live Capacity Space Area Mapping.Area",
+              "nativeQueryRef": "Area"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShelterBuddy Report In Care Inventory"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "queryRef": "ShelterBuddy In Care Inventory.Status",
+              "nativeQueryRef": "Status"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Live Capacity Measures"
+                    }
+                  },
+                  "Property": "Dog In Used"
+                }
+              },
+              "queryRef": "Live Capacity Measures.Measure",
+              "nativeQueryRef": "Dog In Used"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

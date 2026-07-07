@@ -1,0 +1,54 @@
+table Capacity
+	lineageTag: 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d
+	sourceLineageTag: [Source]
+
+	column 'Capacity ID'
+		dataType: int64
+		lineageTag: 2a3b4c5d-6e7f-8a9b-0c1d-2e3f4a5b6c7d
+		sourceColumn: CapacityID
+		isHidden
+
+	column Timestamp
+		dataType: dateTime
+		lineageTag: 3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d
+		sourceColumn: Timestamp
+		formatString: yyyy-mm-dd hh:mm:ss
+
+	column 'Workspace ID'
+		dataType: string
+		lineageTag: 4a5b6c7d-8e9f-0a1b-2c3d-4e5f6a7b8c9d
+		sourceColumn: WorkspaceID
+
+	column 'Capacity Allocated'
+		dataType: double
+		lineageTag: 5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b9c0d
+		sourceColumn: CapacityAllocated
+		formatString: 0.00
+
+	column 'Capacity Used'
+		dataType: double
+		lineageTag: 6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d
+		sourceColumn: CapacityUsed
+		formatString: 0.00
+
+	column 'Peak Period Indicator'
+		dataType: int64
+		lineageTag: 7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d
+		sourceColumn: PeakPeriodIndicator
+		isHidden
+
+	partition 'Capacity' = m
+		mode: import
+		source = 
+			let
+				Source = Table.FromRecords({
+					[CapacityID = 1, Timestamp = DateTime.From("2024-07-01 08:00:00"), WorkspaceID = "WS-001", CapacityAllocated = 100, CapacityUsed = 45, PeakPeriodIndicator = 0],
+					[CapacityID = 2, Timestamp = DateTime.From("2024-07-01 09:00:00"), WorkspaceID = "WS-001", CapacityAllocated = 100, CapacityUsed = 62, PeakPeriodIndicator = 0],
+					[CapacityID = 3, Timestamp = DateTime.From("2024-07-01 17:00:00"), WorkspaceID = "WS-001", CapacityAllocated = 100, CapacityUsed = 88, PeakPeriodIndicator = 1],
+					[CapacityID = 4, Timestamp = DateTime.From("2024-07-01 08:00:00"), WorkspaceID = "WS-002", CapacityAllocated = 150, CapacityUsed = 30, PeakPeriodIndicator = 0],
+					[CapacityID = 5, Timestamp = DateTime.From("2024-07-01 17:00:00"), WorkspaceID = "WS-002", CapacityAllocated = 150, CapacityUsed = 95, PeakPeriodIndicator = 1]
+				})
+			in
+				Source
+
+	annotation PBI_Id = "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d"

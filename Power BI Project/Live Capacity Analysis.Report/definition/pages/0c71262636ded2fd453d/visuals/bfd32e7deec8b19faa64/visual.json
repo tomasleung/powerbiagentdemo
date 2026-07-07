@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "bfd32e7deec8b19faa64",
+  "position": {
+    "x": 32,
+    "y": 80,
+    "z": 0,
+    "height": 160,
+    "width": 1104,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Live Capacity Community Animal Centres"
+                    }
+                  },
+                  "Property": "Community Animal Centre"
+                }
+              },
+              "queryRef": "Live Capacity Community Animal Centres.Community Animal Centre",
+              "nativeQueryRef": "Community Animal Centre"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Live Capacity Measures"
+                    }
+                  },
+                  "Property": "Total Dog Capacity"
+                }
+              },
+              "queryRef": "Live Capacity Measures.Total Dog Capacity",
+              "nativeQueryRef": "Total Dog Capacity1"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Live Capacity Measures"
+                    }
+                  },
+                  "Property": "Dog In Used"
+                }
+              },
+              "queryRef": "Live Capacity Measures.Measure",
+              "nativeQueryRef": "Dog In Used"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Live Capacity Measures"
+                    }
+                  },
+                  "Property": "Dog Open"
+                }
+              },
+              "queryRef": "Live Capacity Measures.Dog Open",
+              "nativeQueryRef": "Dog Open"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Live Capacity Measures"
+                    }
+                  },
+                  "Property": "Total Cat Capacity"
+                }
+              },
+              "queryRef": "Live Capacity Measures.Total Cat Capacity",
+              "nativeQueryRef": "Total Cat Capacity"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Live Capacity Measures"
+                    }
+                  },
+                  "Property": "Cat In Used"
+                }
+              },
+              "queryRef": "Live Capacity Measures.Cat In Used",
+              "nativeQueryRef": "Cat In Used"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Live Capacity Measures"
+                    }
+                  },
+                  "Property": "Cat Open"
+                }
+              },
+              "queryRef": "Live Capacity Measures.Cat Open",
+              "nativeQueryRef": "Cat Open"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

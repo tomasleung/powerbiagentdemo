@@ -1,0 +1,140 @@
+table 'Live Capacity Community Animal Centres'
+	lineageTag: 1b4cbd50-c799-42ad-acf0-1d2ac312eb11
+
+	column 'Community Animal Centre'
+		dataType: string
+		lineageTag: 009bd048-5c94-4f99-be98-9c516f5b43b6
+		summarizeBy: none
+		sourceColumn: Community Animal Centre
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Cat Capacity'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3edbe329-7f48-43db-900f-56cd5e814282
+		summarizeBy: none
+		sourceColumn: Total Cat Capacity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ISO Cat Capacity'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e8585ca-f25b-4c2f-ad71-3f6aa1d7474f
+		summarizeBy: none
+		sourceColumn: ISO Cat Capacity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Temporary Cat Capacity'
+		dataType: int64
+		formatString: 0
+		lineageTag: e26087f1-52c6-4012-891b-ee5be85bca9d
+		summarizeBy: none
+		sourceColumn: Temporary Cat Capacity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Dog Capacity'
+		dataType: int64
+		formatString: 0
+		lineageTag: d55c66e8-e242-44a8-a4b1-d50439cb7e71
+		summarizeBy: none
+		sourceColumn: Total Dog Capacity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Animal Flow Cat Capacity'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8d96812b-43ea-4320-b7c4-764427f5939a
+		summarizeBy: none
+		sourceColumn: Animal Flow Cat Capacity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	partition 'Live Capacity Community Animal Centres' = m
+		mode: import
+		source =
+				let
+				    Source =
+				        SharePoint.Tables(
+				            "https://bcspca.sharepoint.com/sites/ACS-HUB",
+				            [ApiVersion = 15]
+				        ),
+				
+				    CACSpaceAreaRaw =
+				        Source{
+				            [Id = "66b1d151-d328-4504-aa6d-3dd15d17060d"]
+				        }[Items],
+				
+				    SelectedColumns =
+				        Table.SelectColumns(
+				            CACSpaceAreaRaw,
+				            {
+				                "Title",
+				                "TotalCatCapacity",
+				                "ISOCatCapacity",
+				                "TemporaryCatCapacity",
+				                "TotalDogCapacity"
+				            }
+				        ),
+				
+				    FilteredDogCapacity =
+				        Table.SelectRows(
+				            SelectedColumns,
+				            each [TotalDogCapacity] > 0
+				        ),
+				
+				    AddedAnimalFlowCatCapacity =
+				        Table.AddColumn(
+				            FilteredDogCapacity,
+				            "AnimalFlowCatCapacity",
+				            each [TotalCatCapacity] - [TemporaryCatCapacity],
+				            Int64.Type
+				        ),
+				
+				    ChangedTypes =
+				        Table.TransformColumnTypes(
+				            AddedAnimalFlowCatCapacity,
+				            {
+				                {"TotalCatCapacity", Int64.Type},
+				                {"ISOCatCapacity", Int64.Type},
+				                {"TemporaryCatCapacity", Int64.Type},
+				                {"TotalDogCapacity", Int64.Type},
+				                {"AnimalFlowCatCapacity", Int64.Type}
+				            }
+				        ),
+				
+				    RenamedColumns =
+				        Table.RenameColumns(
+				            ChangedTypes,
+				            {
+				                {"Title", "Community Animal Centre"},
+				                {"TotalCatCapacity", "Total Cat Capacity"},
+				                {"ISOCatCapacity", "ISO Cat Capacity"},
+				                {"TemporaryCatCapacity", "Temporary Cat Capacity"},
+				                {"AnimalFlowCatCapacity", "Animal Flow Cat Capacity"},
+				                {"TotalDogCapacity", "Total Dog Capacity"}
+				            }
+				        )
+				in
+				    RenamedColumns
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

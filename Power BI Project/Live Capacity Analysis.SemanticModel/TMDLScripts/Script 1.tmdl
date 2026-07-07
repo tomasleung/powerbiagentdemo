@@ -1,0 +1,1391 @@
+createOrReplace
+
+	model Model
+		culture: en-CA
+		defaultPowerBIDataSourceVersion: powerBI_V3
+		sourceQueryCulture: en-CA
+		dataAccessOptions
+			legacyRedirects
+			returnErrorValuesAsNull
+
+		table 'ShelterBuddy In Care Inventory'
+			lineageTag: 49bd5dc0-52e4-494c-9f49-b9d85718e550
+
+			column Region
+				dataType: string
+				lineageTag: 327e0b6c-c8cc-4f10-a660-9f972a64181f
+				summarizeBy: none
+				sourceColumn: Region
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Shelter Location'
+				dataType: string
+				lineageTag: 36b498a7-0c73-409d-9b42-b7212b256a00
+				summarizeBy: none
+				sourceColumn: Shelter Location
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column AnimalId
+				dataType: string
+				lineageTag: ae098a2f-3d0d-43ce-8d83-508b23b05439
+				summarizeBy: none
+				sourceColumn: AnimalId
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Animal Name'
+				dataType: string
+				lineageTag: b2a889a2-a498-4c9d-a7a9-32c2770663da
+				summarizeBy: none
+				sourceColumn: Animal Name
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column Source
+				dataType: string
+				lineageTag: d0795e5a-d04a-4e37-92aa-9bb094c6fd9a
+				summarizeBy: none
+				sourceColumn: Source
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column Status
+				dataType: string
+				lineageTag: 1797856a-49e9-4d33-83fc-fc5f1eae1ffe
+				summarizeBy: none
+				sourceColumn: Status
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Sub Status'
+				dataType: string
+				lineageTag: 29d72684-072c-4059-82c2-f5ddbcb9df31
+				summarizeBy: none
+				sourceColumn: Sub Status
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Shelter Loc. / Kennel'
+				dataType: string
+				lineageTag: 29e56eeb-ea41-48f2-83ff-75a5c53793a8
+				summarizeBy: none
+				sourceColumn: Shelter Loc. / Kennel
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Animal Type'
+				dataType: string
+				lineageTag: 5db0fbe9-2e39-46cc-bef6-b9a1dc92e562
+				summarizeBy: none
+				sourceColumn: Animal Type
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Primary Breed'
+				dataType: string
+				lineageTag: 8b12260d-8cb5-45a0-8a04-d9ebc4d557f1
+				summarizeBy: none
+				sourceColumn: Primary Breed
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column Color
+				dataType: string
+				lineageTag: 4adbd502-1626-4f4b-8534-19a2990a06b7
+				summarizeBy: none
+				sourceColumn: Color
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column '2nd Color'
+				dataType: string
+				lineageTag: 891c0299-2a76-4fa0-b4a6-f41cbbc1cb83
+				summarizeBy: none
+				sourceColumn: 2nd Color
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Lost/Found Address'
+				dataType: string
+				lineageTag: 3c3cfb81-b0f0-4377-8003-c94ef7c60e10
+				summarizeBy: none
+				sourceColumn: Lost/Found Address
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Animal''s Jurisdiction'
+				dataType: string
+				lineageTag: 869b2b19-723e-4e37-80e9-8fa25c110494
+				summarizeBy: none
+				sourceColumn: Animal's Jurisdiction
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column Sex
+				dataType: string
+				lineageTag: 408343c6-856b-44a8-8830-8e39ecbb150f
+				summarizeBy: none
+				sourceColumn: Sex
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Spay / Neuter'
+				dataType: string
+				lineageTag: e2b67523-ad40-4928-8fc8-8331f6d52724
+				summarizeBy: none
+				sourceColumn: Spay / Neuter
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column Age
+				dataType: string
+				lineageTag: 368eaf5a-4adf-4865-a75b-28d678776566
+				summarizeBy: none
+				sourceColumn: Age
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Age Group'
+				dataType: string
+				lineageTag: a50bcc47-9fbd-486f-b9de-ab44e41f1336
+				summarizeBy: none
+				sourceColumn: Age Group
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column Weight
+				dataType: string
+				lineageTag: 54fc5f50-5d38-46c5-ab24-8e13444905f7
+				summarizeBy: none
+				sourceColumn: Weight
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Date In'
+				dataType: dateTime
+				formatString: Long Date
+				lineageTag: d9db3190-9c4f-4714-b5d0-e13d0b75b220
+				summarizeBy: none
+				sourceColumn: Date In
+
+				variation Variation
+					isDefault
+					relationship: 8244d48d-d00a-4069-8496-eddaa09b382c
+					defaultHierarchy: LocalDateTable_e4fb5195-1180-40a0-bb99-4fd2264a3cbe.'Date Hierarchy'
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			column 'Days Here'
+				dataType: string
+				lineageTag: 39c2a6e8-4e2e-407a-a891-a574bac0c665
+				summarizeBy: none
+				sourceColumn: Days Here
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Days In Foster'
+				dataType: string
+				lineageTag: 872c0bf5-71e7-4904-af6f-f2cdedfadfef
+				summarizeBy: none
+				sourceColumn: Days In Foster
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Days at Current Status'
+				dataType: string
+				lineageTag: cf2586e6-d770-41bb-afcf-8908d0dbc2ea
+				summarizeBy: none
+				sourceColumn: Days at Current Status
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Last Vet Treatment Date'
+				dataType: dateTime
+				formatString: Long Date
+				lineageTag: 4959ead0-b8c4-4c20-bfa6-9d175927e62a
+				summarizeBy: none
+				sourceColumn: Last Vet Treatment Date
+
+				variation Variation
+					isDefault
+					relationship: 552dd52f-b799-468c-a625-54da372f4e2c
+					defaultHierarchy: LocalDateTable_8df221a7-2535-44c6-bad3-66586ade4ed3.'Date Hierarchy'
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			column 'Due Date Out'
+				dataType: dateTime
+				formatString: Long Date
+				lineageTag: 9f396cd6-16d0-4ffe-8b04-279f64409e1b
+				summarizeBy: none
+				sourceColumn: Due Date Out
+
+				variation Variation
+					isDefault
+					relationship: 80e75e15-f968-476d-a5e7-399ca16d074b
+					defaultHierarchy: LocalDateTable_7e8fc96c-6f41-444f-b38e-0d5c76086e58.'Date Hierarchy'
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+				annotation UnderlyingDateTimeDataType = Date
+
+			column Microchip#
+				dataType: string
+				lineageTag: 270b8fe6-912d-4e7c-aaab-489557709741
+				summarizeBy: none
+				sourceColumn: Microchip#
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Other Identification'
+				dataType: string
+				lineageTag: 2f40bb67-9fdf-47b1-917d-9b897d941e2b
+				summarizeBy: none
+				sourceColumn: Other Identification
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Physical Location'
+				dataType: string
+				lineageTag: b400ecf5-abdd-4559-abd0-371535b1803d
+				summarizeBy: none
+				sourceColumn: Physical Location
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Has Photo'
+				dataType: string
+				lineageTag: f5ed0876-47d8-4e42-8192-27a4a77ac4ca
+				summarizeBy: none
+				sourceColumn: Has Photo
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column Size
+				dataType: string
+				lineageTag: cc655f04-bcf9-4ff0-82ef-27711218b7c3
+				summarizeBy: none
+				sourceColumn: Size
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Evaluation Category'
+				dataType: string
+				lineageTag: cf4a36d4-9666-4125-9f9b-ae2d04fb7d9d
+				summarizeBy: none
+				sourceColumn: Evaluation Category
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column AreaMappingKey
+				dataType: string
+				lineageTag: ba952aca-b672-47d1-98a0-80d2943ea41d
+				summarizeBy: none
+				sourceColumn: AreaMappingKey
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'ShelterBuddy In Care Inventory' = m
+				mode: import
+				source =
+						let
+						    Source =
+						        SharePoint.Files(
+						            "https://bcspca.sharepoint.com/sites/ACS-HUB"
+						        ),
+						
+						    FilteredFolder =
+						        Table.SelectRows(
+						            Source,
+						            each
+						                [Folder Path]
+						                    = "https://bcspca.sharepoint.com/sites/ACS-HUB/Live Capacity  Floor Plan Image/"
+						                and [Name] = "Report226.xlsx"
+						        ),
+						
+						    FileBinary =
+						        FilteredFolder{0}[Content],
+						
+						    Workbook =
+						        Excel.Workbook(FileBinary, null, true),
+						
+						    Worksheet =
+						        Workbook{
+						            [
+						                Item = "Sheet1",   // ← change if needed
+						                Kind = "Sheet"
+						            ]
+						        }[Data],
+						
+						    PromotedHeaders =
+						        Table.PromoteHeaders(Worksheet, [PromoteAllScalars = true]),
+						
+						    RemovedLastRow =
+						        Table.RemoveLastN(PromotedHeaders, 1),
+						
+						    AddedAreaMappingKey =
+						        Table.AddColumn(
+						            RemovedLastRow,
+						            "AreaMappingKey",
+						            each Text.Combine({[Region], [Shelter Location]}, "-"),
+						            type text
+						        ),
+						    #"Changed Type" = Table.TransformColumnTypes(AddedAreaMappingKey,{{"Date In", type number}}),
+						    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type",{{"Date In", type date}, {"Last Vet Treatment Date", type date}, {"Due Date Out", type date}})
+						in
+						    #"Changed Type1"
+
+			changedProperty = Name
+
+			changedProperty = IsHidden
+
+			annotation PBI_NavigationStepName = Navigation
+
+			annotation PBI_ResultType = Table
+
+		table DateTableTemplate_d12785c6-2ed5-4ca9-a7b7-bf6053c591da
+			isPrivate
+			lineageTag: d2b6a71f-feda-44bb-bfd8-6698bb8095ec
+
+			column Date
+				dataType: dateTime
+				formatString: General Date
+				lineageTag: 6f66493c-8de4-49ea-a91c-248d42d370ac
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Year = YEAR([Date])
+				dataType: int64
+				formatString: 0
+				lineageTag: 74ca8509-eb86-4e62-934f-d64b7ad62ba1
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column MonthNo = MONTH([Date])
+				dataType: int64
+				formatString: 0
+				lineageTag: 5772c2b1-0108-4983-b396-90cf89e18ac4
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Month = FORMAT([Date], "MMMM")
+				dataType: string
+				lineageTag: 5cab2f8f-04c3-49b1-9e57-9906f3e6ff25
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: MonthNo
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column QuarterNo = INT(([MonthNo] + 2) / 3)
+				dataType: int64
+				formatString: 0
+				lineageTag: 71adccb6-7bcd-42c3-9148-4ae05206d35b
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Quarter = "Qtr " & [QuarterNo]
+				dataType: string
+				lineageTag: ed845668-354d-49b9-8616-7ac22e824e2f
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: QuarterNo
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Day = DAY([Date])
+				dataType: int64
+				formatString: 0
+				lineageTag: 06c1a010-0f01-443f-ab5a-1a52bef2e00a
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Date Hierarchy'
+				lineageTag: 03d717a3-42c7-45e7-aea7-654f95efcf31
+
+				level Year
+					lineageTag: 6f5644d3-da5b-41f7-b806-305d4f80148b
+					column: Year
+
+				level Quarter
+					lineageTag: f3076600-9f38-465d-9232-1d80a1f0cc8e
+					column: Quarter
+
+				level Month
+					lineageTag: ca70b96f-ac82-4da9-8462-4f79b5bd2fc5
+					column: Month
+
+				level Day
+					lineageTag: f0f5240b-29f5-4594-8c4e-15d96cb20f36
+					column: Day
+
+				annotation TemplateId = DateHierarchy
+
+			partition DateTableTemplate_d12785c6-2ed5-4ca9-a7b7-bf6053c591da = calculated
+				mode: import
+				source = Calendar(Date(2015,1,1), Date(2015,1,1))
+
+			annotation __PBI_TemplateDateTable = true
+
+			annotation DefaultItem = DateHierarchy
+
+		table LocalDateTable_e4fb5195-1180-40a0-bb99-4fd2264a3cbe
+			showAsVariationsOnly
+			lineageTag: d4841310-f872-460c-9e3a-5b567c0abdc7
+
+			column Date
+				dataType: dateTime
+				formatString: General Date
+				lineageTag: 9bf805d0-cc28-4bd8-984e-6e6a844b9c8d
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Year = YEAR([Date])
+				dataType: int64
+				formatString: 0
+				lineageTag: 7130933a-0445-4385-a5d5-25f9b228f4ec
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column MonthNo = MONTH([Date])
+				dataType: int64
+				formatString: 0
+				lineageTag: 884263a3-514c-4a3d-bcd2-5f4c9745e662
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Month = FORMAT([Date], "MMMM")
+				dataType: string
+				lineageTag: 365b4a07-3677-4817-964a-58081eeac61e
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: MonthNo
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column QuarterNo = INT(([MonthNo] + 2) / 3)
+				dataType: int64
+				formatString: 0
+				lineageTag: c64522fa-4251-42d8-991f-045a20e7a634
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Quarter = "Qtr " & [QuarterNo]
+				dataType: string
+				lineageTag: 6037f05d-6757-4812-b771-2fc7dfd7b443
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: QuarterNo
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Day = DAY([Date])
+				dataType: int64
+				formatString: 0
+				lineageTag: 90a03ac2-62a5-4009-aff3-5c94c26c1997
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Date Hierarchy'
+				lineageTag: 6e6c0e57-6ad9-46e0-8c08-6f1e2c229b58
+
+				level Year
+					lineageTag: 338858a2-9d94-4852-b178-52c01ffa4f85
+					column: Year
+
+				level Quarter
+					lineageTag: ac5b18be-52eb-45de-9863-1560fb64bada
+					column: Quarter
+
+				level Month
+					lineageTag: 659303f9-69c9-4c8e-9e83-801127996df1
+					column: Month
+
+				level Day
+					lineageTag: b17ae7da-2872-4342-bfe7-e400ca1cf5af
+					column: Day
+
+				annotation TemplateId = DateHierarchy
+
+			partition LocalDateTable_e4fb5195-1180-40a0-bb99-4fd2264a3cbe = calculated
+				mode: import
+				source = Calendar(Date(Year(MIN('ShelterBuddy In Care Inventory'[Date In])), 1, 1), Date(Year(MAX('ShelterBuddy In Care Inventory'[Date In])), 12, 31))
+
+			annotation __PBI_LocalDateTable = true
+
+		table LocalDateTable_8df221a7-2535-44c6-bad3-66586ade4ed3
+			showAsVariationsOnly
+			lineageTag: 68b456c4-1bdc-4604-a8a1-486dd59bb54d
+
+			column Date
+				dataType: dateTime
+				formatString: General Date
+				lineageTag: a1a68125-0caf-492c-8d25-778c4d47f213
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Year = YEAR([Date])
+				dataType: int64
+				formatString: 0
+				lineageTag: 90aeb717-172d-47ed-9516-9d75ecff29df
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column MonthNo = MONTH([Date])
+				dataType: int64
+				formatString: 0
+				lineageTag: 33b19332-b08d-4d27-83d4-a3b92fca2b08
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Month = FORMAT([Date], "MMMM")
+				dataType: string
+				lineageTag: 633a0668-d9bb-40e4-aa81-7ce2f7de1bdd
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: MonthNo
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column QuarterNo = INT(([MonthNo] + 2) / 3)
+				dataType: int64
+				formatString: 0
+				lineageTag: 44c3b28d-71cf-428b-a510-d47c75dd418b
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Quarter = "Qtr " & [QuarterNo]
+				dataType: string
+				lineageTag: 872ff289-17d6-4450-aee3-00f28ad96c71
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: QuarterNo
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Day = DAY([Date])
+				dataType: int64
+				formatString: 0
+				lineageTag: 7fb6edd3-cbda-4fda-a6b7-95f8eb8bab08
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Date Hierarchy'
+				lineageTag: b5090d2e-d433-4b37-8a80-e6d2c10ed656
+
+				level Year
+					lineageTag: f2ae160b-f0e9-48ed-8b11-77802a41d2e0
+					column: Year
+
+				level Quarter
+					lineageTag: 560ca5d3-8135-4898-9fa4-a1aa8f3a19e0
+					column: Quarter
+
+				level Month
+					lineageTag: 795661bb-c888-4027-a9ba-8dfe22b28ad5
+					column: Month
+
+				level Day
+					lineageTag: ce7a9fdd-3fd1-459a-aa9b-667202693159
+					column: Day
+
+				annotation TemplateId = DateHierarchy
+
+			partition LocalDateTable_8df221a7-2535-44c6-bad3-66586ade4ed3 = calculated
+				mode: import
+				source = Calendar(Date(Year(MIN('ShelterBuddy In Care Inventory'[Last Vet Treatment Date])), 1, 1), Date(Year(MAX('ShelterBuddy In Care Inventory'[Last Vet Treatment Date])), 12, 31))
+
+			annotation __PBI_LocalDateTable = true
+
+		table LocalDateTable_7e8fc96c-6f41-444f-b38e-0d5c76086e58
+			showAsVariationsOnly
+			lineageTag: 5f9463e1-0e02-44ce-a79d-924a19c07b1c
+
+			column Date
+				dataType: dateTime
+				formatString: General Date
+				lineageTag: 8c8190eb-980e-4f0a-92ac-d35767a5a219
+				dataCategory: PaddedDateTableDates
+				summarizeBy: none
+				isNameInferred
+				sourceColumn: [Date]
+
+				annotation SummarizationSetBy = User
+
+			column Year = YEAR([Date])
+				dataType: int64
+				formatString: 0
+				lineageTag: ae18bb44-dce6-4241-ad64-9d3a2fe3c80a
+				dataCategory: Years
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Year
+
+			column MonthNo = MONTH([Date])
+				dataType: int64
+				formatString: 0
+				lineageTag: 4e206e85-473e-4f87-b520-bdc6a5d2167f
+				dataCategory: MonthOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = MonthNumber
+
+			column Month = FORMAT([Date], "MMMM")
+				dataType: string
+				lineageTag: 2c50350e-18f9-47e7-8e72-1a0cc2606a2e
+				dataCategory: Months
+				summarizeBy: none
+				sortByColumn: MonthNo
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Month
+
+			column QuarterNo = INT(([MonthNo] + 2) / 3)
+				dataType: int64
+				formatString: 0
+				lineageTag: b5330e50-335c-4d3a-8151-167451fbe8c3
+				dataCategory: QuarterOfYear
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = QuarterNumber
+
+			column Quarter = "Qtr " & [QuarterNo]
+				dataType: string
+				lineageTag: cf574766-429e-43bc-8a78-1b5ff931fdf4
+				dataCategory: Quarters
+				summarizeBy: none
+				sortByColumn: QuarterNo
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Quarter
+
+			column Day = DAY([Date])
+				dataType: int64
+				formatString: 0
+				lineageTag: b362ef43-4f5a-48a0-8a36-167b3b77c478
+				dataCategory: DayOfMonth
+				summarizeBy: none
+
+				annotation SummarizationSetBy = User
+
+				annotation TemplateId = Day
+
+			hierarchy 'Date Hierarchy'
+				lineageTag: 83be8568-798f-4ab3-8fdf-5812a21e6247
+
+				level Year
+					lineageTag: d872b293-a44a-4eb3-aeea-631b624d952f
+					column: Year
+
+				level Quarter
+					lineageTag: da9ca36d-a160-4fc7-a821-0d8223b64818
+					column: Quarter
+
+				level Month
+					lineageTag: 34c3d5d7-f93c-45a5-8bc9-821ac7959a51
+					column: Month
+
+				level Day
+					lineageTag: 01fc7726-b2c0-46eb-99f2-a891755a0eaa
+					column: Day
+
+				annotation TemplateId = DateHierarchy
+
+			partition LocalDateTable_7e8fc96c-6f41-444f-b38e-0d5c76086e58 = calculated
+				mode: import
+				source = Calendar(Date(Year(MIN('ShelterBuddy In Care Inventory'[Due Date Out])), 1, 1), Date(Year(MAX('ShelterBuddy In Care Inventory'[Due Date Out])), 12, 31))
+
+			annotation __PBI_LocalDateTable = true
+
+		table 'Live Capacity Community Animal Centres'
+			lineageTag: 1b4cbd50-c799-42ad-acf0-1d2ac312eb11
+
+			column 'Community Animal Centre'
+				dataType: string
+				lineageTag: 009bd048-5c94-4f99-be98-9c516f5b43b6
+				summarizeBy: none
+				sourceColumn: Community Animal Centre
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Total Cat Capacity'
+				dataType: int64
+				formatString: 0
+				lineageTag: 3edbe329-7f48-43db-900f-56cd5e814282
+				summarizeBy: none
+				sourceColumn: Total Cat Capacity
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'ISO Cat Capacity'
+				dataType: int64
+				formatString: 0
+				lineageTag: 5e8585ca-f25b-4c2f-ad71-3f6aa1d7474f
+				summarizeBy: none
+				sourceColumn: ISO Cat Capacity
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Temporary Cat Capacity'
+				dataType: int64
+				formatString: 0
+				lineageTag: e26087f1-52c6-4012-891b-ee5be85bca9d
+				summarizeBy: none
+				sourceColumn: Temporary Cat Capacity
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Total Dog Capacity'
+				dataType: int64
+				formatString: 0
+				lineageTag: d55c66e8-e242-44a8-a4b1-d50439cb7e71
+				summarizeBy: none
+				sourceColumn: Total Dog Capacity
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Animal Flow Cat Capacity'
+				dataType: int64
+				formatString: 0
+				lineageTag: 8d96812b-43ea-4320-b7c4-764427f5939a
+				summarizeBy: none
+				sourceColumn: Animal Flow Cat Capacity
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = User
+
+			partition 'Live Capacity Community Animal Centres' = m
+				mode: import
+				source =
+						let
+						    Source =
+						        SharePoint.Tables(
+						            "https://bcspca.sharepoint.com/sites/ACS-HUB",
+						            [ApiVersion = 15]
+						        ),
+						
+						    CACSpaceAreaRaw =
+						        Source{
+						            [Id = "66b1d151-d328-4504-aa6d-3dd15d17060d"]
+						        }[Items],
+						
+						    SelectedColumns =
+						        Table.SelectColumns(
+						            CACSpaceAreaRaw,
+						            {
+						                "Title",
+						                "TotalCatCapacity",
+						                "ISOCatCapacity",
+						                "TemporaryCatCapacity",
+						                "TotalDogCapacity"
+						            }
+						        ),
+						
+						    FilteredDogCapacity =
+						        Table.SelectRows(
+						            SelectedColumns,
+						            each [TotalDogCapacity] > 0
+						        ),
+						
+						    AddedAnimalFlowCatCapacity =
+						        Table.AddColumn(
+						            FilteredDogCapacity,
+						            "AnimalFlowCatCapacity",
+						            each [TotalCatCapacity] - [TemporaryCatCapacity],
+						            Int64.Type
+						        ),
+						
+						    ChangedTypes =
+						        Table.TransformColumnTypes(
+						            AddedAnimalFlowCatCapacity,
+						            {
+						                {"TotalCatCapacity", Int64.Type},
+						                {"ISOCatCapacity", Int64.Type},
+						                {"TemporaryCatCapacity", Int64.Type},
+						                {"TotalDogCapacity", Int64.Type},
+						                {"AnimalFlowCatCapacity", Int64.Type}
+						            }
+						        ),
+						
+						    RenamedColumns =
+						        Table.RenameColumns(
+						            ChangedTypes,
+						            {
+						                {"Title", "Community Animal Centre"},
+						                {"TotalCatCapacity", "Total Cat Capacity"},
+						                {"ISOCatCapacity", "ISO Cat Capacity"},
+						                {"TemporaryCatCapacity", "Temporary Cat Capacity"},
+						                {"AnimalFlowCatCapacity", "Animal Flow Cat Capacity"},
+						                {"TotalDogCapacity", "Total Dog Capacity"}
+						            }
+						        )
+						in
+						    RenamedColumns
+
+			annotation PBI_NavigationStepName = Navigation
+
+			annotation PBI_ResultType = Table
+
+		table 'Live Capacity Manager Update'
+			lineageTag: 6ba9dd83-d249-432e-ac13-07df9db5070b
+
+			column 'Dog Open Kennels'
+				dataType: int64
+				formatString: 0
+				lineageTag: 0da62268-8ee9-4c45-a963-d6726430cbcc
+				summarizeBy: sum
+				sourceColumn: Dog Open Kennels
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Cat Open Portals'
+				dataType: int64
+				formatString: 0
+				lineageTag: ae3e2afb-f54c-4e56-8e34-b661150cb86d
+				summarizeBy: sum
+				sourceColumn: Cat Open Portals
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Dog In Use Kennels'
+				dataType: int64
+				formatString: 0
+				lineageTag: b32e7f55-fca1-4d8e-a7e9-6b4950a3218d
+				summarizeBy: sum
+				sourceColumn: Dog In Use Kennels
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Dog Hold Kennels'
+				dataType: int64
+				formatString: 0
+				lineageTag: 997a9e6b-7676-404f-98b6-cd61f81a7ae8
+				summarizeBy: sum
+				sourceColumn: Dog Hold Kennels
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Dog Unavailable Kennels'
+				dataType: int64
+				formatString: 0
+				lineageTag: aab5bb55-80ec-4296-82c4-10c029fb1ccd
+				summarizeBy: sum
+				sourceColumn: Dog Unavailable Kennels
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Cat In Use Portals'
+				dataType: int64
+				formatString: 0
+				lineageTag: cd638b46-970b-495d-8097-2e53bf5aed95
+				summarizeBy: sum
+				sourceColumn: Cat In Use Portals
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Cat Unavailable Portals'
+				dataType: int64
+				formatString: 0
+				lineageTag: 84551dfc-b14a-4389-9b21-77043b3c06c0
+				summarizeBy: sum
+				sourceColumn: Cat Unavailable Portals
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Cat Hold Portals'
+				dataType: int64
+				formatString: 0
+				lineageTag: d7991ded-ff90-4535-9227-433e61123478
+				summarizeBy: sum
+				sourceColumn: Cat Hold Portals
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Community Animal Centre'
+				dataType: string
+				lineageTag: 6a22c111-d98a-4a62-a0d8-fba1565f49cf
+				summarizeBy: none
+				sourceColumn: Community Animal Centre
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'Live Capacity Manager Update' = m
+				mode: import
+				source =
+						let
+						    Source =
+						        SharePoint.Tables(
+						            "https://bcspca.sharepoint.com/sites/ACS-HUB",
+						            [ApiVersion = 15]
+						        ),
+						
+						    CACSpaceAreaRaw =
+						        Source{
+						            [Id = "6875a563-2e5a-4ce5-8594-7e5fa658822a"]
+						        }[Items],
+						
+						    ExpandedCommunityAnimalCentre =
+						        Table.ExpandRecordColumn(
+						            CACSpaceAreaRaw,
+						            "CommunityAnimalCentre",
+						            {"Title"},
+						            {"CommunityAnimalCentre"}
+						        ),
+						
+						    SelectedColumns =
+						        Table.SelectColumns(
+						            ExpandedCommunityAnimalCentre,
+						            {
+								"CommunityAnimalCentre",
+						                "DogOpenKennels",
+						                "DogInUseKennels",
+						                "DogUnavailableKennels",
+						                "DogHoldKennels",
+						                "CatOpenPortals",
+						                "CatInUsePortals",
+						                "CatUnavailablePortals",
+						                "CatHoldPortals"
+						            }
+						        ),
+						
+						  ChangedTypes =
+						        Table.TransformColumnTypes(
+						            SelectedColumns,
+						            {
+						                {"DogOpenKennels", Int64.Type},
+						                {"DogInUseKennels", Int64.Type},
+						                {"DogUnavailableKennels", Int64.Type},
+						                {"DogHoldKennels", Int64.Type},
+						                {"CatOpenPortals", Int64.Type},
+						                {"CatInUsePortals", Int64.Type},
+						                {"CatUnavailablePortals", Int64.Type},
+						                {"CatHoldPortals", Int64.Type}
+						            }
+						        ),
+						
+						    RenamedColumns =
+						        Table.RenameColumns(
+						            ChangedTypes,
+						            {
+						                {"CommunityAnimalCentre", "Community Animal Centre"},
+						                {"DogOpenKennels", "Dog Open Kennels"},
+						                {"DogInUseKennels", "Dog In Use Kennels"},
+						                {"DogUnavailableKennels", "Dog Unavailable Kennels"},
+						                {"DogHoldKennels", "Dog Hold Kennels"},
+						                {"CatOpenPortals", "Cat Open Portals"},
+						                {"CatInUsePortals", "Cat In Use Portals"},
+						                {"CatUnavailablePortals", "Cat Unavailable Portals"},
+						                {"CatHoldPortals", "Cat Hold Portals"}
+						            }
+						        )
+						
+						in
+						    RenamedColumns
+
+			annotation PBI_NavigationStepName = Navigation
+
+			annotation PBI_ResultType = Table
+
+		table 'Live Capacity Space Area Mapping'
+			lineageTag: f8f7668c-243d-4b82-be29-e5ad09f6966b
+
+			column 'Animal Type'
+				dataType: string
+				lineageTag: ef116f1c-1372-405a-9ab1-eb6c9034afcb
+				summarizeBy: none
+				sourceColumn: Animal Type
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column Area
+				dataType: string
+				lineageTag: 925357a2-e9c4-4a48-b476-fca4739a6123
+				summarizeBy: none
+				sourceColumn: Area
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Community Animal Centre'
+				dataType: string
+				lineageTag: f12ce8a8-9df6-4ff7-bac5-b2649d8f7193
+				summarizeBy: none
+				sourceColumn: Community Animal Centre
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			column 'Area Mapping Key'
+				dataType: string
+				lineageTag: d7b131a1-1f79-481d-a8ed-222cd7fa1510
+				summarizeBy: none
+				sourceColumn: Area Mapping Key
+
+				changedProperty = IsHidden
+
+				annotation SummarizationSetBy = Automatic
+
+			partition 'Live Capacity Space Area Mapping' = m
+				mode: import
+				source =
+						let
+						    Source =
+						        SharePoint.Tables(
+						            "https://bcspca.sharepoint.com/sites/ACS-HUB",
+						            [ApiVersion = 15]
+						        ),
+						
+						    CACSpaceAreaRaw =
+						        Source{
+						            [Id = "3b893627-bc4b-4c89-8000-141300ce2d49"]
+						        }[Items],
+						
+						    ExpandedCommunityAnimalCentre =
+						        Table.ExpandRecordColumn(
+						            CACSpaceAreaRaw,
+						            "CommunityAnimalCentre",
+						            {"Title"},
+						            {"CommunityAnimalCentre"}
+						        ),
+						
+						    SelectedColumns =
+						        Table.SelectColumns(
+						            ExpandedCommunityAnimalCentre,
+						            {
+						                "AnimalType",
+						                "Area",
+						                "CommunityAnimalCentre"
+						            }
+						        ),
+						
+						    AddedAreaMappingKey =
+						        Table.AddColumn(
+						            SelectedColumns,
+						            "AreaMappingKey",
+						            each
+						                Text.Combine(
+						                    {
+						                        Text.Trim(Text.From([CommunityAnimalCentre])),
+						                        Text.Trim(Text.From([Area]))
+						                    },
+						                    "-"
+						                ),
+						            type text
+						        ),
+						
+						    RenamedColumns =
+						        Table.RenameColumns(
+						            AddedAreaMappingKey,
+						            {
+						                {"AnimalType", "Animal Type"},
+						                {"CommunityAnimalCentre", "Community Animal Centre"},
+						                {"AreaMappingKey", "Area Mapping Key"}
+						            }
+						        )
+						in
+						    RenamedColumns
+
+			annotation PBI_NavigationStepName = Navigation
+
+			annotation PBI_ResultType = Table
+
+		table 'Live Capacity Measures'
+			lineageTag: e86a1c70-4496-427f-acd0-4b12299399fc
+
+			measure 'Dog In Used' =
+					
+					CALCULATE(
+					    COUNTROWS('ShelterBuddy In Care Inventory'),
+					    TREATAS(
+					        VALUES('Live Capacity Space Area Mapping'[Area Mapping Key]),
+					        'ShelterBuddy In Care Inventory'[AreaMappingKey]
+					    ), 'Live Capacity Space Area Mapping'[Animal Type] = "Dog"
+					)
+				formatString: 0
+				lineageTag: c42117bc-47b9-48b4-af9c-9267abedb817
+
+				changedProperty = IsHidden
+
+			measure 'Cat In Used' =
+					
+					CALCULATE(
+					    COUNTROWS('ShelterBuddy In Care Inventory'),
+					    TREATAS(
+					        VALUES('Live Capacity Space Area Mapping'[Area Mapping Key]),
+					        'ShelterBuddy In Care Inventory'[AreaMappingKey]
+					    ), 'ShelterBuddy In Care Inventory'[Animal Type] = "Cat"
+					)
+				formatString: 0
+				lineageTag: 487c7631-5e3e-4be0-96d7-43675427a3d5
+
+				changedProperty = IsHidden
+
+			measure 'Dog Open' = [Total Dog Capacity] - [Dog In Used]
+				formatString: 0
+				lineageTag: 1a2d168d-8b3d-4478-8d86-d39544806b56
+
+				changedProperty = IsHidden
+
+			measure 'Total Dog Capacity' = ```
+					sum('Live Capacity Community Animal Centres'[Total Dog Capacity]) 
+					```
+				formatString: 0
+				lineageTag: 0ca58535-21c1-4492-a78c-dd13f25e0359
+
+			measure 'Total Cat Capacity' = ```
+					sum('Live Capacity Community Animal Centres'[Total Cat Capacity]) 
+					```
+				formatString: 0
+				lineageTag: 61f93628-bf31-47b0-8c56-f5f80980c569
+
+			measure 'Cat Open' = [Total Cat Capacity] - [Cat In Used]
+				formatString: 0
+				lineageTag: ff5e07f6-887c-4ea3-b5f7-35eb0195b050
+
+			measure 'Dog Hold' = sum('Live Capacity Manager Update'[Dog Hold Kennels])
+				formatString: 0
+				lineageTag: 4d238365-b3fa-42c2-a837-899df0b3775c
+
+			measure 'Dog Unavailable' = sum('Live Capacity Manager Update'[Dog Unavailable Kennels])
+				formatString: 0
+				lineageTag: 1eb0dc5c-4cd8-4a45-a708-9f177d601469
+
+			measure 'Cat Hold' = sum('Live Capacity Manager Update'[Cat Hold Portals])
+				formatString: 0
+				lineageTag: b72615be-6580-4313-bbad-1b05c8e8d35c
+
+			measure 'Cat Unavailable' = sum('Live Capacity Manager Update'[Cat Unavailable Portals])
+				formatString: 0
+				lineageTag: 51934da2-79c9-4ac9-a257-9ffc0422d05e
+
+			partition 'Live Capacity Measures' = m
+				mode: import
+				source =
+						let
+						    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+						    #"Removed Columns" = Table.RemoveColumns(Source,{"Column1"})
+						in
+						    #"Removed Columns"
+
+			changedProperty = Name
+
+			annotation PBI_ResultType = Table
+
+		relationship 8244d48d-d00a-4069-8496-eddaa09b382c
+			joinOnDateBehavior: datePartOnly
+			fromColumn: 'ShelterBuddy In Care Inventory'.'Date In'
+			toColumn: LocalDateTable_e4fb5195-1180-40a0-bb99-4fd2264a3cbe.Date
+
+		relationship 552dd52f-b799-468c-a625-54da372f4e2c
+			joinOnDateBehavior: datePartOnly
+			fromColumn: 'ShelterBuddy In Care Inventory'.'Last Vet Treatment Date'
+			toColumn: LocalDateTable_8df221a7-2535-44c6-bad3-66586ade4ed3.Date
+
+		relationship 80e75e15-f968-476d-a5e7-399ca16d074b
+			joinOnDateBehavior: datePartOnly
+			fromColumn: 'ShelterBuddy In Care Inventory'.'Due Date Out'
+			toColumn: LocalDateTable_7e8fc96c-6f41-444f-b38e-0d5c76086e58.Date
+
+		relationship 5b506201-4239-c3e9-f385-367841602f36
+			crossFilteringBehavior: bothDirections
+			fromCardinality: one
+			fromColumn: 'Live Capacity Community Animal Centres'.'Community Animal Centre'
+			toColumn: 'Live Capacity Manager Update'.'Community Animal Centre'
+
+		relationship 719189e8-f641-7eec-add1-99b537b31157
+			fromColumn: 'Live Capacity Space Area Mapping'.'Community Animal Centre'
+			toColumn: 'Live Capacity Community Animal Centres'.'Community Animal Centre'
+
+		relationship e6b8f9a3-5d56-04b2-1c0d-1f7ef4d426cc
+			fromColumn: 'ShelterBuddy In Care Inventory'.AreaMappingKey
+			toColumn: 'Live Capacity Space Area Mapping'.'Area Mapping Key'
+
+		cultureInfo en-CA
+
+		annotation __PBI_TimeIntelligenceEnabled = 1
+
+		annotation PBI_QueryOrder = ["ShelterBuddy In Care Inventory","Live Capacity Community Animal Centres","Live Capacity Manager Update","Live Capacity Space Area Mapping","Live Capacity Measures"]
+

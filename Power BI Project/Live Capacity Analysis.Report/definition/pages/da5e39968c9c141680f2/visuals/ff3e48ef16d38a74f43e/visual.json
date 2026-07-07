@@ -1,0 +1,165 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "ff3e48ef16d38a74f43e",
+  "position": {
+    "x": 16,
+    "y": 272,
+    "z": 1000,
+    "height": 144,
+    "width": 848,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Live Capacity Space Area Mapping"
+                    }
+                  },
+                  "Property": "Community Animal Centre"
+                }
+              },
+              "queryRef": "Live Capacity Space Area Mapping.Community Animal Centre",
+              "nativeQueryRef": "Community Animal Centre"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Live Capacity Space Area Mapping"
+                    }
+                  },
+                  "Property": "Area"
+                }
+              },
+              "queryRef": "Live Capacity Space Area Mapping.Area",
+              "nativeQueryRef": "Area"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShelterBuddy Report In Care Inventory"
+                    }
+                  },
+                  "Property": "Region"
+                }
+              },
+              "queryRef": "ShelterBuddy Report In Care Inventory.Region",
+              "nativeQueryRef": "Region"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShelterBuddy Report In Care Inventory"
+                    }
+                  },
+                  "Property": "Animal Type"
+                }
+              },
+              "queryRef": "ShelterBuddy Report In Care Inventory.Animal Type",
+              "nativeQueryRef": "Animal Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShelterBuddy Report In Care Inventory"
+                    }
+                  },
+                  "Property": "Shelter Location"
+                }
+              },
+              "queryRef": "ShelterBuddy Report In Care Inventory.Shelter Location",
+              "nativeQueryRef": "Shelter Location"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShelterBuddy Report In Care Inventory"
+                    }
+                  },
+                  "Property": "Animal Count"
+                }
+              },
+              "queryRef": "ShelterBuddy Report In Care Inventory.Animal Count",
+              "nativeQueryRef": "Animal Count"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7c64f2010ac45363fc58",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Live Capacity Space Area Mapping"
+              }
+            },
+            "Property": "Community Animal Centre"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "l",
+              "Entity": "Live Capacity Space Area Mapping",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "l"
+                          }
+                        },
+                        "Property": "Community Animal Centre"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

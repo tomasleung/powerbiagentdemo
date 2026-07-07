@@ -1,0 +1,178 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "6a90b274872460295ad7",
+  "position": {
+    "x": 16,
+    "y": 256,
+    "z": 1000,
+    "height": 240,
+    "width": 768,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShelterBuddy Report In Care Inventory"
+                    }
+                  },
+                  "Property": "Region"
+                }
+              },
+              "queryRef": "ShelterBuddy Report In Care Inventory.Region",
+              "nativeQueryRef": "Region"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShelterBuddy Report In Care Inventory"
+                    }
+                  },
+                  "Property": "Animal Type"
+                }
+              },
+              "queryRef": "ShelterBuddy Report In Care Inventory.Animal Type",
+              "nativeQueryRef": "Animal Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShelterBuddy Report In Care Inventory"
+                    }
+                  },
+                  "Property": "Shelter Location"
+                }
+              },
+              "queryRef": "ShelterBuddy Report In Care Inventory.Shelter Location",
+              "nativeQueryRef": "Shelter Location"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ShelterBuddy Report In Care Inventory"
+                    }
+                  },
+                  "Property": "Animal Count"
+                }
+              },
+              "queryRef": "ShelterBuddy Report In Care Inventory.Animal Count",
+              "nativeQueryRef": "Animal Count"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ShelterBuddy Report In Care Inventory"
+                  }
+                },
+                "Property": "Animal Count"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "ShelterBuddy Report In Care Inventory"
+                                        }
+                                      },
+                                      "Property": "Animal Count"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "ShelterBuddy Report In Care Inventory"
+                                        }
+                                      },
+                                      "Property": "Animal Count"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "2D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#DEEFFF'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "ShelterBuddy Report In Care Inventory.Animal Count"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

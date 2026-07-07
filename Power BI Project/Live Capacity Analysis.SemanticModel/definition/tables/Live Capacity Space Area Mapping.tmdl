@@ -1,0 +1,108 @@
+table 'Live Capacity Space Area Mapping'
+	lineageTag: f8f7668c-243d-4b82-be29-e5ad09f6966b
+
+	column 'Animal Type'
+		dataType: string
+		lineageTag: ef116f1c-1372-405a-9ab1-eb6c9034afcb
+		summarizeBy: none
+		sourceColumn: Animal Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area
+		dataType: string
+		lineageTag: 925357a2-e9c4-4a48-b476-fca4739a6123
+		summarizeBy: none
+		sourceColumn: Area
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Community Animal Centre'
+		dataType: string
+		lineageTag: f12ce8a8-9df6-4ff7-bac5-b2649d8f7193
+		summarizeBy: none
+		sourceColumn: Community Animal Centre
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Area Mapping Key'
+		dataType: string
+		isHidden
+		lineageTag: d7b131a1-1f79-481d-a8ed-222cd7fa1510
+		summarizeBy: none
+		sourceColumn: Area Mapping Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Live Capacity Space Area Mapping' = m
+		mode: import
+		source =
+				let
+				    Source =
+				        SharePoint.Tables(
+				            "https://bcspca.sharepoint.com/sites/ACS-HUB",
+				            [ApiVersion = 15]
+				        ),
+				
+				    CACSpaceAreaRaw =
+				        Source{
+				            [Id = "3b893627-bc4b-4c89-8000-141300ce2d49"]
+				        }[Items],
+				
+				    ExpandedCommunityAnimalCentre =
+				        Table.ExpandRecordColumn(
+				            CACSpaceAreaRaw,
+				            "CommunityAnimalCentre",
+				            {"Title"},
+				            {"CommunityAnimalCentre"}
+				        ),
+				
+				    SelectedColumns =
+				        Table.SelectColumns(
+				            ExpandedCommunityAnimalCentre,
+				            {
+				                "AnimalType",
+				                "Area",
+				                "CommunityAnimalCentre"
+				            }
+				        ),
+				
+				    AddedAreaMappingKey =
+				        Table.AddColumn(
+				            SelectedColumns,
+				            "AreaMappingKey",
+				            each
+				                Text.Combine(
+				                    {
+				                        Text.Trim(Text.From([CommunityAnimalCentre])),
+				                        Text.Trim(Text.From([Area]))
+				                    },
+				                    "-"
+				                ),
+				            type text
+				        ),
+				
+				    RenamedColumns =
+				        Table.RenameColumns(
+				            AddedAreaMappingKey,
+				            {
+				                {"AnimalType", "Animal Type"},
+				                {"CommunityAnimalCentre", "Community Animal Centre"},
+				                {"AreaMappingKey", "Area Mapping Key"}
+				            }
+				        )
+				in
+				    RenamedColumns
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
