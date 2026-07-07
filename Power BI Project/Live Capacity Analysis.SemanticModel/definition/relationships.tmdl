@@ -1,9 +1,9 @@
 relationship 'Capacity to Workspace'
-	fromColumn: Capacity[Workspace ID]
-	toColumn: Workspace[Workspace ID]
+	fromColumn: 'Capacity'.'Workspace ID'
+	toColumn: 'Workspace'.'Workspace ID'
 
 relationship 'Capacity to Date'
-	fromColumn: Capacity[Timestamp]
-	toColumn: Date[Date]
+	fromColumn: 'Capacity'.'Timestamp'
+	toColumn: 'Date'.'Date'
 
 

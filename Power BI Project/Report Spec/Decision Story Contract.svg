@@ -1,0 +1,98 @@
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                ANIMAL FLOW — CAPACITY INTELLIGENCE                         │
+│      Provincial View | Capacity • Data Quality • Action Priorities         │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+
+A ─ CAPACITY HEALTH ─────────────────────── B ─ ACTION REQUIRED ──────────────
+
+┌────────────────────────────┐     ┌────────────────────────────────────────┐
+│ OPEN CAT SPACES            │     │ CENTRES REQUIRING ACTION             │
+│                            │     │                                      │
+│       390                  │     │ 🔴 Victoria                          │
+│                            │     │ Capacity >95%                       │
+│ Status: Healthy            │     │ Action: Avoid New Cat Intake         │
+└────────────────────────────┘     ├──────────────────────────────────────┤
+                                   │ 🟡 Nanaimo                           │
+┌────────────────────────────┐     │ Capacity >80%                       │
+│ OPEN DOG SPACES            │     │ Action: Monitor                     │
+│                            │     ├──────────────────────────────────────┤
+│       127                  │     │ ⚠ Williams Lake                     │
+│                            │     │ 6 Assignment Issues                 │
+│ Status: Limited            │     │ Action: Review Data Quality         │
+└────────────────────────────┘     └──────────────────────────────────────┘
+
+
+
+
+C ─ CAPACITY UTILIZATION ───────────────── D ─ DATA TRUST SCORE ─────────────
+
+┌────────────────────────────┐     ┌────────────────────────────────────────┐
+│ CENTRES BY UTILIZATION     │     │ DATA QUALITY ALERTS                   │
+│                            │     │                                      │
+│ 🔴 >95%       4 Centres    │     │ Missing Kennel Assignments: 18       │
+│ 🟡 80-95%     7 Centres    │     │                                      │
+│ 🟢 <80%      21 Centres    │     │ Unconfirmed Centres: 3              │
+│                            │     │                                      │
+│ Action: Review Red First   │     │ Stale Updates (>12h): 2             │
+└────────────────────────────┘     │                                      │
+                                   │ Assignment Accuracy: 96%            │
+                                   └──────────────────────────────────────┘
+
+
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ REGIONAL CAPACITY HEALTH                                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│ Island            ████████░░ 78%  🟡 Monitor                              │
+│ Interior          █████████░ 89%  🔴 Attention Required                   │
+│ North             ██████░░░░ 61%  🟢 Healthy                              │
+│ Lower Mainland    ███████░░░ 72%  🟢 Healthy                              │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ COMMUNITY ANIMAL CENTRE PRIORITY VIEW                                     │
+├──────────────┬──────────┬─────────┬──────────┬─────────┬──────────────────┤
+│ Centre       │ Cat Util │ Dog Util│ Issues   │ Update  │ Recommended      │
+├──────────────┼──────────┼─────────┼──────────┼─────────┼──────────────────┤
+│ Victoria     │ 98%      │ 92%     │ 2        │ 5 min   │ Avoid Intake     │
+│ Nanaimo      │ 84%      │ 71%     │ 1        │ 7 min   │ Monitor          │
+│ Williams Lk  │ 65%      │ 60%     │ 6        │ 7 min   │ Review Issues    │
+│ Kelowna      │ 52%      │ 48%     │ 0        │ 4 min   │ Candidate Centre │
+└──────────────┴──────────┴─────────┴──────────┴─────────┴──────────────────┘
+
+
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ AI DECISION NARRATIVE                                                      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Three centres require attention today. Victoria remains above the         │
+│ critical capacity threshold and should not receive additional cat         │
+│ intakes without validation.                                               │
+│                                                                           │
+│ Williams Lake has available capacity but six missing kennel assignments   │
+│ are reducing confidence in occupancy calculations.                        │
+│                                                                           │
+│ Kelowna currently has the strongest available capacity and may support    │
+│ intake overflow from nearby centres.                                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ NEXT ACTIONS                                                              │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ [Review Critical Centres]                                                 │
+│ [Review Data Quality Issues]                                              │
+│ [Open Live Capacity Management]                                           │
+│ [Review Emergency Closures]                                               │
+└─────────────────────────────────────────────────────────────────────────────┘

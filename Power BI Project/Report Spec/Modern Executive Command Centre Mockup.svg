@@ -1,0 +1,193 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200"
+xmlns="http://www.w3.org/2000/svg">
+
+<style>
+
+.bg { fill:#F7F9FC; }
+
+.title {
+font-family:Segoe UI;
+font-size:26px;
+font-weight:700;
+fill:#1F2937;
+}
+
+.subtitle {
+font-family:Segoe UI;
+font-size:12px;
+fill:#6B7280;
+}
+
+.card {
+fill:white;
+stroke:#E5E7EB;
+stroke-width:1;
+rx:12;
+}
+
+.cardTitle{
+font-family:Segoe UI;
+font-size:13px;
+font-weight:600;
+fill:#374151;
+}
+
+.bigNumber{
+font-family:Segoe UI;
+font-size:34px;
+font-weight:700;
+fill:#111827;
+}
+
+.label{
+font-family:Segoe UI;
+font-size:12px;
+fill:#6B7280;
+}
+
+.section{
+font-family:Segoe UI;
+font-size:18px;
+font-weight:700;
+fill:#111827;
+}
+
+.good{fill:#16A34A;}
+.warn{fill:#F59E0B;}
+.bad{fill:#DC2626;}
+.info{fill:#2563EB;}
+
+</style>
+
+<rect class="bg" width="1600" height="1200"/>
+
+<!-- HEADER -->
+
+<text x="40" y="50" class="title">
+Animal Flow — Capacity Intelligence
+</text>
+
+<text x="40" y="75" class="subtitle">
+Provincial Intake Readiness • Capacity Monitoring • Data Trust
+</text>
+
+<!-- ACTION REQUIRED -->
+
+<text x="40" y="120" class="section">
+Action Required
+</text>
+
+<rect x="40" y="140" width="330" height="120" class="card"/>
+<text x="60" y="175" class="cardTitle">Centres At Capacity</text>
+<text x="190" y="225" class="bigNumber bad">4</text>
+
+<rect x="390" y="140" width="330" height="120" class="card"/>
+<text x="410" y="175" class="cardTitle">Data Quality Issues</text>
+<text x="540" y="225" class="bigNumber warn">18</text>
+
+<rect x="740" y="140" width="330" height="120" class="card"/>
+<text x="760" y="175" class="cardTitle">Pending Confirmation</text>
+<text x="890" y="225" class="bigNumber warn">3</text>
+
+<rect x="1090" y="140" width="330" height="120" class="card"/>
+<text x="1110" y="175" class="cardTitle">Emergency Closures</text>
+<text x="1240" y="225" class="bigNumber bad">2</text>
+
+<!-- INTAKE READINESS -->
+
+<text x="40" y="330" class="section">
+Intake Readiness
+</text>
+
+<rect x="40" y="350" width="1380" height="110" class="card"/>
+
+<text x="100" y="395" class="cardTitle">Available Centres</text>
+<text x="140" y="435" class="bigNumber good">18</text>
+
+<text x="430" y="395" class="cardTitle">Monitor Centres</text>
+<text x="470" y="435" class="bigNumber warn">7</text>
+
+<text x="760" y="395" class="cardTitle">Full Centres</text>
+<text x="800" y="435" class="bigNumber bad">4</text>
+
+<text x="1080" y="395" class="cardTitle">Closed Centres</text>
+<text x="1130" y="435" class="bigNumber bad">2</text>
+
+<!-- PLACEMENT DECISION BOARD -->
+
+<text x="40" y="520" class="section">
+Placement Decision Board
+</text>
+
+<rect x="40" y="540" width="1380" height="220" class="card"/>
+
+<text x="80" y="590" class="cardTitle">Kelowna</text>
+<text x="250" y="590" class="label">15 / 25 Animals</text>
+<text x="450" y="590" class="label">Remaining Capacity: 10</text>
+<text x="740" y="590" class="good">✅ Intake Candidate</text>
+
+<text x="80" y="640" class="cardTitle">Nanaimo</text>
+<text x="250" y="640" class="label">20 / 25 Animals</text>
+<text x="450" y="640" class="label">Remaining Capacity: 5</text>
+<text x="740" y="640" class="warn">🟡 Monitor</text>
+
+<text x="80" y="690" class="cardTitle">Victoria</text>
+<text x="250" y="690" class="label">25 / 25 Animals</text>
+<text x="450" y="690" class="label">Remaining Capacity: 0</text>
+<text x="740" y="690" class="bad">🔴 Do Not Intake</text>
+
+<!-- CAPACITY HEALTH -->
+
+<text x="40" y="840" class="section">
+Capacity vs Occupancy
+</text>
+
+<rect x="40" y="860" width="680" height="220" class="card"/>
+<text x="70" y="900" class="cardTitle">Care Capacity Health</text>
+
+<text x="70" y="950" class="label">Animals In Care</text>
+<text x="450" y="950" class="bigNumber">1875</text>
+
+<text x="70" y="1000" class="label">Care Capacity</text>
+<text x="450" y="1000" class="bigNumber">2140</text>
+
+<text x="70" y="1050" class="label">Remaining Capacity</text>
+<text x="450" y="1050" class="bigNumber good">265</text>
+
+<!-- DATA TRUST -->
+
+<rect x="740" y="860" width="680" height="220" class="card"/>
+
+<text x="770" y="900" class="cardTitle">Data Trust</text>
+
+<text x="770" y="950" class="label">
+Missing Assignments
+</text>
+
+<text x="1240" y="950" class="bigNumber warn">
+18
+</text>
+
+<text x="770" y="1000" class="label">
+Assignment Accuracy
+</text>
+
+<text x="1220" y="1000" class="bigNumber good">
+96%
+</text>
+
+<text x="770" y="1050" class="label">
+Stale Updates
+</text>
+
+<text x="1240" y="1050" class="bigNumber bad">
+2
+</text>
+
+<!-- AI BRIEFING -->
+
+<text x="40" y="1140" class="section">
+AI Operational Briefing
+</text>
+
+</svg>
