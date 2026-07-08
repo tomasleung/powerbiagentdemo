@@ -1,4 +1,4 @@
-# REPORT_STORY_v1.1.md
+# REPORT_STORY_v1.2.md
 ## Animal Flow — Capacity Intelligence
 ### RDLC Decision Story Contract (DSC)
 
@@ -6,7 +6,7 @@
 
 # Document Metadata
 
-Version: 1.1
+Version: 1.2
 
 Product: Animal Flow — Capacity Intelligence
 
@@ -186,6 +186,26 @@ Decision Category: Placement
 
 ---
 
+### Q13
+
+How much CAT or DOG capacity is currently being consumed by non-target species?
+
+Priority: Medium
+
+Decision Category: Species Occupancy
+
+---
+
+### Q14
+
+Which centres have CAT/DOG capacity impacted by rabbits, small animals, or other species?
+
+Priority: Medium
+
+Decision Category: Capacity Explanation
+
+---
+
 # SECTION 03 — BUSINESS LOGIC MODEL
 
 ## Governing Business Rule
@@ -201,6 +221,8 @@ Care Capacity
 +
 Physical Space Availability
 +
+Species Occupancy
++
 Data Trust
 +
 Emergency Closure Status
@@ -210,11 +232,9 @@ Intake Readiness
 
 ---
 
-## Important Business Concept
+## Physical Capacity
 
-### Physical Capacity
-
-Represents kennel, portal, room, and floor plan availability.
+Represents floor plan availability.
 
 Examples:
 
@@ -225,18 +245,38 @@ Examples:
 
 ---
 
-### Care Capacity
+## Care Capacity
 
-Represents the maximum number of animals a centre can support operationally.
+Represents the maximum number of animals a centre can safely support operationally.
 
-Care Capacity considers:
+Care Capacity reflects:
 
 - Staffing
 - Workload
-- Animal care requirements
-- Centre operating limits
+- Animal care resources
+- Operational limits
 
 Care Capacity is the PRIMARY intake constraint.
+
+---
+
+## Species Occupancy Rule
+
+A centre may temporarily house animals outside the primary species that a space was designed for.
+
+Examples:
+
+```text
+Rabbit occupying CAT space
+
+Guinea Pig occupying CAT space
+
+Small Animal occupying CAT space
+
+Other Animal occupying DOG space
+```
+
+These occupancy conditions may reduce available CAT or DOG intake capacity and should be visible during intake decisions.
 
 ---
 
@@ -245,28 +285,24 @@ Care Capacity is the PRIMARY intake constraint.
 Centre A
 
 ```text
-Total Spaces = 17
+Total CAT Spaces = 17
 
-Open Spaces = 6
+Open CAT Spaces = 6
 
-Animals In Care = 25
+Cats In Care = 20
 
-Care Capacity = 25
+Other Animals In CAT Space = 5
+
+CAT Care Capacity = 25
 ```
 
-Result:
+Result
 
 ```text
-Do Not Intake
+CAT Capacity Full
 ```
 
-Reason:
-
-```text
-Care Capacity has been reached.
-```
-
-Although physical space exists, the centre has no remaining care capacity.
+Although open spaces remain available, CAT capacity is constrained by occupancy from both cats and non-cat species.
 
 ---
 
@@ -315,6 +351,24 @@ In Use Spaces
 Hold Spaces
 
 Unavailable Spaces
+
+---
+
+## Species Occupancy Signals
+
+Cats In Care
+
+Dogs In Care
+
+Other Animals In Care
+
+CAT Spaces Occupied By Other Animals
+
+DOG Spaces Occupied By Other Animals
+
+Species Occupancy %
+
+Species Occupancy Impact Centres
 
 ---
 
@@ -463,7 +517,7 @@ Yellow
 ### Critical
 
 ```text
-> 3
+>3
 ```
 
 Action
@@ -485,7 +539,7 @@ Red
 ### Current
 
 ```text
-< 12 Hours
+<12 Hours
 ```
 
 Action
@@ -513,7 +567,7 @@ Validate Before Routing
 ### Stale
 
 ```text
-> 24 Hours
+>24 Hours
 ```
 
 Action
@@ -531,7 +585,7 @@ Contact Centre
 Action
 
 ```text
-Exclude Centre from Placement Options
+Exclude Centre From Placement Options
 ```
 
 Status
@@ -548,10 +602,11 @@ Red
 |------------|------------|
 | Care Capacity >= 100% | Do Not Intake |
 | Care Capacity 80%-99% | Review Before Routing |
-| Missing Assignments > 3 | Review Data Quality |
-| Stale Updates > 24 Hours | Contact Centre |
+| Missing Assignments >3 | Review Data Quality |
+| Stale Updates >24 Hours | Contact Centre |
 | Emergency Closure Active | Exclude Centre |
 | Healthy Capacity + Available Space | Candidate Centre |
+| High Other Species Occupancy | Review Alternate Housing Options |
 
 ---
 
@@ -611,7 +666,17 @@ Capacity vs Care Capacity
 
 ### Story 4
 
-Can the data be trusted?
+How is capacity being consumed?
+
+Output:
+
+Species Occupancy
+
+---
+
+### Story 5
+
+Can the underlying data be trusted?
 
 Output:
 
@@ -619,9 +684,9 @@ Data Trust
 
 ---
 
-### Story 5
+### Story 6
 
-Where is pressure building?
+Where is capacity pressure building?
 
 Output:
 
@@ -629,7 +694,7 @@ Regional Health
 
 ---
 
-### Story 6
+### Story 7
 
 What should Animal Flow do next?
 
@@ -667,17 +732,7 @@ Exception Management
 
 Purpose
 
-Provide provincial context.
-
-Classification
-
-Informational
-
-Decision Supported
-
-None
-
----
+Provide provincial context before decisions.
 
 Metrics
 
@@ -735,8 +790,6 @@ Metrics
 - Open Spaces
 - Recommendation
 
----
-
 Business Rule
 
 ```text
@@ -755,8 +808,6 @@ Purpose
 
 Explain centre readiness.
 
-Metrics
-
 ### Care Capacity Health
 
 - Animals In Care
@@ -774,11 +825,50 @@ Metrics
 
 ---
 
-## SECTION 05 — DATA TRUST
+## SECTION 05 — SPECIES OCCUPANCY
 
 Purpose
 
-Measure confidence.
+Understand how non-target species consume available capacity.
+
+Metrics
+
+- Cats In Care
+- Dogs In Care
+- Other Animals In Care
+- CAT Spaces Occupied By Other Animals
+- DOG Spaces Occupied By Other Animals
+- Top Impact Centres
+
+Supported Questions
+
+```text
+How much CAT capacity is being consumed by rabbits or small animals?
+
+How much DOG capacity is being consumed by other species?
+
+Which centres are most impacted by cross-species occupancy?
+```
+
+Supported Actions
+
+```text
+Review alternative housing options.
+
+Restore CAT intake capacity.
+
+Restore DOG intake capacity.
+
+Review occupancy constraints before restricting intake.
+```
+
+---
+
+## SECTION 06 — DATA TRUST
+
+Purpose
+
+Measure confidence in decision signals.
 
 Metrics
 
@@ -789,7 +879,7 @@ Metrics
 
 ---
 
-## SECTION 06 — REGIONAL HEALTH
+## SECTION 07 — REGIONAL HEALTH
 
 Purpose
 
@@ -803,7 +893,7 @@ Metrics
 
 ---
 
-## SECTION 07 — AI OPERATIONAL BRIEFING
+## SECTION 08 — AI OPERATIONAL BRIEFING
 
 Purpose
 
@@ -814,6 +904,7 @@ Outputs
 - Centres Requiring Attention
 - Candidate Centres
 - Data Quality Risks
+- Species Occupancy Risks
 - Capacity Risks
 - Recommended Actions
 
@@ -856,7 +947,7 @@ Status KPI Cards
 Visual Type
 
 ```text
-Priority Matrix Table
+Priority Table
 ```
 
 ---
@@ -867,6 +958,25 @@ Visual Type
 
 ```text
 Comparison Cards + Stacked Bar
+```
+
+---
+
+## Species Occupancy
+
+Visual Type
+
+```text
+Species Breakdown Chart
++
+Top Impact Centres Table
+```
+
+Reason
+
+```text
+Explains why care capacity may be constrained
+even when physical space appears available.
 ```
 
 ---
@@ -920,12 +1030,15 @@ SECTION 04
 Capacity vs Occupancy
 
 SECTION 05
-Data Trust
+Species Occupancy
 
 SECTION 06
-Regional Health
+Data Trust
 
 SECTION 07
+Regional Health
+
+SECTION 08
 AI Operational Briefing
 ```
 
@@ -943,6 +1056,8 @@ A successful dashboard enables Animal Flow to:
 
 ✅ Understand care capacity constraints
 
+✅ Understand species occupancy impacts
+
 ✅ Trust operational signals
 
 ✅ Receive actionable recommendations
@@ -955,10 +1070,10 @@ A successful dashboard enables Animal Flow to:
 
 ## Dashboard Success Statement
 
-The report succeeds when users can answer:
+The dashboard succeeds when users can answer:
 
 ```text
 Which centres can safely receive additional animals?
 ```
 
-within 30 seconds of opening the dashboard.
+within 30 seconds of opening the report.

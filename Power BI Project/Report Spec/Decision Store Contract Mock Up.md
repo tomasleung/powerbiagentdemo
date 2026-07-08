@@ -1,32 +1,46 @@
-I would propose this Decision-First Mockup v1.2 based on the updated DSC.
+┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+│                     ANIMAL FLOW — CAPACITY INTELLIGENCE                                     │
+│         Provincial Intake Readiness • Capacity Intelligence • Decision Support              │
+└──────────────────────────────────────────────────────────────────────────────────────────────┘
 
-┌──────────────────────────────────────────────────────────────────────────────┐
-│                  ANIMAL FLOW — CAPACITY INTELLIGENCE                        │
-│          Provincial Intake Readiness & Operational Monitoring               │
-└──────────────────────────────────────────────────────────────────────────────┘
+
+ANIMAL TYPE
+──────────────────────────────────────────────────────────────────────────────────────────────
+
+[ All ]    [ Cat ]    [ Dog ]    [ Rabbit ]    [ Small Animal ]    [ Other ]
+
+(Default = All)
+
 
 
 SECTION 00 — OPERATIONAL SNAPSHOT
-──────────────────────────────────────────────────────────────────────────────
-
-┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐
-│ Centres     │ │ Animals     │ │ Care Cap.   │ │ Open Space  │
-│     32      │ │   1,875     │ │   2,140     │ │    390      │
-└─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘
-
-┌─────────────┐ ┌─────────────┐
-│ Cat Space   │ │ Dog Space   │
-│    810      │ │    430      │
-└─────────────┘ └─────────────┘
-
+──────────────────────────────────────────────────────────────────────────────────────────────
 
 Purpose:
-Provide context before decisions.
+Provide provincial context before reviewing decisions.
+
+┌──────────────┐ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+│ Total Centres│ │ Animals Care │ │ Care Capacity│ │ Open Spaces  │
+│      32      │ │    1,875     │ │    2,140     │ │     390      │
+└──────────────┘ └──────────────┘ └──────────────┘ └──────────────┘
+
+┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+│ CAT Spaces   │ │ DOG Spaces   │ │ Care Cap %   │
+│     810      │ │     430      │ │     88%      │
+└──────────────┘ └──────────────┘ └──────────────┘
+
+
+Key Question
+
+What is happening across the network today?
 
 
 
 SECTION 01 — ACTION REQUIRED
-──────────────────────────────────────────────────────────────────────────────
+──────────────────────────────────────────────────────────────────────────────────────────────
+
+Purpose:
+Immediate operational attention.
 
 ┌────────────────┐ ┌────────────────┐ ┌────────────────┐ ┌────────────────┐
 │ 🔴 At Capacity │ │ ⚠ Data Issues  │ │ 🟡 Not Confirm │ │ 🚨 Closures    │
@@ -34,39 +48,66 @@ SECTION 01 — ACTION REQUIRED
 └────────────────┘ └────────────────┘ └────────────────┘ └────────────────┘
 
 
-Purpose:
-Immediate operational attention.
+Key Question
+
+What needs my attention right now?
 
 
 
 SECTION 02 — INTAKE READINESS
-──────────────────────────────────────────────────────────────────────────────
+──────────────────────────────────────────────────────────────────────────────────────────────
+
+Purpose:
+Determine overall intake readiness.
 
 ┌────────────────┐ ┌────────────────┐ ┌────────────────┐ ┌────────────────┐
 │ Available      │ │ Monitor        │ │ Full           │ │ Closed         │
-│      18        │ │      7         │ │      4         │ │      2         │
+│      18        │ │       7        │ │       4        │ │       2        │
 └────────────────┘ └────────────────┘ └────────────────┘ └────────────────┘
 
 
-Purpose:
-Can we intake more animals?
+Business Rules
+
+Available
+=
+Care Capacity < 80%
+
+Monitor
+=
+Care Capacity 80% - 99%
+
+Full
+=
+Care Capacity >= 100%
+
+Closed
+=
+Emergency Closure Active
+
+
+Key Question
+
+Can we intake more animals today?
 
 
 
 SECTION 03 — PLACEMENT DECISION BOARD
-──────────────────────────────────────────────────────────────────────────────
+──────────────────────────────────────────────────────────────────────────────────────────────
+
+Purpose:
+Identify candidate centres.
 
 ┌──────────────┬─────────┬──────────┬──────────┬──────────┬────────────────┐
-│ Centre       │ Animals │ Capacity │ Remain   │ Open Spc │ Recommendation │
+│ Centre       │ Animals │ Capacity │ Remaining│ Open Spc │ Recommendation │
 ├──────────────┼─────────┼──────────┼──────────┼──────────┼────────────────┤
-│ Kelowna      │ 15      │ 25       │ 10       │ 8        │ ✅ Candidate    │
-│ Nanaimo      │ 20      │ 25       │ 5        │ 6        │ 🟡 Monitor      │
-│ Victoria     │ 25      │ 25       │ 0        │ 2        │ 🔴 Do Not Intake│
-│ Williams Lk  │ 25      │ 25       │ 0        │ 6        │ ⚠ Review Data   │
+│ Kelowna      │   15    │    25    │    10    │    8     │ ✅ Candidate    │
+│ Nanaimo      │   20    │    25    │     5    │    6     │ 🟡 Monitor      │
+│ Victoria     │   25    │    25    │     0    │    2     │ 🔴 Do Not Intake│
+│ Williams Lk  │   25    │    25    │     0    │    6     │ ⚠ Review Data   │
 └──────────────┴─────────┴──────────┴──────────┴──────────┴────────────────┘
 
 
-Business Rule:
+Business Rule
 
 Remaining Capacity
 =
@@ -75,61 +116,129 @@ Care Capacity
 Animals In Care
 
 
-Purpose:
-Which centres should Animal Flow use?
+Key Question
+
+Which centres should Animal Flow use first?
 
 
 
-SECTION 04 — CAPACITY HEALTH
-──────────────────────────────────────────────────────────────────────────────
-
-┌─────────────────────────────────────┐
-│ CARE CAPACITY                       │
-├─────────────────────────────────────┤
-│ Animals In Care         1,875       │
-│ Care Capacity           2,140       │
-│ Remaining Capacity        265       │
-│ Capacity Used             88%       │
-└─────────────────────────────────────┘
-
-
-┌─────────────────────────────────────┐
-│ PHYSICAL SPACE                      │
-├─────────────────────────────────────┤
-│ Total Spaces            1,240       │
-│ Open Spaces               390       │
-│ In Use                    690       │
-│ Hold                       90       │
-│ Unavailable                70       │
-└─────────────────────────────────────┘
-
+SECTION 04 — CAPACITY VS OCCUPANCY
+──────────────────────────────────────────────────────────────────────────────────────────────
 
 Purpose:
+Explain why centres can or cannot receive animals.
+
+┌────────────────────────────────────────┐
+│ CARE CAPACITY HEALTH                   │
+├────────────────────────────────────────┤
+│ Animals In Care             1,875      │
+│ Care Capacity               2,140      │
+│ Remaining Capacity            265      │
+│ Capacity Utilization          88%      │
+└────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────┐
+│ PHYSICAL SPACE HEALTH                  │
+├────────────────────────────────────────┤
+│ Total Spaces                1,240      │
+│ Open Spaces                   390      │
+│ In Use Spaces                 690      │
+│ Hold Spaces                    90      │
+│ Unavailable                    70      │
+└────────────────────────────────────────┘
+
+
+Key Question
+
 Why are centres available or unavailable?
 
 
 
-SECTION 05 — DATA TRUST
-──────────────────────────────────────────────────────────────────────────────
+
+SECTION 05 — SPECIES OCCUPANCY
+──────────────────────────────────────────────────────────────────────────────────────────────
+
+Purpose:
+Understand how non-target species consume capacity.
+
+┌────────────────────────────────────────┐
+│ ANIMAL BREAKDOWN                       │
+├────────────────────────────────────────┤
+│ Cats In Care                 925       │
+│ Dogs In Care                 620       │
+│ Other Animals                330       │
+└────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────┐
+│ CAPACITY IMPACT                         │
+├────────────────────────────────────────┤
+│ CAT Spaces Used By Other Animals   12  │
+│ DOG Spaces Used By Other Animals    3  │
+└────────────────────────────────────────┘
+
+
+Top Impact Centres
+
+┌──────────────┬─────────────────────────┐
+│ Centre       │ Species Occupancy Impact│
+├──────────────┼─────────────────────────┤
+│ Nanaimo      │ 5                       │
+│ Kelowna      │ 4                       │
+│ Victoria     │ 3                       │
+└──────────────┴─────────────────────────┘
+
+
+Supported Questions
+
+How much CAT capacity is being consumed by rabbits or small animals?
+
+How much DOG capacity is being consumed by non-dog species?
+
+Which centres have capacity constrained by other species?
+
+
+
+SECTION 06 — DATA TRUST
+──────────────────────────────────────────────────────────────────────────────────────────────
+
+Purpose:
+Measure confidence in the information.
 
 ┌──────────────────────┐ ┌──────────────────────┐
-│ Missing Assignment   │ │ Accuracy %           │
+│ Missing Assignment   │ │ Assignment Accuracy  │
 │         18           │ │        96%           │
 └──────────────────────┘ └──────────────────────┘
 
 ┌──────────────────────┐ ┌──────────────────────┐
-│ Pending Confirmation │ │ Stale Updates        │
-│          3           │ │         2            │
+│ Pending Confirm      │ │ Stale Updates        │
+│          3           │ │          2           │
 └──────────────────────┘ └──────────────────────┘
 
 
-Purpose:
+Business Rules
+
+Missing Assignments > 3
+=
+Review Required
+
+Update Age > 24 Hours
+=
+Contact Centre
+
+
+Key Question
+
 Can I trust the data?
 
 
 
-SECTION 06 — REGIONAL HEALTH
-──────────────────────────────────────────────────────────────────────────────
+SECTION 07 — REGIONAL HEALTH
+──────────────────────────────────────────────────────────────────────────────────────────────
+
+Purpose:
+Monitor pressure across regions.
 
 Interior         █████████░░   89%   🔴 High
 
@@ -140,55 +249,65 @@ Lower Mainland   ███████░░░░   72%   🟢 Healthy
 North            ██████░░░░░   61%   🟢 Healthy
 
 
-Purpose:
+Key Question
+
 Where is capacity pressure building?
 
 
 
-SECTION 07 — AI OPERATIONAL BRIEFING
-──────────────────────────────────────────────────────────────────────────────
+SECTION 08 — AI OPERATIONAL BRIEFING
+──────────────────────────────────────────────────────────────────────────────────────────────
+
+Purpose:
+Provide recommended actions.
 
 TODAY'S PRIORITIES
 
 1. Victoria
-   Care Capacity reached.
+
+   Care Capacity has been reached.
+
    Recommendation:
-   Do not intake additional animals.
+   Do not route additional animals.
+
 
 2. Williams Lake
-   Data quality concerns detected.
+
+   Data quality issues detected.
+
    Recommendation:
    Review ShelterBuddy assignments.
 
+
 3. Kelowna
-   Highest remaining capacity.
+
+   Highest remaining care capacity.
+
    Recommendation:
    Candidate for overflow intake.
 
 
-Purpose:
-What should Animal Flow do next?
+4. Nanaimo
+
+   CAT capacity is being impacted by
+   non-cat species occupancy.
+
+   Recommendation:
+   Review alternate housing options.
 
 
 
-SECTION 08 — QUICK ACTIONS
-──────────────────────────────────────────────────────────────────────────────
+SECTION 09 — QUICK ACTIONS
+──────────────────────────────────────────────────────────────────────────────────────────────
 
 [ Review Critical Centres ]
 
-[ Review Data Quality ]
+[ Review Data Quality Issues ]
+
+[ Review Species Occupancy ]
 
 [ Open Live Capacity Management ]
 
-[ Review Closures ]
+[ Review Emergency Closures ]
 
 [ Review Pending Confirmations ]
-
-One thing I am considering
-We may eventually move Placement Decision Board above Intake Readiness because it directly answers the primary decision:
-
-Which centre can receive animals?
-
-So the future flow could become:
-Plain TextOperational Snapshot↓Action Required↓Placement Decision Board↓Intake Readiness↓Capacity Health↓Data Trust↓Regional Health↓AI BriefingShow more lines
-Personally, I like that version better because it puts the primary decision immediately after the alerts. However, let's confirm this layout first before generating the polished SVG.

@@ -1,203 +1,316 @@
-<svg width="1600" height="1400" viewBox="0 0 1600 1400"
+<svg width="1800" height="2350" viewBox="0 0 1800 2350"
 xmlns="http://www.w3.org/2000/svg">
 
 <style>
 
-.bg { fill:#F8FAFC; }
+.background { fill:#F8FAFC; }
 
-.title{
-font-family:'Segoe UI';
-font-size:28px;
-font-weight:700;
-fill:#0F172A;
+.header {
+  fill:#0F172A;
+  font-family:'Segoe UI';
+  font-size:30px;
+  font-weight:700;
 }
 
-.subtitle{
-font-family:'Segoe UI';
-font-size:12px;
-fill:#64748B;
+.subheader {
+  fill:#64748B;
+  font-family:'Segoe UI';
+  font-size:14px;
 }
 
-.section{
-font-family:'Segoe UI';
-font-size:18px;
-font-weight:700;
-fill:#111827;
+.section {
+  fill:#111827;
+  font-family:'Segoe UI';
+  font-size:18px;
+  font-weight:700;
 }
 
-.card{
-fill:white;
-stroke:#E2E8F0;
-stroke-width:1;
-rx:12;
+.card {
+  fill:white;
+  stroke:#E2E8F0;
+  stroke-width:1;
+  rx:12;
 }
 
-.kpi-title{
-font-family:'Segoe UI';
-font-size:12px;
-font-weight:600;
-fill:#64748B;
+.cardTitle {
+  fill:#64748B;
+  font-family:'Segoe UI';
+  font-size:12px;
+  font-weight:600;
 }
 
-.kpi-value{
-font-family:'Segoe UI';
-font-size:30px;
-font-weight:700;
-fill:#111827;
+.cardValue {
+  fill:#111827;
+  font-family:'Segoe UI';
+  font-size:30px;
+  font-weight:700;
 }
 
-.label{
-font-family:'Segoe UI';
-font-size:13px;
-fill:#475569;
+.label {
+  fill:#475569;
+  font-family:'Segoe UI';
+  font-size:13px;
 }
 
-.green{fill:#16A34A;}
-.yellow{fill:#F59E0B;}
-.red{fill:#DC2626;}
-.blue{fill:#2563EB;}
+.good { fill:#16A34A; }
+.warn { fill:#F59E0B; }
+.bad { fill:#DC2626; }
+.info { fill:#2563EB; }
 
 </style>
 
-<rect width="1600" height="1400" class="bg"/>
+<rect width="1800" height="2350" class="background"/>
 
 <!-- HEADER -->
 
-<text x="40" y="45" class="title">
+<text x="50" y="50" class="header">
 Animal Flow — Capacity Intelligence
 </text>
 
-<text x="40" y="72" class="subtitle">
-Provincial Intake Readiness • Capacity Monitoring • Operational Decision Support
+<text x="50" y="80" class="subheader">
+Provincial Intake Readiness • Capacity Intelligence • Decision Support
 </text>
+
+<!-- FILTERS -->
+
+<text x="50" y="120" class="section">
+Animal Type
+</text>
+
+<rect x="50" y="140" width="90" height="35" class="card"/>
+<text x="78" y="162" class="label">All</text>
+
+<rect x="150" y="140" width="90" height="35" class="card"/>
+<text x="182" y="162" class="label">Cat</text>
+
+<rect x="250" y="140" width="90" height="35" class="card"/>
+<text x="282" y="162" class="label">Dog</text>
+
+<rect x="350" y="140" width="120" height="35" class="card"/>
+<text x="373" y="162" class="label">Rabbit</text>
+
+<rect x="480" y="140" width="150" height="35" class="card"/>
+<text x="503" y="162" class="label">Small Animal</text>
+
+<rect x="640" y="140" width="100" height="35" class="card"/>
+<text x="670" y="162" class="label">Other</text>
 
 <!-- OPERATIONAL SNAPSHOT -->
 
-<text x="40" y="120" class="section">
+<text x="50" y="230" class="section">
 Operational Snapshot
 </text>
 
-<rect x="40" y="140" width="220" height="100" class="card"/>
-<text x="60" y="175" class="kpi-title">Total Centres</text>
-<text x="135" y="220" class="kpi-value">32</text>
+<rect x="50" y="250" width="240" height="110" class="card"/>
+<text x="70" y="285" class="cardTitle">Total Centres</text>
+<text x="150" y="335" class="cardValue">32</text>
 
-<rect x="280" y="140" width="220" height="100" class="card"/>
-<text x="300" y="175" class="kpi-title">Animals In Care</text>
-<text x="350" y="220" class="kpi-value">1,875</text>
+<rect x="320" y="250" width="240" height="110" class="card"/>
+<text x="340" y="285" class="cardTitle">Animals In Care</text>
+<text x="410" y="335" class="cardValue">1,875</text>
 
-<rect x="520" y="140" width="220" height="100" class="card"/>
-<text x="540" y="175" class="kpi-title">Care Capacity</text>
-<text x="600" y="220" class="kpi-value">2,140</text>
+<rect x="590" y="250" width="240" height="110" class="card"/>
+<text x="610" y="285" class="cardTitle">Care Capacity</text>
+<text x="680" y="335" class="cardValue">2,140</text>
 
-<rect x="760" y="140" width="220" height="100" class="card"/>
-<text x="780" y="175" class="kpi-title">Open Spaces</text>
-<text x="850" y="220" class="kpi-value">390</text>
+<rect x="860" y="250" width="240" height="110" class="card"/>
+<text x="880" y="285" class="cardTitle">Open Spaces</text>
+<text x="960" y="335" class="cardValue">390</text>
 
-<rect x="1000" y="140" width="220" height="100" class="card"/>
-<text x="1020" y="175" class="kpi-title">CAT Spaces</text>
-<text x="1090" y="220" class="kpi-value">810</text>
+<rect x="1130" y="250" width="240" height="110" class="card"/>
+<text x="1150" y="285" class="cardTitle">CAT Spaces</text>
+<text x="1230" y="335" class="cardValue">810</text>
 
-<rect x="1240" y="140" width="220" height="100" class="card"/>
-<text x="1260" y="175" class="kpi-title">DOG Spaces</text>
-<text x="1330" y="220" class="kpi-value">430</text>
+<rect x="1400" y="250" width="240" height="110" class="card"/>
+<text x="1420" y="285" class="cardTitle">DOG Spaces</text>
+<text x="1500" y="335" class="cardValue">430</text>
 
 <!-- ACTION REQUIRED -->
 
-<text x="40" y="300" class="section">
+<text x="50" y="430" class="section">
 Action Required
 </text>
 
-<rect x="40" y="320" width="330" height="120" class="card"/>
-<text x="60" y="360" class="kpi-title">Centres At Capacity</text>
-<text x="180" y="405" class="kpi-value red">4</text>
+<rect x="50" y="450" width="380" height="130" class="card"/>
+<text x="70" y="490" class="cardTitle">Centres At Capacity</text>
+<text x="220" y="545" class="cardValue bad">4</text>
 
-<rect x="390" y="320" width="330" height="120" class="card"/>
-<text x="410" y="360" class="kpi-title">Data Quality Issues</text>
-<text x="530" y="405" class="kpi-value yellow">18</text>
+<rect x="460" y="450" width="380" height="130" class="card"/>
+<text x="480" y="490" class="cardTitle">Data Quality Issues</text>
+<text x="630" y="545" class="cardValue warn">18</text>
 
-<rect x="740" y="320" width="330" height="120" class="card"/>
-<text x="760" y="360" class="kpi-title">Pending Confirmation</text>
-<text x="890" y="405" class="kpi-value yellow">3</text>
+<rect x="870" y="450" width="380" height="130" class="card"/>
+<text x="890" y="490" class="cardTitle">Pending Confirmation</text>
+<text x="1040" y="545" class="cardValue warn">3</text>
 
-<rect x="1090" y="320" width="330" height="120" class="card"/>
-<text x="1110" y="360" class="kpi-title">Emergency Closures</text>
-<text x="1240" y="405" class="kpi-value red">2</text>
+<rect x="1280" y="450" width="360" height="130" class="card"/>
+<text x="1300" y="490" class="cardTitle">Emergency Closures</text>
+<text x="1435" y="545" class="cardValue bad">2</text>
 
 <!-- INTAKE READINESS -->
 
-<text x="40" y="500" class="section">
+<text x="50" y="650" class="section">
 Intake Readiness
 </text>
 
-<rect x="40" y="520" width="1380" height="100" class="card"/>
+<rect x="50" y="670" width="1590" height="120" class="card"/>
 
-<text x="120" y="565" class="kpi-title">Available Centres</text>
-<text x="150" y="605" class="kpi-value green">18</text>
+<text x="150" y="720" class="cardTitle">Available Centres</text>
+<text x="170" y="765" class="cardValue good">18</text>
 
-<text x="470" y="565" class="kpi-title">Monitor Centres</text>
-<text x="500" y="605" class="kpi-value yellow">7</text>
+<text x="550" y="720" class="cardTitle">Monitor Centres</text>
+<text x="570" y="765" class="cardValue warn">7</text>
 
-<text x="800" y="565" class="kpi-title">Full Centres</text>
-<text x="820" y="605" class="kpi-value red">4</text>
+<text x="950" y="720" class="cardTitle">Full Centres</text>
+<text x="960" y="765" class="cardValue bad">4</text>
 
-<text x="1120" y="565" class="kpi-title">Closed Centres</text>
-<text x="1150" y="605" class="kpi-value red">2</text>
+<text x="1320" y="720" class="cardTitle">Closed Centres</text>
+<text x="1340" y="765" class="cardValue bad">2</text>
 
-<!-- PLACEMENT DECISION BOARD -->
+<!-- PLACEMENT BOARD -->
 
-<text x="40" y="680" class="section">
+<text x="50" y="860" class="section">
 Placement Decision Board
 </text>
 
-<rect x="40" y="700" width="1380" height="250" class="card"/>
+<rect x="50" y="880" width="1590" height="320" class="card"/>
 
-<text x="70" y="745" class="label">Kelowna • 15 / 25 Animals • Remaining Capacity 10 • ✅ Intake Candidate</text>
-<text x="70" y="795" class="label">Nanaimo • 20 / 25 Animals • Remaining Capacity 5 • 🟡 Monitor</text>
-<text x="70" y="845" class="label">Victoria • 25 / 25 Animals • Remaining Capacity 0 • 🔴 Do Not Intake</text>
-<text x="70" y="895" class="label">Williams Lake • 25 / 25 Animals • Remaining Capacity 0 • ⚠ Review Data Quality</text>
+<text x="80" y="930" class="label">
+Kelowna | Animals:15 | Capacity:25 | Remaining:10 | Open:8 | ✅ Intake Candidate
+</text>
 
-<!-- CAPACITY + DATA TRUST -->
+<text x="80" y="980" class="label">
+Nanaimo | Animals:20 | Capacity:25 | Remaining:5 | Open:6 | 🟡 Monitor
+</text>
 
-<text x="40" y="1010" class="section">
+<text x="80" y="1030" class="label">
+Victoria | Animals:25 | Capacity:25 | Remaining:0 | Open:2 | 🔴 Do Not Intake
+</text>
+
+<text x="80" y="1080" class="label">
+Williams Lake | Animals:25 | Capacity:25 | Remaining:0 | Open:6 | ⚠ Review Data Quality
+</text>
+
+<!-- CAPACITY HEALTH -->
+
+<text x="50" y="1280" class="section">
 Capacity vs Occupancy
 </text>
 
-<rect x="40" y="1030" width="680" height="220" class="card"/>
+<rect x="50" y="1300" width="760" height="260" class="card"/>
 
-<text x="70" y="1070" class="kpi-title">Care Capacity Health</text>
+<text x="80" y="1340" class="cardTitle">
+Care Capacity Health
+</text>
 
-<text x="70" y="1115" class="label">Animals In Care</text>
-<text x="500" y="1115" class="kpi-value">1,875</text>
+<text x="80" y="1390" class="label">Animals In Care</text>
+<text x="620" y="1390" class="cardValue">1,875</text>
 
-<text x="70" y="1160" class="label">Care Capacity</text>
-<text x="500" y="1160" class="kpi-value">2,140</text>
+<text x="80" y="1450" class="label">Care Capacity</text>
+<text x="620" y="1450" class="cardValue">2,140</text>
 
-<text x="70" y="1205" class="label">Remaining Capacity</text>
-<text x="500" y="1205" class="kpi-value green">265</text>
+<text x="80" y="1510" class="label">Remaining Capacity</text>
+<text x="620" y="1510" class="cardValue good">265</text>
 
-<rect x="760" y="1030" width="660" height="220" class="card"/>
+<!-- SPECIES OCCUPANCY -->
 
-<text x="790" y="1070" class="kpi-title">Data Trust</text>
+<rect x="850" y="1300" width="790" height="260" class="card"/>
 
-<text x="790" y="1115" class="label">Missing Assignments</text>
-<text x="1250" y="1115" class="kpi-value yellow">18</text>
+<text x="880" y="1340" class="cardTitle">
+Species Occupancy
+</text>
 
-<text x="790" y="1160" class="label">Assignment Accuracy</text>
-<text x="1220" y="1160" class="kpi-value green">96%</text>
+<text x="880" y="1390" class="label">Cats In Care</text>
+<text x="1500" y="1390" class="cardValue">925</text>
 
-<text x="790" y="1205" class="label">Stale Updates</text>
-<text x="1260" y="1205" class="kpi-value red">2</text>
+<text x="880" y="1450" class="label">Dogs In Care</text>
+<text x="1500" y="1450" class="cardValue">620</text>
+
+<text x="880" y="1510" class="label">Other Animals</text>
+<text x="1500" y="1510" class="cardValue warn">330</text>
+
+<!-- DATA TRUST -->
+
+<text x="50" y="1630" class="section">
+Data Trust
+</text>
+
+<rect x="50" y="1650" width="760" height="220" class="card"/>
+
+<text x="80" y="1700" class="label">Missing Assignments</text>
+<text x="620" y="1700" class="cardValue warn">18</text>
+
+<text x="80" y="1760" class="label">Assignment Accuracy</text>
+<text x="600" y="1760" class="cardValue good">96%</text>
+
+<text x="80" y="1820" class="label">Pending Confirmation</text>
+<text x="620" y="1820" class="cardValue warn">3</text>
+
+<!-- REGIONAL HEALTH -->
+
+<rect x="850" y="1650" width="790" height="220" class="card"/>
+
+<text x="880" y="1700" class="cardTitle">Regional Health</text>
+
+<text x="880" y="1750" class="label">Interior ............ 89% 🔴</text>
+<text x="880" y="1790" class="label">Island .............. 78% 🟡</text>
+<text x="880" y="1830" class="label">Lower Mainland ...... 72% 🟢</text>
 
 <!-- AI BRIEFING -->
+<!-- AI OPERATIONAL BRIEFING -->
+<text x="50" y="1940" class="section">AI Summarize</text>
 
-<text x="40" y="1310" class="section">
-AI Operational Briefing
-</text>
+<!-- 1. STATUS SUMMARY -->
+<text x="50" y="1980" font-family="Segoe UI" font-size="18" font-weight="700" fill="#111827">Network Status: Monitor</text>
+<text x="50" y="2010" font-family="Segoe UI" font-size="14" fill="#475569">4 Centres At Capacity | 18 Data Quality Issues | 3 Pending Confirmations</text>
 
-<rect x="40" y="1325" width="1380" height="60" class="card"/>
+<!-- 2. NEXT ACTIONS GRID -->
+<text x="50" y="2060" font-family="Segoe UI" font-size="16" font-weight="700" fill="#111827">Next Actions</text>
 
-<text x="60" y="1360" class="label">
-Victoria has reached care capacity. Williams Lake requires data review. Kelowna is the strongest candidate for overflow intake.
-</text>
+<rect x="50" y="2080" width="380" height="100" class="card"/>
+<text x="70" y="2110" font-family="Segoe UI" font-size="14" font-weight="700" fill="#DC2626">🔴 Pause Intake</text>
+<text x="70" y="2135" font-family="Segoe UI" font-size="13" fill="#111827">Centre: Victoria</text>
 
+<rect x="460" y="2080" width="380" height="100" class="card"/>
+<text x="480" y="2110" font-family="Segoe UI" font-size="14" font-weight="700" fill="#F59E0B">⚠ Review Assignments</text>
+<text x="480" y="2135" font-family="Segoe UI" font-size="13" fill="#111827">Centre: Williams Lake</text>
+
+<rect x="870" y="2080" width="380" height="100" class="card"/>
+<text x="890" y="2110" font-family="Segoe UI" font-size="14" font-weight="700" fill="#F59E0B">🟡 Review Species Occupancy</text>
+<text x="890" y="2135" font-family="Segoe UI" font-size="13" fill="#111827">Centre: Nanaimo</text>
+
+<rect x="1280" y="2080" width="360" height="100" class="card"/>
+<text x="1300" y="2110" font-family="Segoe UI" font-size="14" font-weight="700" fill="#16A34A">✅ Preferred Intake Location</text>
+<text x="1300" y="2135" font-family="Segoe UI" font-size="13" fill="#111827">Centre: Kelowna</text>
+
+<!-- 3. DETAILED RISK ANALYSIS CARDS -->
+<text x="50" y="2220" font-family="Segoe UI" font-size="16" font-weight="700" fill="#111827">Operational Risks</text>
+
+<!-- CARD 1: Capacity -->
+<rect x="50" y="2240" width="380" height="120" class="card"/>
+<text x="70" y="2270" font-family="Segoe UI" font-size="14" font-weight="700" fill="#111827">CAPACITY RISKS</text>
+<foreignObject x="70" y="2285" width="350" height="60">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI'; font-size:13px; color:#475569;">Victoria has reached 100% Care Capacity and should not receive additional animal intakes.</div>
+</foreignObject>
+
+<!-- CARD 2: Species -->
+<rect x="460" y="2240" width="380" height="120" class="card"/>
+<text x="480" y="2270" font-family="Segoe UI" font-size="14" font-weight="700" fill="#111827">SPECIES OCCUPANCY RISKS</text>
+<foreignObject x="480" y="2285" width="350" height="60">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI'; font-size:13px; color:#475569;">Nanaimo CAT capacity is being impacted by five non-cat animals occupying CAT-designated spaces.</div>
+</foreignObject>
+
+<!-- CARD 3: Data Quality -->
+<rect x="870" y="2240" width="380" height="120" class="card"/>
+<text x="890" y="2270" font-family="Segoe UI" font-size="14" font-weight="700" fill="#111827">DATA QUALITY RISKS</text>
+<foreignObject x="890" y="2285" width="350" height="60">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI'; font-size:13px; color:#475569;">Williams Lake has six animals without valid kennel assignments; capacity calculations may be inaccurate.</div>
+</foreignObject>
+
+<!-- CARD 4: Operational Alerts -->
+<rect x="1280" y="2240" width="360" height="120" class="card"/>
+<text x="1300" y="2270" font-family="Segoe UI" font-size="14" font-weight="700" fill="#111827">OPERATIONAL ALERTS</text>
+<foreignObject x="1300" y="2285" width="330" height="60">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Segoe UI'; font-size:13px; color:#475569;">Three centres currently have pending intake confirmations that require immediate review.</div>
+</foreignObject>
 </svg>
