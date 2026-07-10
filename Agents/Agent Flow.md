@@ -65,6 +65,50 @@ Power BI Report
 
 ---
 
+# Phase Diagram
+
+```text
+BRD
+↓
+Decision Story Agent
+  - Input: BRD
+  - Output: REPORT_STORY_MATRIX, REPORT_STORY (DSC)
+  - Validate: decisions, questions, signals, thresholds, actions
+  - Gate: approve REPORT_STORY (DSC)
+↓
+Mockup Agent
+  - Input: REPORT_STORY (DSC)
+  - Output: MOCKUP.md, MOCKUP.svg
+  - Validate: story flow, section order, visual hierarchy
+  - Gate: approve mockup
+↓
+TRD Agent
+  - Input: BRD, REPORT_STORY (DSC), MOCKUP
+  - Output: TRD
+  - Validate: source/target mapping, measure inventory, implementation feasibility
+  - Gate: approve TRD
+↓
+Semantic Design Agent
+  - Input: TRD, REPORT_STORY (DSC), DATA_MODEL_STANDARDS
+  - Output: DATA_MODEL_MATRIX, SEMANTIC_MODEL_SPEC, MEASURE_CONTRACT
+  - Validate: grain, facts, dimensions, relationships, measure traceability
+  - Gate: approve semantic design artifacts
+↓
+Semantic Build Agent (Future)
+  - Input: SEMANTIC_MODEL_SPEC, MEASURE_CONTRACT
+  - Output: Fabric Semantic Model
+  - Validate: model build success, measure support, security
+  - Gate: approve semantic model build
+↓
+Report Build Agent (Future)
+  - Input: REPORT_STORY (DSC), SVG, TRD, Semantic Model
+  - Output: Power BI Report
+  - Validate: report alignment, visual layout, interactivity
+  - Gate: approve report build
+```
+
+---
+
 # PHASE 01 — BUSINESS DESIGN LAYER
 
 ## Input
