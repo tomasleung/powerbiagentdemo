@@ -140,6 +140,7 @@ Output:
 Actions:
 - Identify required dimensions.
 - Define dimension purpose, attributes, filters, and supported analysis.
+- Review dimension design for query performance, filter efficiency, and common user scenarios.
 
 Output:
 - Dimension Inventory
@@ -150,6 +151,7 @@ Actions:
 - Define relationships between facts and dimensions.
 - Specify cardinality, filter direction, and join keys.
 - Validate star schema and avoid unnecessary many-to-many relationships.
+- Optimize relationships for query performance and filter propagation.
 
 Output:
 - Relationship Matrix
@@ -254,7 +256,20 @@ Before the agent completes, verify:
 - Every fact has a declared grain and example row.
 - Every dimension has a clear business purpose.
 - Relationships form a star schema unless justified.
+- Models use performance-aware design patterns.
 - All outputs follow `DATA_MODEL_STANDARDS_v1.0`.
+
+## Performance Considerations
+
+Before the agent completes, verify:
+
+- The model minimizes unnecessary columns and wide fact table payloads.
+- Grain is appropriate to avoid overly high-cardinality facts.
+- Keys are simplified to numeric surrogate keys where possible.
+- Measures are defined to support common query patterns and aggregations.
+- Relationships are single-direction unless a business case justifies both directions.
+- The semantic model avoids unnecessary many-to-many joins.
+- The output includes notes on performance trade-offs or expected query behavior.
 
 ## Example Run Input
 
