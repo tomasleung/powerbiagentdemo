@@ -1,0 +1,516 @@
+<!--
+FILE: MOCKUP_v1.0.svg
+
+Purpose:
+Decision-Driven BI SVG Wireframe
+
+Status:
+Approved Layout Mockup
+
+Generated From:
+REPORT_STORY_v1.0.md
+
+Notes:
+- Wireframe only
+- Not intended to be production SVG
+- Visual styling can evolve
+- Business story is frozen
+-->
+
+<svg width="1800"
+     height="2350"
+     viewBox="0 0 1800 2350"
+     xmlns="http://www.w3.org/2000/svg">
+
+<style>
+
+.background {
+    fill:#F8FAFC;
+}
+
+.header {
+    fill:#0F172A;
+    font-family:'Segoe UI';
+    font-size:30px;
+    font-weight:700;
+}
+
+.subheader {
+    fill:#64748B;
+    font-family:'Segoe UI';
+    font-size:14px;
+}
+
+.section {
+    fill:#111827;
+    font-family:'Segoe UI';
+    font-size:18px;
+    font-weight:700;
+}
+
+.card {
+    fill:white;
+    stroke:#E2E8F0;
+    stroke-width:1;
+}
+
+.cardTitle {
+    fill:#64748B;
+    font-family:'Segoe UI';
+    font-size:12px;
+    font-weight:600;
+}
+
+.cardValue {
+    fill:#111827;
+    font-family:'Segoe UI';
+    font-size:30px;
+    font-weight:700;
+}
+
+.label {
+    fill:#475569;
+    font-family:'Segoe UI';
+    font-size:13px;
+}
+
+.good {
+    fill:#16A34A;
+}
+
+.warn {
+    fill:#F59E0B;
+}
+
+.bad {
+    fill:#DC2626;
+}
+
+.info {
+    fill:#2563EB;
+}
+
+</style>
+
+<!-- Background -->
+
+<rect width="1800"
+      height="2350"
+      class="background"/>
+
+<!-- ================================================= -->
+<!-- HEADER -->
+<!-- ================================================= -->
+
+<text x="50"
+      y="50"
+      class="header">
+Animal Flow — Capacity Intelligence
+</text>
+
+<text x="50"
+      y="80"
+      class="subheader">
+Provincial Intake Readiness • Capacity Intelligence • Decision Support
+</text>
+
+<!-- ================================================= -->
+<!-- ANIMAL TYPE FILTER -->
+<!-- ================================================= -->
+
+<text x="50"
+      y="120"
+      class="section">
+Animal Type
+</text>
+
+<rect x="50" y="140" width="90" height="35" rx="8" class="card"/>
+<text x="80" y="162" class="label">All</text>
+
+<rect x="150" y="140" width="90" height="35" rx="8" class="card"/>
+<text x="182" y="162" class="label">Cat</text>
+
+<rect x="250" y="140" width="90" height="35" rx="8" class="card"/>
+<text x="282" y="162" class="label">Dog</text>
+
+<rect x="350" y="140" width="120" height="35" rx="8" class="card"/>
+<text x="382" y="162" class="label">Rabbit</text>
+
+<rect x="480" y="140" width="150" height="35" rx="8" class="card"/>
+<text x="505" y="162" class="label">Small Animal</text>
+
+<rect x="640" y="140" width="100" height="35" rx="8" class="card"/>
+<text x="670" y="162" class="label">Other</text>
+
+<!-- ================================================= -->
+<!-- SECTION 01 - OPERATIONAL SNAPSHOT -->
+<!-- ================================================= -->
+
+<text x="50"
+      y="230"
+      class="section">
+Operational Snapshot
+</text>
+
+<rect x="50" y="250" width="240" height="110" rx="12" class="card"/>
+<text x="70" y="285" class="cardTitle">Total Centres</text>
+<text x="145" y="335" class="cardValue">32</text>
+
+<rect x="320" y="250" width="240" height="110" rx="12" class="card"/>
+<text x="340" y="285" class="cardTitle">Animals In Care</text>
+<text x="395" y="335" class="cardValue">1,875</text>
+
+<rect x="590" y="250" width="240" height="110" rx="12" class="card"/>
+<text x="610" y="285" class="cardTitle">Care Capacity</text>
+<text x="670" y="335" class="cardValue">2,140</text>
+
+<rect x="860" y="250" width="240" height="110" rx="12" class="card"/>
+<text x="880" y="285" class="cardTitle">Open Spaces</text>
+<text x="970" y="335" class="cardValue">390</text>
+
+<rect x="1130" y="250" width="240" height="110" rx="12" class="card"/>
+<text x="1150" y="285" class="cardTitle">CAT Spaces</text>
+<text x="1245" y="335" class="cardValue">810</text>
+
+<rect x="1400" y="250" width="240" height="110" rx="12" class="card"/>
+<text x="1420" y="285" class="cardTitle">DOG Spaces</text>
+<text x="1515" y="335" class="cardValue">430</text>
+
+<!-- ================================================= -->
+<!-- SECTION 02 - ACTION REQUIRED -->
+<!-- ================================================= -->
+
+<text x="50"
+      y="430"
+      class="section">
+Action Required
+</text>
+
+<rect x="50" y="450" width="380" height="130" rx="12" class="card"/>
+<text x="70" y="490" class="cardTitle">Centres At Capacity</text>
+<text x="225" y="545" class="cardValue bad">4</text>
+
+<rect x="460" y="450" width="380" height="130" rx="12" class="card"/>
+<text x="480" y="490" class="cardTitle">Data Quality Issues</text>
+<text x="625" y="545" class="cardValue warn">18</text>
+
+<rect x="870" y="450" width="380" height="130" rx="12" class="card"/>
+<text x="890" y="490" class="cardTitle">Pending Confirmation</text>
+<text x="1035" y="545" class="cardValue warn">3</text>
+
+<rect x="1280" y="450" width="360" height="130" rx="12" class="card"/>
+<text x="1300" y="490" class="cardTitle">Emergency Closures</text>
+<text x="1430" y="545" class="cardValue bad">2</text>
+
+<!-- ================================================= -->
+<!-- SECTION 03 - INTAKE READINESS -->
+<!-- ================================================= -->
+
+<text x="50"
+      y="650"
+      class="section">
+Intake Readiness
+</text>
+
+<rect x="50"
+      y="670"
+      width="1590"
+      height="120"
+      rx="12"
+      class="card"/>
+
+<text x="150" y="720" class="cardTitle">Available Centres</text>
+<text x="170" y="765" class="cardValue good">18</text>
+
+<text x="550" y="720" class="cardTitle">Monitor Centres</text>
+<text x="570" y="765" class="cardValue warn">7</text>
+
+<text x="950" y="720" class="cardTitle">Full Centres</text>
+<text x="965" y="765" class="cardValue bad">4</text>
+
+<text x="1320" y="720" class="cardTitle">Closed Centres</text>
+<text x="1340" y="765" class="cardValue bad">2</text>
+
+<!-- ================================================= -->
+<!-- SECTION 04 - PLACEMENT DECISION BOARD -->
+<!-- ================================================= -->
+
+<text x="50"
+      y="860"
+      class="section">
+Placement Decision Board
+</text>
+
+<rect x="50"
+      y="880"
+      width="1590"
+      height="320"
+      rx="12"
+      class="card"/>
+
+<text x="80" y="930" class="label">
+Kelowna | Animals: 15 | Capacity: 25 | Remaining: 10 | Open: 8 | Candidate Centre
+</text>
+
+<text x="80" y="980" class="label">
+Nanaimo | Animals: 20 | Capacity: 25 | Remaining: 5 | Open: 6 | Monitor
+</text>
+
+<text x="80" y="1030" class="label">
+Victoria | Animals: 25 | Capacity: 25 | Remaining: 0 | Open: 2 | Do Not Intake
+</text>
+
+<text x="80" y="1080" class="label">
+Williams Lake | Animals: 25 | Capacity: 25 | Remaining: 0 | Open: 6 | Review Data Quality
+</text>
+
+<!-- ================================================= -->
+<!-- SECTION 05 - CAPACITY VS OCCUPANCY -->
+<!-- ================================================= -->
+
+<text x="50"
+      y="1280"
+      class="section">
+Capacity vs Occupancy
+</text>
+
+<rect x="50"
+      y="1300"
+      width="760"
+      height="260"
+      rx="12"
+      class="card"/>
+
+<text x="80" y="1340" class="cardTitle">
+Care Capacity Health
+</text>
+
+<text x="80" y="1390" class="label">Animals In Care</text>
+<text x="620" y="1390" class="cardValue">1,875</text>
+
+<text x="80" y="1450" class="label">Care Capacity</text>
+<text x="620" y="1450" class="cardValue">2,140</text>
+
+<text x="80" y="1510" class="label">Remaining Capacity</text>
+<text x="620" y="1510" class="cardValue good">265</text>
+
+<!-- ================================================= -->
+<!-- SECTION 06 - SPECIES OCCUPANCY -->
+<!-- ================================================= -->
+
+<rect x="850"
+      y="1300"
+      width="790"
+      height="260"
+      rx="12"
+      class="card"/>
+
+<text x="880" y="1340" class="cardTitle">
+Species Occupancy
+</text>
+
+<text x="880" y="1390" class="label">Cats In Care</text>
+<text x="1500" y="1390" class="cardValue">925</text>
+
+<text x="880" y="1450" class="label">Dogs In Care</text>
+<text x="1500" y="1450" class="cardValue">620</text>
+
+<text x="880" y="1510" class="label">Other Animals</text>
+<text x="1500" y="1510" class="cardValue warn">330</text>
+
+<!-- ================================================= -->
+<!-- SECTION 07 - DATA TRUST -->
+<!-- ================================================= -->
+
+<text x="50"
+      y="1630"
+      class="section">
+Data Trust
+</text>
+
+<rect x="50"
+      y="1650"
+      width="760"
+      height="220"
+      rx="12"
+      class="card"/>
+
+<text x="80" y="1700" class="label">Missing Assignments</text>
+<text x="620" y="1700" class="cardValue warn">18</text>
+
+<text x="80" y="1760" class="label">Assignment Accuracy</text>
+<text x="600" y="1760" class="cardValue good">96%</text>
+
+<text x="80" y="1820" class="label">Pending Confirmation</text>
+<text x="620" y="1820" class="cardValue warn">3</text>
+
+<!-- ================================================= -->
+<!-- SECTION 08 - REGIONAL HEALTH -->
+<!-- ================================================= -->
+
+<rect x="850"
+      y="1650"
+      width="790"
+      height="220"
+      rx="12"
+      class="card"/>
+
+<text x="880" y="1700" class="cardTitle">
+Regional Health
+</text>
+
+<text x="880" y="1750" class="label">
+Interior ............ 89%
+</text>
+
+<text x="880" y="1790" class="label">
+Island .............. 78%
+</text>
+
+<text x="880" y="1830" class="label">
+Lower Mainland ...... 72%
+</text>
+
+<!-- ================================================= -->
+<!-- SECTION 09 - AI OPERATIONAL BRIEFING -->
+<!-- ================================================= -->
+
+<text x="50"
+      y="1940"
+      class="section">
+AI Operational Briefing
+</text>
+
+<!-- Capacity Risks -->
+
+<rect x="50"
+      y="1960"
+      width="760"
+      height="120"
+      rx="12"
+      class="card"/>
+
+<text x="70"
+      y="1990"
+      font-family="Segoe UI"
+      font-size="14"
+      font-weight="700"
+      fill="#111827">
+CAPACITY RISKS
+</text>
+
+<text x="70"
+      y="2025"
+      class="label">
+Victoria has reached 100% Care Capacity.
+</text>
+
+<text x="70"
+      y="2050"
+      class="label">
+Recommendation: Do Not Intake.
+</text>
+
+<!-- Species Occupancy Risks -->
+
+<rect x="830"
+      y="1960"
+      width="760"
+      height="120"
+      rx="12"
+      class="card"/>
+
+<text x="850"
+      y="1990"
+      font-family="Segoe UI"
+      font-size="14"
+      font-weight="700"
+      fill="#111827">
+SPECIES OCCUPANCY RISKS
+</text>
+
+<text x="850"
+      y="2025"
+      class="label">
+Nanaimo CAT capacity is impacted by non-cat occupancy.
+</text>
+
+<text x="850"
+      y="2050"
+      class="label">
+Recommendation: Review Alternate Housing.
+</text>
+
+<!-- Data Quality Risks -->
+
+<rect x="50"
+      y="2090"
+      width="760"
+      height="120"
+      rx="12"
+      class="card"/>
+
+<text x="70"
+      y="2120"
+      font-family="Segoe UI"
+      font-size="14"
+      font-weight="700"
+      fill="#111827">
+DATA QUALITY RISKS
+</text>
+
+<text x="70"
+      y="2155"
+      class="label">
+Williams Lake has six animals without valid assignments.
+</text>
+
+<text x="70"
+      y="2180"
+      class="label">
+Recommendation: Review ShelterBuddy Assignments.
+</text>
+
+<!-- Recommended Actions -->
+
+<rect x="830"
+      y="2090"
+      width="760"
+      height="120"
+      rx="12"
+      class="card"/>
+
+<text x="850"
+      y="2120"
+      font-family="Segoe UI"
+      font-size="14"
+      font-weight="700"
+      fill="#111827">
+RECOMMENDED ACTIONS
+</text>
+
+<text x="850"
+      y="2155"
+      class="label">
+1. Pause Victoria Intake
+</text>
+
+<text x="1100"
+      y="2155"
+      class="label">
+2. Review Nanaimo Species Occupancy
+</text>
+
+<text x="850"
+      y="2180"
+      class="label">
+3. Fix Williams Lake Assignments
+</text>
+
+<text x="1100"
+      y="2180"
+      class="label">
+4. Prioritize Kelowna
+</text>
+
+</svg>
