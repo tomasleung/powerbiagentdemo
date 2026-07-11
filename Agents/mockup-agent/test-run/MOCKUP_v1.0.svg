@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <defs>
+    <style>
+      .bg { fill: #f6f8fa }
+      .header { fill: #ffffff; stroke: #dbe3ea; }
+      .filter { fill: #ffffff; stroke: #e1e8ef; }
+      .kpi { fill: #ffffff; stroke: #d0d7de; }
+      .card-title { font: 14px sans-serif; fill: #22333b; }
+      .kpi-value { font: 22px sans-serif; fill: #0b3d91; font-weight:700 }
+      .section-title { font: 16px sans-serif; fill: #0b3d91; font-weight:700 }
+      .muted { font: 12px sans-serif; fill: #577088 }
+      .table { fill: #ffffff; stroke: #dbe3ea }
+      .small { font: 12px sans-serif; fill: #22333b }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="900" />
+
+  <!-- Header / Global Filters -->
+  <rect class="header" x="20" y="20" width="1160" height="70" rx="8"/>
+  <text x="40" y="46" class="card-title">Animal Flow — Live Capacity Reporting</text>
+  <g id="filters">
+    <rect class="filter" x="40" y="60" width="220" height="28" rx="4"/>
+    <text x="50" y="80" class="muted">Animal Type ▼</text>
+    <rect class="filter" x="280" y="60" width="220" height="28" rx="4"/>
+    <text x="290" y="80" class="muted">Region ▼</text>
+    <rect class="filter" x="520" y="60" width="220" height="28" rx="4"/>
+    <text x="530" y="80" class="muted">Centre ▼</text>
+    <rect class="filter" x="760" y="60" width="240" height="28" rx="4"/>
+    <text x="770" y="80" class="muted">Capacity Status ▼</text>
+  </g>
+
+  <!-- KPI Row -->
+  <text x="40" y="120" class="section-title">Provincial Capacity Snapshot</text>
+  <g id="kpis">
+    <rect class="kpi" x="40" y="140" width="210" height="90" rx="6"/>
+    <text x="55" y="165" class="card-title">Total DOG Spaces</text>
+    <text x="55" y="200" class="kpi-value">1,250</text>
+
+    <rect class="kpi" x="270" y="140" width="210" height="90" rx="6"/>
+    <text x="285" y="165" class="card-title">Open DOG Spaces</text>
+    <text x="285" y="200" class="kpi-value">320</text>
+
+    <rect class="kpi" x="500" y="140" width="210" height="90" rx="6"/>
+    <text x="515" y="165" class="card-title">DOG Utilization %</text>
+    <text x="515" y="200" class="kpi-value">74%</text>
+
+    <rect class="kpi" x="730" y="140" width="210" height="90" rx="6"/>
+    <text x="745" y="165" class="card-title">Open CAT Spaces</text>
+    <text x="745" y="200" class="kpi-value">180</text>
+
+    <rect class="kpi" x="960" y="140" width="200" height="90" rx="6"/>
+    <text x="975" y="165" class="card-title">CAT Utilization %</text>
+    <text x="975" y="200" class="kpi-value">68%</text>
+  </g>
+
+  <!-- Action Required -->
+  <text x="40" y="260" class="section-title">Action Required</text>
+  <g id="action-required">
+    <rect class="kpi" x="40" y="280" width="360" height="110" rx="6"/>
+    <text x="55" y="305" class="card-title">Emergency Closures</text>
+    <text x="55" y="335" class="small">Centre X — Active</text>
+    <text x="55" y="355" class="small">Centre Y — Active</text>
+
+    <rect class="kpi" x="420" y="280" width="360" height="110" rx="6"/>
+    <text x="435" y="305" class="card-title">Full Centres</text>
+    <text x="435" y="335" class="small">Centre A — 102% Util</text>
+    <text x="435" y="355" class="small">Centre B — 100% Util</text>
+
+    <rect class="kpi" x="800" y="280" width="360" height="110" rx="6"/>
+    <text x="815" y="305" class="card-title">Data Quality Alerts</text>
+    <text x="815" y="335" class="small">Centre Z — Missing Assignments: 5</text>
+    <text x="815" y="355" class="small">Centre Q — Stale Update: 36h</text>
+  </g>
+
+  <!-- Intake Readiness -->
+  <text x="40" y="410" class="section-title">Intake Readiness</text>
+  <g id="intake">
+    <rect class="kpi" x="40" y="430" width="360" height="160" rx="6"/>
+    <text x="55" y="455" class="card-title">Candidate Centres</text>
+    <text x="55" y="485" class="small">Centre 1 — 3 open DOG, 2 open CAT</text>
+    <text x="55" y="505" class="small">Centre 2 — 2 open DOG, 1 open CAT</text>
+
+    <rect class="kpi" x="420" y="430" width="360" height="160" rx="6"/>
+    <text x="435" y="455" class="card-title">Monitor Centres</text>
+    <text x="435" y="485" class="small">Centre 5 — 85% Util</text>
+
+    <rect class="kpi" x="800" y="430" width="360" height="160" rx="6"/>
+    <text x="815" y="455" class="card-title">Do Not Intake Centres</text>
+    <text x="815" y="485" class="small">Centre A — 102% Util</text>
+  </g>
+
+  <!-- Placement Decision Board (table) -->
+  <text x="40" y="610" class="section-title">Placement Decision Board</text>
+  <rect class="table" x="40" y="630" width="720" height="200" rx="6"/>
+  <text x="55" y="655" class="card-title">Centre</text>
+  <text x="255" y="655" class="card-title">Region</text>
+  <text x="455" y="655" class="card-title">Open Capacity</text>
+  <text x="655" y="655" class="card-title">Status</text>
+  <text x="855" y="655" class="card-title">Recommendation</text>
+
+  <text x="55" y="685" class="small">Centre 1</text>
+  <text x="255" y="685" class="small">South</text>
+  <text x="455" y="685" class="small">DOG:3 CAT:2</text>
+  <text x="655" y="685" class="small">Candidate</text>
+  <text x="855" y="685" class="small">Priority</text>
+
+  <text x="55" y="710" class="small">Centre 2</text>
+  <text x="255" y="710" class="small">North</text>
+  <text x="455" y="710" class="small">DOG:2 CAT:1</text>
+  <text x="655" y="710" class="small">Candidate</text>
+  <text x="855" y="710" class="small">Hold</text>
+
+  <!-- Capacity Analysis (placeholder bars) -->
+  <text x="790" y="610" class="section-title">Capacity Analysis</text>
+  <g transform="translate(790,630)">
+    <rect x="0" y="40" width="360" height="140" fill="#ffffff" stroke="#dbe3ea" rx="6"/>
+    <text x="10" y="70" class="card-title">DOG Capacity Comparison</text>
+    <rect x="10" y="95" width="200" height="14" fill="#0b3d91"/>
+    <rect x="10" y="115" width="150" height="14" fill="#2a9d8f"/>
+    <text x="10" y="150" class="small">Centre A vs Centre B</text>
+  </g>
+
+  <!-- Data Trust -->
+  <text x="40" y="850" class="section-title">Data Trust</text>
+  <rect class="kpi" x="120" y="830" width="300" height="60" rx="6"/>
+  <text x="135" y="855" class="small">Missing Assignments: 5</text>
+
+  <!-- Regional Health -->
+  <text x="460" y="850" class="section-title">Regional Health</text>
+  <rect class="kpi" x="560" y="830" width="300" height="60" rx="6"/>
+  <text x="575" y="855" class="small">Top Region: Lower Mainland — 78% Util</text>
+
+  <!-- Operational Briefing -->
+  <text x="880" y="850" class="section-title">Operational Briefing</text>
+  <rect class="kpi" x="1000" y="830" width="160" height="60" rx="6"/>
+  <text x="1015" y="855" class="small">Recommendation: Send 5 Dogs</text>
+
+</svg>

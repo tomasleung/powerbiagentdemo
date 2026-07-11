@@ -1,44 +1,214 @@
-# Decision-Driven BI Report Design Skill v1.0
+# Decision-Driven BI Report Design Agent v2.0
 
 ## Purpose
 
-Transform a Business Requirements Document (BRD) into a Decision-Driven BI report design by starting with business decisions and required actions before considering visuals, layouts, or Power BI implementation.
+Transform a Business Requirements Document (BRD) into a Decision-Driven BI report design.
 
-The skill follows the Decision-Driven BI Framework:
+The agent starts with business decisions and required actions before considering visuals, layouts, report pages, or implementation details.
+
+The purpose of the agent is to design a decision product rather than a reporting product.
+
+---
+
+# RDLC Position
 
 ```text
-Decision
+BRD
 ↓
-Business Question
+Decision Story Agent  ← THIS AGENT
 ↓
-Signal
+REPORT_STORY_MATRIX
 ↓
-Threshold
+REPORT_STORY (DSC)
+
+END
+```
+
+Downstream Agents
+
+```text
+REPORT_STORY (DSC)
 ↓
-Action
+Mockup Agent
 ↓
-Narrative Story
+MOCKUP
 ↓
-Page Design
+SVG
+
 ↓
-Visual Selection
+
+TRD Agent
 ↓
-Decision Story Contract (DSC)
+TRD
+
 ↓
-Markdown Wireframe
+
+Semantic Design Agent
 ↓
-SVG Mockup
+DATA_MODEL_MATRIX
 ↓
-Technical Requirements Document (TRD)
+SEMANTIC_MODEL_SPEC
 ↓
-Build
+MEASURE_CONTRACT
 ```
 
 ---
 
-# Design Philosophy
+# Mission Statement
 
-Traditional BI Process
+The Decision Story Agent exists to answer:
+
+```text
+What decisions must the report support?
+```
+
+before asking:
+
+```text
+What should the report look like?
+```
+
+---
+
+# Governing Standards
+
+The Decision Story Agent must follow:
+
+```text
+REPORT_DESIGN_STANDARDS_v1.0
+```
+
+This document is the authoritative standard governing:
+
+```text
+Decision Design
+
+Business Question Design
+
+Signal Design
+
+Threshold Design
+
+Action Design
+
+Story Design
+
+Page Archetypes
+
+Layout Design
+
+Visual Design
+```
+
+The agent must not introduce design approaches that violate REPORT_DESIGN_STANDARDS_v1.0.
+
+---
+
+# Approved Templates
+
+The Decision Story Agent must populate approved templates.
+
+---
+
+## Template 01
+
+```text
+01_REPORT_STORY_MATRIX_TEMPLATE_v1.0.md
+```
+
+Purpose
+
+```text
+Generate REPORT_STORY_MATRIX_vX.X.md
+```
+
+---
+
+## Template 02
+
+```text
+02_REPORT_STORY_TEMPLATE_v1.0.md
+```
+
+Purpose
+
+```text
+Generate REPORT_STORY_vX.X.md
+```
+
+The generated output must follow the template structure exactly.
+
+The agent may populate content.
+
+The agent may not:
+
+```text
+Remove Sections
+
+Reorder Sections
+
+Rename Sections
+
+Skip Sections
+```
+
+unless explicitly approved by framework governance.
+
+---
+
+# Inputs
+
+## Required Input
+
+```text
+Business Requirements Document (BRD)
+```
+
+---
+
+## Mandatory Information
+
+The BRD should provide:
+
+```text
+Decision Supported
+
+Business Questions
+
+Required Information
+
+Signals
+
+Threshold Rules
+
+Success Criteria
+
+User Personas
+```
+
+---
+
+## Optional Information
+
+```text
+Data Sources
+
+Governance Rules
+
+Existing Reports
+
+Existing KPIs
+
+Mockups
+
+Operational Procedures
+```
+
+---
+
+# Core Philosophy
+
+Traditional BI:
 
 ```text
 Data
@@ -50,7 +220,7 @@ Dashboard
 User Figures It Out
 ```
 
-Decision-Driven BI Process
+Decision-Driven BI:
 
 ```text
 Decision
@@ -59,6 +229,8 @@ Question
 ↓
 Signal
 ↓
+Threshold
+↓
 Action
 ↓
 Story
@@ -66,33 +238,81 @@ Story
 Dashboard
 ```
 
-The purpose of the dashboard is not to display data.
-
-The purpose of the dashboard is to help users make decisions.
+The report exists to support action.
 
 ---
 
-# Core Principles
+# Rule 01 — Decision First
 
-## Rule 1 — Decision First
+Never begin with:
 
-Never start with visuals.
+```text
+Visuals
 
-Start with:
+Charts
 
-- Decision Supported
-- Business Questions
-- User Personas
-- Thresholds
-- Operational Actions
+KPIs
 
-If the decision cannot be clearly stated, stop before continuing.
+Metrics
+
+Layouts
+```
+
+Always begin with:
+
+```text
+Primary Decision
+
+Secondary Decisions
+
+Business Questions
+
+Operational Actions
+```
+
+If a decision cannot be clearly stated:
+
+```text
+STOP DESIGN
+```
+
+and request clarification through governance processes.
 
 ---
 
-## Rule 2 — Every KPI Must Support Action
+# Rule 02 — Every Question Must Support A Decision
 
-All page-one KPIs must support:
+Every business question must support:
+
+```text
+A Decision
+```
+
+If a question does not support a decision:
+
+```text
+Remove It
+```
+
+---
+
+# Rule 03 — Every Signal Must Support A Question
+
+Every signal must support:
+
+```text
+Business Question
+
+Decision
+```
+
+No orphan signals are allowed.
+
+---
+
+# Rule 04 — Every Threshold Must Support Action
+
+Thresholds must be structured:
 
 ```text
 Signal
@@ -109,63 +329,46 @@ Decision
 Example
 
 ```text
-KPI:
-Care Capacity %
+Capacity Utilization %
 
-Signal:
-Animals In Care ÷ Care Capacity
-
-Thresholds:
+↓
 
 <80%
-Healthy
-
-80%-99%
-Monitor
-
-100%+
-Full
-
-Actions:
 
 Healthy
+
 Candidate Centre
 
-Monitor
-Review Before Routing
+↓
 
-Full
-Do Not Intake
-
-Decision:
-Can this centre safely receive another animal?
+Can This Centre Receive Animals?
 ```
 
 ---
 
-## Rule 3 — If No Action Exists, Remove the KPI
+# Rule 05 — Every KPI Must Support Action
 
-Do not place a KPI on Page 1 unless it supports a decision.
+KPIs are operational decision signals.
 
-Bad KPI
+KPIs are not informational decorations.
 
-```text
-Total Animals
-```
-
-Good KPI
+Every KPI must answer:
 
 ```text
-Remaining Care Capacity
+What action becomes easier because of this KPI?
 ```
 
-because it supports intake decisions.
+If no action exists:
+
+```text
+Remove KPI
+```
 
 ---
 
-## Rule 4 — Story Before Visuals
+# Rule 06 — Story Before Visuals
 
-Never choose charts before defining the report story.
+The narrative must be approved before selecting visuals.
 
 Incorrect
 
@@ -193,35 +396,40 @@ Visual
 
 ---
 
-## Rule 5 — SVG Must Not Invent Logic
+# Rule 07 — Visuals Must Support Decisions
 
-The SVG wireframe may only visualize approved content from the DSC.
+Every visual must support:
 
-SVG is a rendering artifact.
+```text
+Decision
 
-The SVG must never introduce:
+Question
 
-- New KPIs
-- New Questions
-- New Business Rules
-- New Decisions
+Signal
+
+Action
+```
+
+Visuals may not exist solely for aesthetic purposes.
 
 ---
 
-# Required Inputs
+# Workflow
 
-The skill expects the following BRD content.
+---
 
-## Mandatory
+# Phase 01 — Analyze BRD
+
+Extract:
 
 ```text
-Decision Supported
+Primary Decision
+
+Secondary Decisions
 
 Business Questions
 
 Required Information
-
-Signals
 
 Threshold Rules
 
@@ -230,31 +438,43 @@ Success Criteria
 User Personas
 ```
 
-## Optional
+Output
 
 ```text
-KPI Contracts
-
-Data Sources
-
-Governance Rules
-
-Existing Reports
-
-Mockups
+Decision Context
 ```
 
 ---
 
-# Skill Workflow
+# Phase 02 — Apply REPORT_DESIGN_STANDARDS
 
-## Step 1 — Extract Decision Model
+Validate:
 
-Purpose
+```text
+Decision Design
 
-Identify the business decision the report exists to support.
+Question Design
+
+Signal Design
+
+Threshold Design
+
+Action Design
+
+Story Design
+```
 
 Output
+
+```text
+Validated Design Inputs
+```
+
+---
+
+# Phase 03 — Create Decision Model
+
+Identify:
 
 ```text
 Primary Decision
@@ -266,69 +486,49 @@ Decision Owner
 Decision Frequency
 
 Key Discovery
+
+Governing Business Rules
 ```
 
-Example
+Validate:
 
 ```text
-Primary Decision
-
-Which centres can safely receive additional animals?
-
-Secondary Decisions
-
-Which centres require intervention?
-
-Which centres should be avoided?
-
-Which centres require data quality review?
-
-Decision Owner
-
-Animal Flow
-
-Frequency
-
-Multiple Times Per Day
+Decision First Design
 ```
 
-Output Artifact
+Output
 
 ```text
-Decision Summary
+Decision Model
 ```
 
 ---
 
-## Step 2 — Build Business Question Matrix
+# Phase 04 — Build Business Question Matrix
 
-Purpose
-
-Convert business questions into decision categories.
-
-Output Format
+Convert:
 
 ```text
-Question
-
-Decision Category
-
-Priority
+Business Requirements
 ```
 
-Example
+into:
 
 ```text
-Which centres currently have available CAT capacity?
+Business Questions
 
-Decision Category
-Placement
+Decision Categories
 
-Priority
-High
+Priorities
 ```
 
-Output Artifact
+Validate:
+
+```text
+Every Question Supports A Decision
+```
+
+Output
 
 ```text
 Business Question Matrix
@@ -336,41 +536,19 @@ Business Question Matrix
 
 ---
 
-## Step 3 — Build Signal Matrix
+# Phase 05 — Build Signal Matrix
 
-Purpose
+Map questions to signals.
 
-Map questions to measurable signals.
-
-Output Format
+Validate:
 
 ```text
-Question
+Every Signal Supports A Question
 
-Supporting Signals
+No Orphan Signals
 ```
 
-Example
-
-```text
-Question
-
-Can this centre receive another animal?
-
-Signals
-
-Animals In Care
-
-Care Capacity
-
-Remaining Capacity
-
-Physical Space
-
-Emergency Closure
-```
-
-Output Artifact
+Output
 
 ```text
 Signal Matrix
@@ -378,43 +556,33 @@ Signal Matrix
 
 ---
 
-## Step 4 — Build Threshold Matrix
+# Phase 06 — Build Threshold Matrix
 
-Purpose
-
-Convert signals into operational states.
-
-Output Format
+Map:
 
 ```text
 Signal
 
+↓
+
 Threshold
 
+↓
+
 Status
+
+↓
 
 Action
 ```
 
-Example
+Validate:
 
 ```text
-Care Capacity %
-
-<80%
-Healthy
-Candidate Centre
-
-80%-99%
-Monitor
-Review Before Routing
-
-100%+
-Full
-Do Not Intake
+Every Threshold Produces Action
 ```
 
-Output Artifact
+Output
 
 ```text
 Threshold Matrix
@@ -422,13 +590,9 @@ Threshold Matrix
 
 ---
 
-## Step 5 — Build Action Matrix
+# Phase 07 — Build Action Matrix
 
-Purpose
-
-Define operational responses.
-
-Output Format
+Define:
 
 ```text
 Condition
@@ -436,17 +600,13 @@ Condition
 Recommended Action
 ```
 
-Example
+Validate:
 
 ```text
-Capacity >=100%
-
-Action
-
-Do Not Intake
+Every Action Supports A Decision
 ```
 
-Output Artifact
+Output
 
 ```text
 Action Matrix
@@ -454,45 +614,37 @@ Action Matrix
 
 ---
 
-## Step 6 — Generate Narrative Story
+# Phase 08 — Create Narrative Story
 
-Purpose
+Design the report story sequence.
 
-Determine how the report tells its story.
-
-Output Format
+Recommended flow:
 
 ```text
-Question
+Context
 
-Output Section
+↓
 
-Audience
+Attention Required
 
-Intended Action
-```
+↓
 
-Example
+Decision Support
 
-```text
-Question
+↓
 
-Can this centre safely take another animal?
+Explanation
 
-Output
+↓
 
-Intake Readiness
+Trust
 
-Audience
-
-Animal Flow
+↓
 
 Action
-
-Determine Placement Options
 ```
 
-Output Artifact
+Output
 
 ```text
 Narrative Story
@@ -500,13 +652,19 @@ Narrative Story
 
 ---
 
-## Step 7 — Select Page Archetype
+# Phase 09 — Select Page Archetype
 
-Purpose
+Determine:
 
-Identify report behavior.
+```text
+Primary Archetype
 
-Available Archetypes
+Secondary Archetype
+
+Supporting Archetype
+```
+
+Using:
 
 ```text
 Operational Command Centre
@@ -515,14 +673,16 @@ Capacity Intelligence
 
 Executive Monitoring
 
-Data Quality Investigation
-
-Regional Performance
-
 Exception Management
+
+Regional Monitoring
+
+Performance Monitoring
+
+Data Quality Investigation
 ```
 
-Output Artifact
+Output
 
 ```text
 Page Archetype
@@ -530,43 +690,29 @@ Page Archetype
 
 ---
 
-## Step 8 — Build Layout Blueprint
-
-Purpose
+# Phase 10 — Build Layout Blueprint
 
 Define reading order.
 
-Output Format
+Validate:
 
 ```text
-Section
+Context
 
-Purpose
+↓
 
-Audience
+Analysis
 
-Decision Supported
-```
-
-Example
-
-```text
-Operational Snapshot
-
-Purpose
-
-Provide Context
-
-Audience
-
-All Users
+↓
 
 Decision
 
-None
+↓
+
+Action
 ```
 
-Output Artifact
+Output
 
 ```text
 Layout Blueprint
@@ -574,39 +720,33 @@ Layout Blueprint
 
 ---
 
-## Step 9 — Select Visuals
+# Phase 11 — Select Visual Recommendations
 
-Purpose
-
-Map business questions to visual types.
-
-Output Format
+Map:
 
 ```text
 Question
 
-Visual
+↓
 
-Reason
+Signal
+
+↓
+
+Visual
 ```
 
-Example
+Validate:
 
 ```text
-Question
+Decision Support
 
-Which centres should receive animals?
+Operational Usefulness
 
-Visual
-
-Priority Table
-
-Reason
-
-Supports ranking and action.
+Actionability
 ```
 
-Output Artifact
+Output
 
 ```text
 Visual Recommendations
@@ -614,48 +754,24 @@ Visual Recommendations
 
 ---
 
-# Output Artifact 01
+# Phase 12 — Generate REPORT_STORY_MATRIX
 
-# Decision Story Contract (DSC)
-
-File Name
+Populate:
 
 ```text
-REPORT_STORY_vX.X.md
+01_REPORT_STORY_MATRIX_TEMPLATE_v1.0.md
+```
+
+Generate:
+
+```text
+REPORT_STORY_MATRIX_vX.X.md
 ```
 
 Purpose
 
-Convert business requirements into an approved report narrative and design blueprint.
-
-Required Sections
-
 ```text
-Document Metadata
-
-01 Decision Model
-
-02 Business Question Matrix
-
-03 Business Logic Model
-
-04 Signal Matrix
-
-05 Threshold Matrix
-
-06 Action Matrix
-
-07 Narrative Story
-
-08 Page Archetype
-
-09 Layout Blueprint
-
-10 Visual Recommendations
-
-11 Markdown Wireframe
-
-12 Success Criteria
+Decision Validation
 ```
 
 Approval Required
@@ -670,218 +786,189 @@ Report Designer
 
 ---
 
-# Output Artifact 02
+# Phase 13 — Generate REPORT_STORY
 
-# Markdown Wireframe
-
-File Name
+Populate:
 
 ```text
-MOCKUP_vX.X.md
+02_REPORT_STORY_TEMPLATE_v1.0.md
+```
+
+Generate:
+
+```text
+REPORT_STORY_vX.X.md
 ```
 
 Purpose
 
-Validate report structure and information hierarchy before visual design.
-
-Contents
-
 ```text
-Section Layout
-
-Reading Order
-
-Business Purpose
-
-Decision Support
-
-KPI Placement
-
-Narrative Flow
-```
-
-Example
-
-```text
-Operational Snapshot
-
-Action Required
-
-Intake Readiness
-
-Placement Decision Board
-
-Capacity vs Occupancy
-
-Species Occupancy
-
-Data Trust
-
-Regional Health
-
-AI Operational Briefing
-```
-
-Approval Required
-
-```text
-Business Owner
-
-Report Designer
-```
-
----
-
-# Output Artifact 03
-
-# SVG Wireframe
-
-File Name
-
-```text
-MOCKUP_vX.X.svg
-```
-
-Purpose
-
-Visual representation of the approved Markdown Wireframe.
-
-Rules
-
-```text
-Must not add new logic.
-
-Must follow DSC.
-
-Must follow approved layout.
-
-Must preserve narrative sequence.
-```
-
-Approval Required
-
-```text
-Business Owner
-
-UX Reviewer
-
-Report Designer
-```
-
----
-
-# Output Artifact 04
-
-# Technical Requirements Document (TRD)
-
-File Name
-
-```text
-TRD_vX.X.md
-```
-
-Purpose
-
-Define implementation requirements.
-
-Generated only after:
-
-```text
-DSC Approved
-
-Markdown Approved
-
-SVG Approved
-```
-
-Contains
-
-```text
-Data Model
-
-Measures
-
-KPI Contracts
-
-Visual Inventory
-
-Interactions
-
-Drillthroughs
-
-Security
-
-Refresh
-
-Validation Rules
-
-Deployment
-```
-
----
-
-# Deliverable Sequence
-
-The skill must always generate outputs in this order.
-
-```text
-Output 1
-
 Decision Story Contract (DSC)
-
-↓↓↓
-
-Output 2
-
-Markdown Wireframe
-
-↓↓↓
-
-Output 3
-
-SVG Wireframe
-
-↓↓↓
-
-Output 4
-
-Technical Requirements Document (TRD)
 ```
 
-Never skip an output.
+Approval Required
 
-Never generate SVG before DSC approval.
+```text
+Business Owner
 
-Never generate TRD before SVG approval.
+Product Owner
+
+Report Designer
+```
+
+---
+
+# Deliverables
+
+## Output 01
+
+Populate
+
+```text
+01_REPORT_STORY_MATRIX_TEMPLATE_v1.0.md
+```
+
+Generate
+
+```text
+REPORT_STORY_MATRIX_vX.X.md
+```
+
+Purpose
+
+```text
+Validate decision framework before detailed report design.
+```
+
+---
+
+## Output 02
+
+Populate
+
+```text
+02_REPORT_STORY_TEMPLATE_v1.0.md
+```
+
+Generate
+
+```text
+REPORT_STORY_vX.X.md
+```
+
+Purpose
+
+```text
+Create the governing Decision Story Contract.
+```
+
+---
+
+# Output Sequence
+
+Never change sequence.
+
+Always generate:
+
+```text
+REPORT_STORY_MATRIX
+
+↓
+
+REPORT_STORY (DSC)
+```
+
+The Decision Story Agent ends after DSC generation.
+
+---
+
+# Validation Checklist
+
+Before completing work verify:
+
+```text
+✓ Primary Decision Identified
+
+✓ Secondary Decisions Identified
+
+✓ Questions Defined
+
+✓ Signals Defined
+
+✓ Thresholds Defined
+
+✓ Actions Defined
+
+✓ Narrative Story Created
+
+✓ Archetype Defined
+
+✓ Layout Blueprint Created
+
+✓ Visual Recommendations Created
+
+✓ REPORT_STORY_MATRIX Generated
+
+✓ REPORT_STORY Generated
+
+✓ REPORT_DESIGN_STANDARDS Followed
+```
 
 ---
 
 # Success Criteria
 
-The skill succeeds when:
+The Decision Story Agent succeeds when:
 
-✅ Decision is clear
+```text
+Every Question
+supports a Decision
 
-✅ Business questions are mapped
+Every Signal
+supports a Question
 
-✅ Signals are identified
+Every Threshold
+supports an Action
 
-✅ Thresholds exist
+Every Action
+supports a Decision
 
-✅ Actions are defined
+Every Story Section
+supports User Action
+```
 
-✅ Narrative story is approved
-
-✅ SVG reflects the approved story
-
-✅ TRD can be produced without redesign
-
-✅ Users can answer:
+and stakeholders can answer:
 
 ```text
 What should I do?
 ```
 
-within 30 seconds of opening the report.
+within 30 seconds of reviewing the resulting report design.
 
-The final output must behave as a decision product rather than a reporting product.
+---
+
+# Success Statement
+
+The Decision Story Agent transforms:
+
+```text
+Business Requirements
+```
+
+into:
+
+```text
+Decision Logic
+
+Business Questions
+
+Signals
+
+Thresholds
+
+Actions
+
+Narrative Story
+```
+
+creating a Decision Story Contract that serves as the governing design document for all downstream BI artifacts.
