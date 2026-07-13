@@ -93,11 +93,13 @@ Action
 
 ## Rule 01
 
-Story Drives Layout
+Story Drives Layout.
 
 ```text
 Story
+
 ↓
+
 Layout
 ```
 
@@ -105,7 +107,9 @@ Never:
 
 ```text
 Layout
+
 ↓
+
 Story
 ```
 
@@ -113,15 +117,19 @@ Story
 
 ## Rule 02
 
-Preserve Story Sequence
+Preserve Story Sequence.
 
 If the DSC defines:
 
 ```text
 A
+
 ↓
+
 B
+
 ↓
+
 C
 ```
 
@@ -129,9 +137,13 @@ The layout must preserve:
 
 ```text
 A
+
 ↓
+
 B
+
 ↓
+
 C
 ```
 
@@ -139,9 +151,9 @@ C
 
 ## Rule 03
 
-Primary Decision Must Appear Early
+Primary Decision Must Appear Early.
 
-Decision support should be visible within first screen view.
+Decision support should be visible within the first screen view.
 
 ---
 
@@ -175,7 +187,7 @@ Bottom Right
 
 ---
 
-Priority Placement:
+## Priority Placement
 
 ```text
 1. Snapshot
@@ -193,14 +205,14 @@ Priority Placement:
 
 ---
 
-Example
+## Example
 
 ```text
-Snapshot     Alerts
+Snapshot           Alerts
 
 Decision Support
 
-Analysis     Trust
+Analysis           Trust
 
 Recommendations
 ```
@@ -209,13 +221,13 @@ Recommendations
 
 # SECTION 04 — OPERATIONAL COMMAND CENTRE
 
-Purpose
+## Purpose
 
-```text
 Rapid Operational Decisions
-```
 
-Users
+---
+
+## Users
 
 ```text
 Operations
@@ -227,7 +239,9 @@ Logistics
 Call Centres
 ```
 
-Pattern
+---
+
+## Pattern
 
 ```text
 Snapshot
@@ -253,7 +267,9 @@ Trust
 Actions
 ```
 
-Layout
+---
+
+## Layout
 
 ```text
 Header
@@ -291,13 +307,13 @@ Recommendations
 
 # SECTION 05 — CAPACITY INTELLIGENCE
 
-Purpose
+## Purpose
 
-```text
 Capacity Planning
-```
 
-Users
+---
+
+## Users
 
 ```text
 Operations
@@ -307,7 +323,9 @@ Capacity Teams
 Animal Flow
 ```
 
-Pattern
+---
+
+## Pattern
 
 ```text
 Overview
@@ -333,7 +351,9 @@ Regional Impact
 Actions
 ```
 
-Layout
+---
+
+## Layout
 
 ```text
 Capacity Snapshot
@@ -363,13 +383,13 @@ Action Plan
 
 # SECTION 06 — EXECUTIVE MONITORING
 
-Purpose
+## Purpose
 
-```text
 Executive Review
-```
 
-Users
+---
+
+## Users
 
 ```text
 Executives
@@ -379,7 +399,9 @@ Leadership
 Board Members
 ```
 
-Pattern
+---
+
+## Pattern
 
 ```text
 Executive Summary
@@ -409,13 +431,13 @@ Actions
 
 # SECTION 07 — EXCEPTION MANAGEMENT
 
-Purpose
+## Purpose
 
-```text
 Issue Resolution
-```
 
-Pattern
+---
+
+## Pattern
 
 ```text
 Summary
@@ -441,13 +463,13 @@ Action Plan
 
 # SECTION 08 — INVESTIGATIVE DASHBOARD
 
-Purpose
+## Purpose
 
-```text
 Root Cause Analysis
-```
 
-Pattern
+---
+
+## Pattern
 
 ```text
 Summary
@@ -477,15 +499,15 @@ Conclusion
 
 # SECTION 09 — BOARD REPORTING
 
-Purpose
+## Purpose
 
-```text
 Governance
 
 Strategic Oversight
-```
 
-Pattern
+---
+
+## Pattern
 
 ```text
 Summary
@@ -511,13 +533,13 @@ Strategic Decisions
 
 # SECTION 10 — NARRATIVE INTELLIGENCE
 
-Purpose
+## Purpose
 
-```text
 AI Driven Insight Experiences
-```
 
-Pattern
+---
+
+## Pattern
 
 ```text
 Situation
@@ -609,7 +631,9 @@ DSC Layout Blueprint
 
 exactly.
 
-The renderer may not:
+---
+
+## The Renderer May Not
 
 ```text
 Move Sections
@@ -623,9 +647,363 @@ Create Alternate Story Paths
 
 ---
 
-# SECTION 13 — PATTERN SELECTION RULES
+# SECTION 13 — DECISION INTELLIGENCE COMMAND CENTRE
 
-Operational Dashboard
+## Pattern Classification
+
+Primary Pattern
+
+```text
+Decision Intelligence Command Centre
+```
+
+Status
+
+```text
+Recommended
+```
+
+Purpose
+
+```text
+Preferred pattern for decision-driven operational dashboards.
+```
+
+---
+
+## Purpose
+
+Support operational decision making through a guided decision journey.
+
+This pattern is optimized for users who must:
+
+```text
+Monitor
+
+Prioritize
+
+Decide
+
+Act
+```
+
+within a single workflow.
+
+---
+
+## Typical Users
+
+```text
+Animal Flow
+
+Operations
+
+Capacity Planning
+
+Resource Allocation
+
+Logistics
+
+Call Centres
+```
+
+---
+
+## Story Pattern
+
+```text
+What Is Happening?
+
+↓
+
+What Requires Attention?
+
+↓
+
+What Decisions Must Be Made?
+
+↓
+
+Where Should Action Be Taken?
+
+↓
+
+Why?
+
+↓
+
+Can The Information Be Trusted?
+
+↓
+
+Where Is Risk Building?
+
+↓
+
+What Should We Do Next?
+```
+
+---
+
+## Layout Pattern
+
+```text
+Global Filters
+
+↓
+
+Provincial Capacity Snapshot
+
+↓
+
+Action Required
+
+↓
+
+Intake Readiness
+
+↓
+
+Placement Decision Board
+
+↓
+
+Capacity Analysis
+
+↓
+
+Data Trust
+
+↓
+
+Regional Health
+
+↓
+
+Operational Briefing
+```
+
+---
+
+## ZIP / ZAP Placement Strategy
+
+### Tier 1 — Mission Critical
+
+```text
+Provincial Capacity Snapshot
+
+Action Required
+```
+
+---
+
+### Tier 2 — Decision Support
+
+```text
+Intake Readiness
+
+Placement Decision Board
+```
+
+---
+
+### Tier 3 — Explanation & Trust
+
+```text
+Capacity Analysis
+
+Data Trust
+```
+
+---
+
+### Tier 4 — Monitoring
+
+```text
+Regional Health
+```
+
+---
+
+### Tier 5 — Action
+
+```text
+Operational Briefing
+```
+
+---
+
+## Recommended Visual Pattern
+
+```text
+Header
+
+↓
+
+Global Filters
+
+↓
+
+Snapshot KPI Cards
+
+↓
+
+Exception KPI Cards
+
+↓
+
+Decision Support Cards
+
+↓
+
+Priority Decision Table
+
+↓
+
+Analysis Containers
+
+↓
+
+Data Trust Containers
+
+↓
+
+Regional Monitoring
+
+↓
+
+Operational Recommendations
+```
+
+---
+
+## Information Hierarchy
+
+### Mission Critical
+
+```text
+Provincial Capacity Snapshot
+
+Action Required
+
+Intake Readiness
+```
+
+---
+
+### Decision Support
+
+```text
+Placement Decision Board
+
+Capacity Analysis
+```
+
+---
+
+### Trust & Monitoring
+
+```text
+Data Trust
+
+Regional Health
+```
+
+---
+
+### Action
+
+```text
+Operational Briefing
+```
+
+---
+
+## Recommended Use Cases
+
+```text
+Animal Flow
+
+Capacity Intelligence
+
+Intake Management
+
+Resource Allocation
+
+Provincial Monitoring
+
+Logistics Operations
+
+Call Centre Operations
+```
+
+---
+
+## Success Criteria
+
+Users can answer:
+
+```text
+What is happening?
+
+What needs attention?
+
+What should I do?
+
+Why?
+
+Can I trust the information?
+```
+
+without leaving the page.
+
+---
+
+## Example
+
+```text
+Global Filters
+
+↓
+
+Provincial Capacity Snapshot
+
+↓
+
+Action Required
+
+↓
+
+Intake Readiness
+
+↓
+
+Placement Decision Board
+
+↓
+
+Capacity Analysis
+
+↓
+
+Data Trust
+
+↓
+
+Regional Health
+
+↓
+
+Operational Briefing
+```
+
+This pattern should be considered the preferred layout for Decision-Driven BI operational command centres.
+
+---
+
+# SECTION 14 — PATTERN SELECTION RULES
+
+## Operational Dashboard
 
 ```text
 Operational Command Centre
@@ -633,7 +1011,27 @@ Operational Command Centre
 
 ---
 
-Capacity Dashboard
+## Operational Decision Dashboard
+
+```text
+Decision Intelligence Command Centre
+```
+
+Examples
+
+```text
+Animal Flow
+
+Capacity Intelligence
+
+Resource Allocation
+
+Placement Prioritization
+```
+
+---
+
+## Capacity Dashboard
 
 ```text
 Capacity Intelligence
@@ -641,7 +1039,7 @@ Capacity Intelligence
 
 ---
 
-Executive Dashboard
+## Executive Dashboard
 
 ```text
 Executive Monitoring
@@ -649,7 +1047,7 @@ Executive Monitoring
 
 ---
 
-Data Quality Dashboard
+## Data Quality Dashboard
 
 ```text
 Exception Management
@@ -657,7 +1055,7 @@ Exception Management
 
 ---
 
-Investigation Dashboard
+## Investigation Dashboard
 
 ```text
 Investigative Dashboard
@@ -665,7 +1063,7 @@ Investigative Dashboard
 
 ---
 
-Governance Dashboard
+## Governance Dashboard
 
 ```text
 Board Reporting
@@ -673,7 +1071,7 @@ Board Reporting
 
 ---
 
-# LAYOUT SUCCESS STATEMENT
+# SECTION 15 — LAYOUT SUCCESS STATEMENT
 
 A layout succeeds when:
 

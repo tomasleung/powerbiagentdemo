@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1400" viewBox="0 0 1920 1400">
+  <defs>
+    <style>
+      .bg { fill: #f8f9fb; }
+      .surface { fill: #ffffff; stroke: #d9dee6; stroke-width: 1; }
+      .tier1-bg { fill: #ffffff; stroke: #0078d4; stroke-width: 2; }
+      .tier2-bg { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; }
+      .tier3-bg { fill: #fafbfc; stroke: #cbd5e1; stroke-width: 1; }
+      .tier4-bg { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; }
+      .title { font: 32px 'Segoe UI', Arial, sans-serif; fill: #0b3d91; font-weight: 700; }
+      .section-title { font: 20px 'Segoe UI', Arial, sans-serif; fill: #0b3d91; font-weight: 700; }
+      .label { font: 13px 'Segoe UI', Arial, sans-serif; fill: #6b7280; }
+      .value { font: 28px 'Segoe UI', Arial, sans-serif; fill: #0078d4; font-weight: 700; }
+      .kpi-label { font: 12px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .small-text { font: 12px 'Segoe UI', Arial, sans-serif; fill: #6b7280; }
+      .note { font: 11px 'Segoe UI', Arial, sans-serif; fill: #94a3b8; }
+      .accent-good { fill: #107c10; }
+      .accent-warning { fill: #f59e0b; }
+      .accent-alert { fill: #d13438; }
+      .filter-bg { fill: #f5f7fb; stroke: #cbd5e1; }
+      .kpi-card { rx: 8; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1920" height="1400" />
+
+  <!-- HEADER -->
+  <rect class="surface" x="40" y="20" width="1840" height="80" rx="12" />
+  <text x="60" y="60" class="title">Live Capacity Intake Readiness</text>
+  <text x="60" y="82" class="label">Decision Story: Which centres can safely receive incoming animals? | 30-Second Decision</text>
+
+  <!-- GLOBAL FILTER BAR -->
+  <rect class="filter-bg" x="40" y="120" width="1840" height="60" rx="12" />
+  <text x="60" y="145" class="label" font-weight="700">GLOBAL FILTERS</text>
+  <rect x="280" y="135" width="140" height="35" class="surface" rx="6" />
+  <text x="295" y="160" class="kpi-label">Animal Type ▼</text>
+  <rect x="450" y="135" width="140" height="35" class="surface" rx="6" />
+  <text x="465" y="160" class="kpi-label">Region ▼</text>
+  <rect x="620" y="135" width="140" height="35" class="surface" rx="6" />
+  <text x="635" y="160" class="kpi-label">Centre ▼</text>
+  <rect x="790" y="135" width="140" height="35" class="surface" rx="6" />
+  <text x="805" y="160" class="kpi-label">Capacity Status ▼</text>
+
+  <!-- TIER 1: MISSION CRITICAL (Top row - ZIP flow left to right) -->
+  <!-- SECTION 01: PROVINCIAL CAPACITY SNAPSHOT -->
+  <rect class="tier1-bg" x="40" y="200" width="600" height="300" rx="12" />
+  <text x="60" y="230" class="section-title">Provincial Capacity Snapshot</text>
+  <text x="60" y="255" class="label">What is happening across the province today?</text>
+
+  <!-- KPI Cards Row 1 -->
+  <rect class="tier1-bg" x="60" y="270" width="110" height="90" rx="8" />
+  <text x="75" y="295" class="value">1,240</text>
+  <text x="75" y="315" class="kpi-label">Total DOG Spaces</text>
+
+  <rect class="tier1-bg" x="185" y="270" width="110" height="90" rx="8" />
+  <text x="200" y="295" class="value">320</text>
+  <text x="200" y="315" class="kpi-label">Open DOG Spaces</text>
+
+  <rect class="tier1-bg" x="310" y="270" width="110" height="90" rx="8" />
+  <text x="325" y="295" class="value">74%</text>
+  <text x="325" y="315" class="kpi-label" fill="#f59e0b">DOG Utilization</text>
+
+  <!-- KPI Cards Row 2 -->
+  <rect class="tier1-bg" x="60" y="375" width="110" height="90" rx="8" />
+  <text x="75" y="400" class="value">840</text>
+  <text x="75" y="420" class="kpi-label">Total CAT Spaces</text>
+
+  <rect class="tier1-bg" x="185" y="375" width="110" height="90" rx="8" />
+  <text x="200" y="400" class="value">180</text>
+  <text x="200" y="420" class="kpi-label">Open CAT Spaces</text>
+
+  <rect class="tier1-bg" x="310" y="375" width="110" height="90" rx="8" />
+  <text x="325" y="400" class="value">79%</text>
+  <text x="325" y="420" class="kpi-label" fill="#f59e0b">CAT Utilization</text>
+
+  <!-- SECTION 02: ACTION REQUIRED -->
+  <rect class="tier1-bg" x="680" y="200" width="600" height="300" rx="12" />
+  <text x="700" y="230" class="section-title">Action Required</text>
+  <text x="700" y="255" class="label">What requires immediate attention?</text>
+
+  <!-- Exception Cards -->
+  <rect class="tier1-bg" x="700" y="270" width="170" height="90" rx="8" />
+  <text x="720" y="295" class="value" fill="#d13438">3</text>
+  <text x="720" y="315" class="kpi-label">Emergency Closures</text>
+  <text x="720" y="330" class="small-text">Exclude from intake</text>
+
+  <rect class="tier1-bg" x="900" y="270" width="170" height="90" rx="8" />
+  <text x="920" y="295" class="value" fill="#d13438">8</text>
+  <text x="920" y="315" class="kpi-label">Over-Capacity</text>
+  <text x="920" y="330" class="small-text">Do not route</text>
+
+  <rect class="tier1-bg" x="1100" y="270" width="170" height="90" rx="8" />
+  <text x="1120" y="295" class="value" fill="#f59e0b">5</text>
+  <text x="1120" y="315" class="kpi-label">Data Quality Alerts</text>
+  <text x="1120" y="330" class="small-text">Review before use</text>
+
+  <!-- Risk Trend -->
+  <text x="700" y="390" class="label" font-weight="700">Operational Risk Trend</text>
+  <rect x="700" y="395" width="160" height="4" fill="#e2e8f0" rx="2" />
+  <rect x="700" y="395" width="85" height="4" fill="#0078d4" rx="2" />
+  <text x="710" y="425" class="kpi-label">↑ 15% from yesterday</text>
+
+  <!-- SECTION 03: INTAKE READINESS -->
+  <rect class="tier1-bg" x="1320" y="200" width="560" height="300" rx="12" />
+  <text x="1340" y="230" class="section-title">Intake Readiness</text>
+  <text x="1340" y="255" class="label">Which centres can safely receive animals?</text>
+
+  <!-- Status grid 2x2 -->
+  <rect class="tier1-bg" x="1340" y="270" width="120" height="95" rx="8" />
+  <text x="1360" y="295" class="value" fill="#107c10">12</text>
+  <text x="1360" y="315" class="kpi-label">Candidate</text>
+  <text x="1360" y="330" class="small-text" fill="#107c10">Ready for intake</text>
+
+  <rect class="tier1-bg" x="1480" y="270" width="120" height="95" rx="8" />
+  <text x="1500" y="295" class="value" fill="#f59e0b">6</text>
+  <text x="1500" y="315" class="kpi-label">Monitor</text>
+  <text x="1500" y="330" class="small-text" fill="#f59e0b">Review first</text>
+
+  <rect class="tier1-bg" x="1340" y="380" width="120" height="95" rx="8" />
+  <text x="1360" y="405" class="value" fill="#d13438">8</text>
+  <text x="1360" y="425" class="kpi-label">Full</text>
+  <text x="1360" y="440" class="small-text" fill="#d13438">No capacity</text>
+
+  <rect class="tier1-bg" x="1480" y="380" width="120" height="95" rx="8" />
+  <text x="1500" y="405" class="value" fill="#d13438">3</text>
+  <text x="1500" y="425" class="kpi-label">Closed</text>
+  <text x="1500" y="440" class="small-text" fill="#d13438">No access</text>
+
+  <!-- TIER 2: DECISION SUPPORT (Second row) -->
+  <!-- SECTION 04: PLACEMENT DECISION BOARD -->
+  <rect class="tier2-bg" x="40" y="520" width="940" height="260" rx="12" />
+  <text x="60" y="550" class="section-title">Placement Decision Board</text>
+  <text x="60" y="575" class="label">Which centres should be prioritized for incoming animals?</text>
+
+  <!-- Table Header -->
+  <rect x="60" y="590" width="900" height="35" fill="#f5f7fb" rx="6" />
+  <text x="75" y="612" class="kpi-label" font-weight="700">Centre</text>
+  <text x="200" y="612" class="kpi-label" font-weight="700">Region</text>
+  <text x="350" y="612" class="kpi-label" font-weight="700">DOG Available</text>
+  <text x="520" y="612" class="kpi-label" font-weight="700">CAT Available</text>
+  <text x="690" y="612" class="kpi-label" font-weight="700">Status</text>
+
+  <!-- Table Rows -->
+  <line x1="60" y1="635" x2="960" y2="635" stroke="#cbd5e1" stroke-width="1" />
+  <text x="75" y="660" class="kpi-label">Victoria Centre</text>
+  <text x="200" y="660" class="kpi-label">Lower Mainland</text>
+  <text x="350" y="660" class="kpi-label" fill="#107c10">24 spaces</text>
+  <text x="520" y="660" class="kpi-label" fill="#107c10">18 spaces</text>
+  <text x="690" y="660" class="kpi-label" fill="#107c10">✓ Ready</text>
+
+  <line x1="60" y1="680" x2="960" y2="680" stroke="#cbd5e1" stroke-width="1" />
+  <text x="75" y="705" class="kpi-label">Surrey Centre</text>
+  <text x="200" y="705" class="kpi-label">Lower Mainland</text>
+  <text x="350" y="705" class="kpi-label" fill="#f59e0b">8 spaces</text>
+  <text x="520" y="705" class="kpi-label" fill="#f59e0b">5 spaces</text>
+  <text x="690" y="705" class="kpi-label" fill="#f59e0b">⚠ Review</text>
+
+  <!-- SECTION 05: CAPACITY ANALYSIS -->
+  <rect class="tier2-bg" x="1000" y="520" width="880" height="260" rx="12" />
+  <text x="1020" y="550" class="section-title">Capacity Analysis</text>
+  <text x="1020" y="575" class="label">Why can or cannot centres receive additional animals?</text>
+
+  <!-- DOG Comparison -->
+  <text x="1020" y="610" class="kpi-label" font-weight="700">DOG Capacity Comparison</text>
+  <rect x="1020" y="620" width="400" height="40" fill="#e2e8f0" rx="6" />
+  <rect x="1020" y="620" width="296" height="40" fill="#0078d4" rx="6" />
+  <text x="1040" y="645" class="kpi-label" fill="#ffffff" font-weight="700">74% Utilization</text>
+
+  <!-- CAT Comparison -->
+  <text x="1020" y="690" class="kpi-label" font-weight="700">CAT Capacity Comparison</text>
+  <rect x="1020" y="700" width="400" height="40" fill="#e2e8f0" rx="6" />
+  <rect x="1020" y="700" width="316" height="40" fill="#0078d4" rx="6" />
+  <text x="1040" y="725" class="kpi-label" fill="#ffffff" font-weight="700">79% Utilization</text>
+
+  <!-- Regional Comparison -->
+  <text x="1480" y="610" class="kpi-label" font-weight="700">Regional Pressure</text>
+  <rect x="1480" y="620" width="380" height="30" fill="#e2e8f0" rx="6" />
+  <text x="1495" y="640" class="kpi-label">Lower Mainland: 82% ↑</text>
+
+  <rect x="1480" y="660" width="380" height="30" fill="#e2e8f0" rx="6" />
+  <text x="1495" y="680" class="kpi-label">Vancouver Island: 68%</text>
+
+  <!-- TIER 3: TRUST & MONITORING (Third row) -->
+  <!-- SECTION 06: DATA TRUST -->
+  <rect class="tier3-bg" x="40" y="800" width="560" height="240" rx="12" />
+  <text x="60" y="830" class="section-title">Data Trust</text>
+  <text x="60" y="855" class="label">Can the information be trusted?</text>
+
+  <!-- Trust metrics grid -->
+  <rect class="surface" x="60" y="870" width="130" height="75" rx="8" />
+  <text x="75" y="895" class="value" fill="#107c10">0</text>
+  <text x="75" y="915" class="kpi-label">Missing</text>
+  <text x="75" y="930" class="small-text">Assignments</text>
+
+  <rect class="surface" x="210" y="870" width="130" height="75" rx="8" />
+  <text x="225" y="895" class="value" fill="#f59e0b">5</text>
+  <text x="225" y="915" class="kpi-label">Stale</text>
+  <text x="225" y="930" class="small-text">Confirmation</text>
+
+  <rect class="surface" x="360" y="870" width="130" height="75" rx="8" />
+  <text x="375" y="895" class="value" fill="#107c10">✓</text>
+  <text x="375" y="915" class="kpi-label">Sync</text>
+  <text x="375" y="930" class="small-text">Current</text>
+
+  <!-- Trust score -->
+  <text x="60" y="985" class="label" font-weight="700">Overall Data Confidence</text>
+  <rect x="60" y="990" width="500" height="8" fill="#e2e8f0" rx="4" />
+  <rect x="60" y="990" width="375" height="8" fill="#107c10" rx="4" />
+  <text x="570" y="997" class="kpi-label" fill="#107c10" font-weight="700">75%</text>
+
+  <!-- SECTION 07: REGIONAL HEALTH -->
+  <rect class="tier3-bg" x="620" y="800" width="560" height="240" rx="12" />
+  <text x="640" y="830" class="section-title">Regional Health</text>
+  <text x="640" y="855" class="label">Where is capacity pressure building?</text>
+
+  <!-- Regional bars -->
+  <text x="640" y="885" class="kpi-label" font-weight="700">Lower Mainland</text>
+  <rect x="640" y="895" width="400" height="20" fill="#e2e8f0" rx="4" />
+  <rect x="640" y="895" width="328" height="20" fill="#0078d4" rx="4" />
+  <text x="1055" y="908" class="kpi-label" fill="#0078d4" font-weight="700">82%</text>
+
+  <text x="640" y="940" class="kpi-label" font-weight="700">Vancouver Island</text>
+  <rect x="640" y="950" width="400" height="20" fill="#e2e8f0" rx="4" />
+  <rect x="640" y="950" width="272" height="20" fill="#2a9d8f" rx="4" />
+  <text x="1055" y="963" class="kpi-label" fill="#2a9d8f" font-weight="700">68%</text>
+
+  <!-- Risk indicator -->
+  <rect x="640" y="1000" width="500" height="35" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="6" />
+  <text x="660" y="1025" class="kpi-label" fill="#92400e" font-weight="700">⚠ Lower Mainland approaching critical levels</text>
+
+  <!-- SECTION 08: DATA QUALITY DETAIL -->
+  <rect class="tier3-bg" x="1200" y="800" width="680" height="240" rx="12" />
+  <text x="1220" y="830" class="section-title">Data Quality Review</text>
+  <text x="1220" y="855" class="label">Which centres require data investigation?</text>
+
+  <!-- Quality alerts list -->
+  <rect x="1220" y="870" width="640" height="30" fill="#fff7ed" stroke="#f59e0b" stroke-width="1" rx="6" />
+  <text x="1240" y="890" class="kpi-label">Centre K: Stale capacity confirmation (26 hours old)</text>
+
+  <rect x="1220" y="910" width="640" height="30" fill="#fff7ed" stroke="#f59e0b" stroke-width="1" rx="6" />
+  <text x="1240" y="930" class="kpi-label">Centre M: Missing 2 kennel assignments</text>
+
+  <rect x="1220" y="950" width="640" height="30" fill="#fef2f2" stroke="#d13438" stroke-width="1" rx="6" />
+  <text x="1240" y="970" class="kpi-label">Centre Q: Sync failure with ShelterBuddy (3 hours)</text>
+
+  <!-- TIER 4: ACTION (Bottom row) -->
+  <!-- SECTION 08: OPERATIONAL BRIEFING -->
+  <rect class="tier4-bg" x="40" y="1060" width="1840" height="300" rx="12" />
+  <text x="60" y="1090" class="section-title">Operational Briefing: Recommended Actions</text>
+  <text x="60" y="1115" class="label">What should we do next? | Execute these recommendations immediately</text>
+
+  <!-- Recommendation 1 -->
+  <rect x="60" y="1130" width="580" height="200" fill="#ecfdf5" stroke="#10b981" stroke-width="2" rx="8" />
+  <text x="80" y="1160" class="section-title" fill="#065f46">✓ ROUTE ANIMALS</text>
+  <text x="80" y="1185" class="kpi-label" font-weight="700">Send 4 dogs to Victoria Centre</text>
+  <text x="80" y="1205" class="small-text">Best candidate: 24 open spaces, 74% utilization, data current</text>
+  <text x="80" y="1225" class="small-text">Expected capacity post-intake: 80% DOG utilization</text>
+  <text x="80" y="1245" class="small-text">Timeline: Execute within 2 hours to maintain intake flow</text>
+  <text x="80" y="1270" class="label" fill="#065f46" font-weight="700">Priority: IMMEDIATE</text>
+
+  <!-- Recommendation 2 -->
+  <rect x="660" y="1130" width="580" height="200" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="8" />
+  <text x="680" y="1160" class="section-title" fill="#78350f">⚠ MONITOR CLOSELY</text>
+  <text x="680" y="1185" class="kpi-label" font-weight="700">Review Surrey Centre before routing</text>
+  <text x="680" y="1205" class="small-text">Current: 8 open DOG spaces, 95% utilization (approaching threshold)</text>
+  <text x="680" y="1225" class="small-text">Action: Validate capacity before placement; consider alternative</text>
+  <text x="680" y="1245" class="small-text">Risk: Exceeding 100% would require emergency closure</text>
+  <text x="680" y="1270" class="label" fill="#78350f" font-weight="700">Priority: WITHIN 1 HOUR</text>
+
+  <!-- Recommendation 3 -->
+  <rect x="1260" y="1130" width="620" height="200" fill="#fee2e2" stroke="#d13438" stroke-width="2" rx="8" />
+  <text x="1280" y="1160" class="section-title" fill="#7f1d1d">⛔ DATA CLEANUP REQUIRED</text>
+  <text x="1280" y="1185" class="kpi-label" font-weight="700">Resolve stale data before routing to Centres K, M, Q</text>
+  <text x="1280" y="1205" class="small-text">Centre K: Confirmation age 26 hours (threshold 24 hours)</text>
+  <text x="1280" y="1225" class="small-text">Centre M/Q: Contact for fresh status before accepting animals</text>
+  <text x="1280" y="1245" class="small-text">Impact: Prevents placement errors and improves audit trail</text>
+  <text x="1280" y="1270" class="label" fill="#7f1d1d" font-weight="700">Priority: BEFORE NEW INTAKE</text>
+
+  <!-- Footer note -->
+  <text x="60" y="1385" class="note">Decision Intelligence Command Centre | ZIP/ZAP Reading Pattern (Top-Left → Right → Down) | Visual Hierarchy: Tier 1 (Critical), Tier 2 (Support), Tier 3 (Trust), Tier 4 (Action)</text>
+</svg>

@@ -1,39 +1,21 @@
-# Decision-Driven BI Mockup Agent v2.0
+# Decision-Driven BI Mockup Agent v1.0
 
 ## Purpose
 
-Transform an approved Decision Story Contract (DSC) into a structured report wireframe and SVG prototype blueprint.
+Transform an approved Decision Story Contract (DSC) into a structured report wireframe and SVG layout blueprint.
 
 The Mockup Agent visualizes the approved story.
 
-The Mockup Agent does not create:
-
-```text
-Business Logic
-
-Decisions
-
-Questions
-
-KPIs
-
-Signals
-
-Thresholds
-
-Report Requirements
-```
+The Mockup Agent does not create business logic, decisions, questions, KPIs, or report requirements.
 
 The Mockup Agent exists to answer:
 
 ```text
 What should users see?
 
-Where should users see it?
+Where should they see it?
 
-How should users read it?
-
-How should the story be presented visually?
+How should they read it?
 ```
 
 before technical design begins.
@@ -85,11 +67,7 @@ Approved Story
 into:
 
 ```text
-Business Review Mockup
-
-Visual Prototype
-
-Developer Blueprint
+Visual Blueprint
 ```
 
 without modifying business intent.
@@ -98,81 +76,31 @@ without modifying business intent.
 
 # Governing Standards
 
-The Mockup Agent must follow all approved standards.
-
----
-
-## Standard 01
+The Mockup Agent must follow:
 
 ```text
 MOCKUP_STANDARDS_v1.0.md
 ```
 
-Purpose
+This document is the official source of truth for:
 
 ```text
 Information Hierarchy
 
-Story Flow
+Page Layout
 
 Reading Order
 
-Section Purpose
+Narrative Flow
 
-Container Purpose
+Visual Containers
 
-Mockup Rules
+Wireframe Design
+
+SVG Design
 ```
 
----
-
-## Standard 02
-
-```text
-UX_THEME_STANDARD_v1.0.md
-```
-
-Purpose
-
-```text
-Typography
-
-Colors
-
-Spacing
-
-Visual Language
-
-Component Design
-
-Card Design
-
-Accessibility
-```
-
----
-
-## Standard 03
-
-```text
-LAYOUT_PATTERNS_v1.0.md
-```
-
-Purpose
-
-```text
-Layout Selection
-
-Story Flow
-
-Dashboard Architecture
-
-ZIP / ZAP Pattern
-
-Section Ordering
-
-Reading Journey
-```
+The agent must never violate MOCKUP_STANDARDS_v1.0.
 
 ---
 
@@ -191,9 +119,7 @@ The Mockup Agent must populate approved templates.
 Purpose
 
 ```text
-Generate:
-
-MOCKUP_vX.X.md
+Generate MOCKUP_vX.X.md
 ```
 
 ---
@@ -201,50 +127,18 @@ MOCKUP_vX.X.md
 ## Template 02
 
 ```text
-04_SVG_TEMPLATE_v1.0.md
+04_SVG_GUIDELINES_v1.0.md
 ```
 
 Purpose
 
 ```text
-Generate:
-
-MOCKUP_vX.X.svg
+Generate MOCKUP_vX.X.svg
 ```
 
 ---
 
-# Rendering Guidelines
-
-## Guideline 01
-
-```text
-SVG_GUIDELINES_v1.0.md
-```
-
-Purpose
-
-```text
-SVG Rendering Rules
-
-Margins
-
-Spacing
-
-Sizing
-
-Accessibility
-
-Story Flow Compliance
-
-Theme Application
-
-Rendering Constraints
-```
-
----
-
-# Inputs
+# Input
 
 ## Required Input
 
@@ -355,29 +249,27 @@ New Signals
 
 New Actions
 
-New Decisions
+New Visuals
 ```
 
 ---
 
 # Rule 02 — Preserve Story Order
 
-The mockup must preserve the approved DSC narrative sequence.
-
-The sequence may not be altered.
+The mockup must preserve the DSC narrative sequence.
 
 Example
 
 ```text
-Context
+Operational Snapshot
 
 ↓
 
-Attention
+Action Required
 
 ↓
 
-Decision
+Decision Support
 
 ↓
 
@@ -389,8 +281,10 @@ Trust
 
 ↓
 
-Action
+Recommendations
 ```
+
+The sequence may not be altered.
 
 ---
 
@@ -403,7 +297,7 @@ Priority:
 ```text
 Tier 1
 
-Snapshot
+Operational Snapshot
 
 Action Required
 
@@ -423,9 +317,9 @@ Analysis
 ```text
 Tier 3
 
-Trust
+Data Trust
 
-Monitoring
+Regional Monitoring
 ```
 
 ↓
@@ -449,7 +343,7 @@ Sections
 
 Containers
 
-Reading Flow
+Flow
 
 Hierarchy
 ```
@@ -478,7 +372,7 @@ Approved Mockup
 Approved DSC
 ```
 
-The SVG must never introduce:
+The SVG must never create:
 
 ```text
 Business Logic
@@ -528,101 +422,7 @@ Section Purpose
 Decision Support
 ```
 
-Containers do not exist for decoration.
-
----
-
-# Rule 08 — Layout Pattern Is Mandatory
-
-Before generating a mockup, the agent must select an approved layout pattern.
-
-The selected pattern becomes the source of truth for:
-
-```text
-Section Order
-
-Reading Flow
-
-Information Hierarchy
-
-Business Journey
-
-Visual Sequence
-```
-
----
-
-## Approved Layout Patterns
-
-```text
-Operational Command Centre
-
-Decision Intelligence Command Centre
-
-Capacity Intelligence
-
-Executive Monitoring
-
-Exception Management
-
-Investigative Dashboard
-
-Board Reporting
-
-Narrative Intelligence
-```
-
----
-
-# Rule 09 — Theme Is Separate From Story
-
-```text
-Story
-=
-What Appears
-```
-
-```text
-Layout
-=
-Where It Appears
-```
-
-```text
-Theme
-=
-How It Appears
-```
-
-The theme may change without modifying:
-
-```text
-Business Logic
-
-Story
-
-Questions
-
-Decisions
-```
-
----
-
-# Rule 10 — SVG Must Use Approved Template
-
-All SVG output must be generated using:
-
-```text
-04_SVG_TEMPLATE_v1.0.md
-```
-
-and
-
-```text
-SVG_GUIDELINES_v1.0.md
-```
-
-The renderer may not invent alternative SVG structures.
+Containers do not exist for visual decoration.
 
 ---
 
@@ -664,7 +464,7 @@ Section Order Exists
 Visual Recommendations Exist
 ```
 
-Validate against:
+Validate compliance with:
 
 ```text
 MOCKUP_STANDARDS_v1.0
@@ -678,48 +478,16 @@ Validated Story
 
 ---
 
-# Phase 03 — Select Layout Pattern
-
-Choose the most appropriate pattern from:
-
-```text
-Operational Command Centre
-
-Decision Intelligence Command Centre
-
-Capacity Intelligence
-
-Executive Monitoring
-
-Exception Management
-
-Investigative Dashboard
-
-Board Reporting
-
-Narrative Intelligence
-```
-
-Output
-
-```text
-Selected Layout Pattern
-```
-
----
-
-# Phase 04 — Apply Layout Pattern
+# Phase 03 — Extract Narrative Flow
 
 Build:
 
 ```text
+Story Sequence
+
 Reading Order
 
 Section Hierarchy
-
-Business Journey
-
-ZIP / ZAP Structure
 ```
 
 Output
@@ -730,7 +498,7 @@ Narrative Flow Map
 
 ---
 
-# Phase 05 — Extract Visual Containers
+# Phase 04 — Extract Visual Containers
 
 Map:
 
@@ -751,8 +519,6 @@ Examples
 ```text
 KPI Cards
 
-Status Cards
-
 Priority Table
 
 Ranking Chart
@@ -770,7 +536,7 @@ Visual Container Inventory
 
 ---
 
-# Phase 06 — Build Information Hierarchy
+# Phase 05 — Build Information Hierarchy
 
 Classify content:
 
@@ -793,7 +559,7 @@ Decision Support
 ```text
 Tier 3
 
-Analysis & Trust
+Supporting Analysis
 ```
 
 ↓
@@ -801,7 +567,7 @@ Analysis & Trust
 ```text
 Tier 4
 
-Actions
+Recommendations
 ```
 
 Output
@@ -812,7 +578,7 @@ Hierarchy Model
 
 ---
 
-# Phase 07 — Generate MOCKUP
+# Phase 06 — Populate MOCKUP Template
 
 Populate:
 
@@ -829,59 +595,21 @@ MOCKUP_vX.X.md
 Purpose:
 
 ```text
-Business Review Artifact
-
-Story Validation Artifact
-
-Layout Validation Artifact
+Visual Layout Blueprint
 ```
 
 ---
 
-# Phase 08 — Select UX Theme
+# Phase 07 — Generate SVG Layout
 
-Apply:
-
-```text
-UX_THEME_STANDARD_v1.0
-```
-
-Determine:
+Using:
 
 ```text
-Typography
+MOCKUP_vX.X.md
 
-Colors
++
 
-Spacing
-
-Card Design
-
-Visual Style
-```
-
-Output
-
-```text
-Theme Profile
-```
-
----
-
-# Phase 09 — Generate SVG
-
-Populate:
-
-```text
-04_SVG_TEMPLATE_v1.0.md
-```
-
-Apply:
-
-```text
-UX_THEME_STANDARD_v1.0
-
-SVG_GUIDELINES_v1.0.md
+04_SVG_GUIDELINES_v1.0.md
 ```
 
 Generate:
@@ -893,11 +621,7 @@ MOCKUP_vX.X.svg
 Purpose:
 
 ```text
-Visual Prototype
-
-Executive Review Artifact
-
-Developer Blueprint
+Visual Rendering Blueprint
 ```
 
 ---
@@ -921,29 +645,17 @@ MOCKUP_vX.X.md
 Purpose
 
 ```text
-Business Review
-
-Story Validation
-
-Layout Validation
+Validate layout before implementation.
 ```
 
 ---
 
 ## Output 02
 
-Populate
+Render using
 
 ```text
-04_SVG_TEMPLATE_v1.0.md
-```
-
-Apply
-
-```text
-UX_THEME_STANDARD_v1.0
-
-SVG_GUIDELINES_v1.0.md
+04_SVG_GUIDELINES_v1.0.md
 ```
 
 Generate
@@ -955,11 +667,7 @@ MOCKUP_vX.X.svg
 Purpose
 
 ```text
-Visual Review
-
-UX Review
-
-Developer Handoff
+Visual representation of the approved mockup.
 ```
 
 ---
@@ -976,7 +684,7 @@ MOCKUP_vX.X.md
 MOCKUP_vX.X.svg
 ```
 
-The SVG must never be created before the markdown mockup exists.
+The SVG must never be generated before the markdown mockup exists.
 
 ---
 
@@ -986,8 +694,6 @@ Before completion verify:
 
 ```text
 ✓ DSC Read
-
-✓ Layout Pattern Selected
 
 ✓ Story Preserved
 
@@ -999,8 +705,6 @@ Before completion verify:
 
 ✓ Reading Order Clear
 
-✓ ZIP / ZAP Flow Applied
-
 ✓ Container Placement Defined
 
 ✓ MOCKUP Generated
@@ -1008,12 +712,6 @@ Before completion verify:
 ✓ SVG Generated
 
 ✓ MOCKUP_STANDARDS Followed
-
-✓ LAYOUT_PATTERNS Followed
-
-✓ UX_THEME_STANDARD Followed
-
-✓ SVG_TEMPLATE Used
 
 ✓ SVG_GUIDELINES Followed
 ```
@@ -1063,15 +761,13 @@ Decision Story Contract
 into:
 
 ```text
-Business Review Mockup
+Report Layout
 
-Layout Blueprint
-
-Visual Prototype
+Visual Blueprint
 
 Developer Blueprint
 
-SVG Prototype
+SVG Blueprint
 ```
 
-providing a complete visualization contract before technical design and Power BI implementation begin.
+providing a complete visual design contract before technical design and Power BI implementation begin.

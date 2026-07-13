@@ -53,11 +53,9 @@ The mockup must follow:
 ```text
 Approved DSC
 
-Approved Layout Pattern
+Approved Layout Blueprint
 
 MOCKUP_STANDARDS_v1.0
-
-LAYOUT_PATTERNS_v1.0
 ```
 
 ---
@@ -92,66 +90,6 @@ LAYOUT_PATTERNS_v1.0
 
 ```text
 [Story Goal]
-```
-
----
-
-# LAYOUT PATTERN
-
-## Selected Layout Pattern
-
-```text
-[SELECTED_LAYOUT_PATTERN]
-```
-
----
-
-## Layout Purpose
-
-```text
-[LAYOUT_PATTERN_PURPOSE]
-```
-
----
-
-## Business Journey
-
-```text
-[BUSINESS_JOURNEY]
-```
-
-Example
-
-```text
-What Is Happening?
-
-↓
-
-What Requires Attention?
-
-↓
-
-What Decisions Must Be Made?
-
-↓
-
-Where Should Action Be Taken?
-
-↓
-
-Why?
-
-↓
-
-Can The Information Be Trusted?
-
-↓
-
-Where Is Risk Building?
-
-↓
-
-What Should We Do Next?
 ```
 
 ---
@@ -198,21 +136,17 @@ Section 08
 
 # GLOBAL FILTER AREA
 
-## Purpose
+Purpose
 
 Allow users to focus analysis.
 
----
-
-## Supported Decisions
+Supported Decisions
 
 ```text
 [Decision Supported]
 ```
 
----
-
-## Filters
+Filters
 
 ```text
 [Filter 01]
@@ -224,9 +158,7 @@ Allow users to focus analysis.
 [Filter 04]
 ```
 
----
-
-## Mockup Layout
+Mockup Layout
 
 ```text
 +------------------------------------------------------+
@@ -238,15 +170,7 @@ Allow users to focus analysis.
 
 ---
 
-# SECTION 01
-
-## Section Name
-
-```text
-[SECTION_NAME]
-```
-
----
+# SECTION 01 — OPERATIONAL SNAPSHOT
 
 ## Business Question
 
@@ -274,22 +198,22 @@ Allow users to focus analysis.
 
 ## Purpose
 
-```text
-[Purpose]
-```
+Provide context before decision making begins.
 
 ---
 
 ## Visual Containers
 
 ```text
-[Container 01]
+KPI Card 01
 
-[Container 02]
+KPI Card 02
 
-[Container 03]
+KPI Card 03
 
-[Container 04]
+KPI Card 04
+
+KPI Card 05
 ```
 
 ---
@@ -298,25 +222,261 @@ Allow users to focus analysis.
 
 ```text
 +------------------------------------------------------+
-|                  [SECTION_NAME]                      |
+|                OPERATIONAL SNAPSHOT                  |
++------------------------------------------------------+
+
++-----------+-----------+-----------+-----------+
+| KPI       | KPI       | KPI       | KPI       |
+| Card      | Card      | Card      | Card      |
++-----------+-----------+-----------+-----------+
+
++-----------+
+| KPI       |
+| Card      |
++-----------+
+```
+
+---
+
+# SECTION 02 — ACTION REQUIRED
+
+## Business Question
+
+```text
+[Business Question]
+```
+
+---
+
+## Audience
+
+```text
+[Audience]
+```
+
+---
+
+## Decision Supported
+
+```text
+[Decision]
+```
+
+---
+
+## Purpose
+
+Identify urgent operational issues.
+
+---
+
+## Visual Containers
+
+```text
+Exception KPI
+
+Exception KPI
+
+Exception KPI
+```
+
+---
+
+## Mockup Layout
+
+```text
++------------------------------------------------------+
+|                  ACTION REQUIRED                     |
++------------------------------------------------------+
+
++-----------+-----------+-----------+
+| Exception | Exception | Exception |
+| Card      | Card      | Card      |
++-----------+-----------+-----------+
+```
+
+---
+
+# SECTION 03 — DECISION SUPPORT
+
+## Business Question
+
+```text
+[Business Question]
+```
+
+---
+
+## Audience
+
+```text
+[Audience]
+```
+
+---
+
+## Decision Supported
+
+```text
+[Decision]
+```
+
+---
+
+## Purpose
+
+Support operational decisions.
+
+---
+
+## Visual Containers
+
+```text
+Status Card
+
+Status Card
+
+Status Card
+
+Status Card
+```
+
+---
+
+## Mockup Layout
+
+```text
++------------------------------------------------------+
+|                 DECISION SUPPORT                     |
++------------------------------------------------------+
+
++-----------+-----------+
+| Status    | Status    |
+| Card      | Card      |
++-----------+-----------+
+
++-----------+-----------+
+| Status    | Status    |
+| Card      | Card      |
++-----------+-----------+
+```
+
+---
+
+# SECTION 04 — PRIORITIZATION
+
+## Business Question
+
+```text
+[Business Question]
+```
+
+---
+
+## Audience
+
+```text
+[Audience]
+```
+
+---
+
+## Decision Supported
+
+```text
+[Decision]
+```
+
+---
+
+## Purpose
+
+Support ranking and prioritization.
+
+---
+
+## Visual Containers
+
+```text
+Priority Table
+```
+
+---
+
+## Mockup Layout
+
+```text
++------------------------------------------------------+
+|                PRIORITY DECISION BOARD               |
++------------------------------------------------------+
+
++------------------------------------------------------+
+|                                                      |
+|                 PRIORITY TABLE                       |
+|                                                      |
++------------------------------------------------------+
+```
+
+---
+
+# SECTION 05 — ANALYSIS
+
+## Business Question
+
+```text
+[Business Question]
+```
+
+---
+
+## Audience
+
+```text
+[Audience]
+```
+
+---
+
+## Decision Supported
+
+```text
+[Decision]
+```
+
+---
+
+## Purpose
+
+Explain why conditions exist.
+
+---
+
+## Visual Containers
+
+```text
+Comparison Container
+
+Comparison Container
+```
+
+---
+
+## Mockup Layout
+
+```text
++------------------------------------------------------+
+|                     ANALYSIS                         |
 +------------------------------------------------------+
 
 +----------------------+----------------------+
+| Comparison           | Comparison           |
 | Container            | Container            |
 +----------------------+----------------------+
 ```
 
 ---
 
-# SECTION 02
-
-## Section Name
-
-```text
-[SECTION_NAME]
-```
-
----
+# SECTION 06 — DATA TRUST
 
 ## Business Question
 
@@ -344,20 +504,16 @@ Allow users to focus analysis.
 
 ## Purpose
 
-```text
-[Purpose]
-```
+Validate decision confidence.
 
 ---
 
 ## Visual Containers
 
 ```text
-[Container 01]
+Exception Matrix
 
-[Container 02]
-
-[Container 03]
+Quality Summary
 ```
 
 ---
@@ -366,25 +522,17 @@ Allow users to focus analysis.
 
 ```text
 +------------------------------------------------------+
-|                  [SECTION_NAME]                      |
+|                    DATA TRUST                        |
 +------------------------------------------------------+
 
 +----------------------+----------------------+
-| Container            | Container            |
+| Exception Matrix     | Quality Summary      |
 +----------------------+----------------------+
 ```
 
 ---
 
-# SECTION 03
-
-## Section Name
-
-```text
-[SECTION_NAME]
-```
-
----
+# SECTION 07 — REGIONAL HEALTH
 
 ## Business Question
 
@@ -412,20 +560,16 @@ Allow users to focus analysis.
 
 ## Purpose
 
-```text
-[Purpose]
-```
+Support regional monitoring.
 
 ---
 
 ## Visual Containers
 
 ```text
-[Container 01]
+Ranking Chart
 
-[Container 02]
-
-[Container 03]
+Regional Summary
 ```
 
 ---
@@ -434,25 +578,17 @@ Allow users to focus analysis.
 
 ```text
 +------------------------------------------------------+
-|                  [SECTION_NAME]                      |
+|                  REGIONAL HEALTH                     |
 +------------------------------------------------------+
 
 +----------------------+----------------------+
-| Container            | Container            |
+| Ranking Chart        | Regional Summary     |
 +----------------------+----------------------+
 ```
 
 ---
 
-# SECTION 04
-
-## Section Name
-
-```text
-[SECTION_NAME]
-```
-
----
+# SECTION 08 — OPERATIONAL BRIEFING
 
 ## Business Question
 
@@ -480,18 +616,18 @@ Allow users to focus analysis.
 
 ## Purpose
 
-```text
-[Purpose]
-```
+Translate findings into action.
 
 ---
 
 ## Visual Containers
 
 ```text
-[Container 01]
+Recommendation Card
 
-[Container 02]
+Recommendation Card
+
+Recommendation Card
 ```
 
 ---
@@ -500,277 +636,19 @@ Allow users to focus analysis.
 
 ```text
 +------------------------------------------------------+
-|                  [SECTION_NAME]                      |
+|                OPERATIONAL BRIEFING                  |
 +------------------------------------------------------+
 
 +------------------------------------------------------+
-|                 PRIMARY CONTAINER                     |
-+------------------------------------------------------+
-```
-
----
-
-# SECTION 05
-
-## Section Name
-
-```text
-[SECTION_NAME]
-```
-
----
-
-## Business Question
-
-```text
-[Business Question]
-```
-
----
-
-## Audience
-
-```text
-[Audience]
-```
-
----
-
-## Decision Supported
-
-```text
-[Decision]
-```
-
----
-
-## Purpose
-
-```text
-[Purpose]
-```
-
----
-
-## Visual Containers
-
-```text
-[Container 01]
-
-[Container 02]
-```
-
----
-
-## Mockup Layout
-
-```text
-+------------------------------------------------------+
-|                  [SECTION_NAME]                      |
-+------------------------------------------------------+
-
-+----------------------+----------------------+
-| Container            | Container            |
-+----------------------+----------------------+
-```
-
----
-
-# SECTION 06
-
-## Section Name
-
-```text
-[SECTION_NAME]
-```
-
----
-
-## Business Question
-
-```text
-[Business Question]
-```
-
----
-
-## Audience
-
-```text
-[Audience]
-```
-
----
-
-## Decision Supported
-
-```text
-[Decision]
-```
-
----
-
-## Purpose
-
-```text
-[Purpose]
-```
-
----
-
-## Visual Containers
-
-```text
-[Container 01]
-
-[Container 02]
-```
-
----
-
-## Mockup Layout
-
-```text
-+------------------------------------------------------+
-|                  [SECTION_NAME]                      |
-+------------------------------------------------------+
-
-+----------------------+----------------------+
-| Container            | Container            |
-+----------------------+----------------------+
-```
-
----
-
-# SECTION 07
-
-## Section Name
-
-```text
-[SECTION_NAME]
-```
-
----
-
-## Business Question
-
-```text
-[Business Question]
-```
-
----
-
-## Audience
-
-```text
-[Audience]
-```
-
----
-
-## Decision Supported
-
-```text
-[Decision]
-```
-
----
-
-## Purpose
-
-```text
-[Purpose]
-```
-
----
-
-## Visual Containers
-
-```text
-[Container 01]
-
-[Container 02]
-```
-
----
-
-## Mockup Layout
-
-```text
-+------------------------------------------------------+
-|                  [SECTION_NAME]                      |
-+------------------------------------------------------+
-
-+----------------------+----------------------+
-| Container            | Container            |
-+----------------------+----------------------+
-```
-
----
-
-# SECTION 08
-
-## Section Name
-
-```text
-[SECTION_NAME]
-```
-
----
-
-## Business Question
-
-```text
-[Business Question]
-```
-
----
-
-## Audience
-
-```text
-[Audience]
-```
-
----
-
-## Decision Supported
-
-```text
-[Decision]
-```
-
----
-
-## Purpose
-
-```text
-[Purpose]
-```
-
----
-
-## Visual Containers
-
-```text
-[Container 01]
-
-[Container 02]
-
-[Container 03]
-```
-
----
-
-## Mockup Layout
-
-```text
-+------------------------------------------------------+
-|                  [SECTION_NAME]                      |
+| Recommendation Card                                 |
 +------------------------------------------------------+
 
 +------------------------------------------------------+
-| Recommendation / Narrative Container                 |
+| Recommendation Card                                 |
++------------------------------------------------------+
+
++------------------------------------------------------+
+| Recommendation Card                                 |
 +------------------------------------------------------+
 ```
 
@@ -778,138 +656,42 @@ Allow users to focus analysis.
 
 # FULL PAGE WIREFRAME
 
-## Selected Layout Pattern
-
 ```text
-[SELECTED_LAYOUT_PATTERN]
-```
++------------------------------------------------------+
+| GLOBAL FILTER BAR                                   |
++------------------------------------------------------+
 
----
++------------------------------------------------------+
+| OPERATIONAL SNAPSHOT                                |
++------------------------------------------------------+
 
-## Story Flow
++------------------------------------------------------+
+| ACTION REQUIRED                                     |
++------------------------------------------------------+
 
-```text
-[LAYOUT_PATTERN_FLOW]
-```
++------------------------------------------------------+
+| DECISION SUPPORT                                    |
++------------------------------------------------------+
 
----
++------------------------------------------------------+
+| PRIORITY DECISION BOARD                             |
++------------------------------------------------------+
 
-## Example
++------------------------------------------------------+
+| ANALYSIS                                            |
++------------------------------------------------------+
 
-```text
-Global Filters
++------------------------------------------------------+
+| DATA TRUST                                          |
++------------------------------------------------------+
 
-↓
++------------------------------------------------------+
+| REGIONAL HEALTH                                     |
++------------------------------------------------------+
 
-Provincial Capacity Snapshot
-
-↓
-
-Action Required
-
-↓
-
-Intake Readiness
-
-↓
-
-Placement Decision Board
-
-↓
-
-Capacity Analysis
-
-↓
-
-Data Trust
-
-↓
-
-Regional Health
-
-↓
-
-Operational Briefing
-```
-
----
-
-# VISUAL HIERARCHY
-
-## Tier 1 — Mission Critical
-
-```text
-Snapshot
-
-Action Required
-
-Decision Support
-```
-
----
-
-## Tier 2 — Analysis
-
-```text
-Analysis
-
-Comparisons
-
-Explanation
-```
-
----
-
-## Tier 3 — Trust
-
-```text
-Data Quality
-
-Validation
-
-Regional Monitoring
-```
-
----
-
-## Tier 4 — Action
-
-```text
-Recommendations
-
-Operational Guidance
-
-AI Briefings
-```
-
----
-
-# READING PATTERN
-
-```text
-ZIP / ZAP Flow
-
-Top Left
-
-→
-
-Top Right
-
-↓
-
-Middle Left
-
-→
-
-Middle Right
-
-↓
-
-Bottom Left
-
-→
-
-Bottom Right
++------------------------------------------------------+
+| OPERATIONAL BRIEFING                                |
++------------------------------------------------------+
 ```
 
 ---
@@ -929,12 +711,6 @@ Reading Order
 ---
 
 Story Flow
-
-☐ Approved
-
----
-
-Layout Pattern Applied
 
 ☐ Approved
 
@@ -997,11 +773,7 @@ Generate:
 
 MOCKUP_vX.X.svg
 
-Using:
+using
 
-04_SVG_TEMPLATE_v1.0.md
-
-and
-
-SVG_GUIDELINES_v1.0.md
+04_SVG_GUIDELINES_v1.0.md
 ```
