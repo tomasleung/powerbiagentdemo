@@ -1,0 +1,1315 @@
+# DATA_MODEL_STANDARDS_v1.0
+## Decision-Driven BI Semantic Modeling Standards
+
+---
+
+# Document Metadata
+
+Document Name
+
+```text
+DATA_MODEL_STANDARDS
+```
+
+Version
+
+```text
+1.0
+```
+
+Owner
+
+```text
+Decision-Driven BI Framework
+```
+
+Status
+
+```text
+Approved Standard
+```
+
+Purpose
+
+Provide a governing semantic modeling framework for all Decision-Driven BI solutions.
+
+This standard combines:
+
+```text
+Decision-Driven BI Principles
++
+Kimball Dimensional Modeling
++
+Microsoft Fabric Semantic Modeling Standards
++
+SQLBI Best Practices
+```
+
+The goal is to ensure all semantic models are:
+
+```text
+Decision Driven
+
+Business Focused
+
+Consistent
+
+Scalable
+
+Performant
+
+Maintainable
+
+AI Ready
+```
+
+---
+
+# SECTION 01 — MODELING PHILOSOPHY
+
+## Core Principle
+
+The semantic model exists to support business decisions.
+
+The model must not be driven by source systems.
+
+The model must be driven by decision requirements.
+
+---
+
+## Incorrect Design Approach
+
+```text
+Source Tables
+↓
+Columns
+↓
+Relationships
+↓
+Dashboard
+```
+
+---
+
+## Correct Design Approach
+
+```text
+Decision
+↓
+Business Question
+↓
+Signal
+↓
+Measure
+↓
+Grain
+↓
+Fact
+↓
+Dimension
+↓
+Semantic Model
+```
+
+---
+
+## Model Success Criteria
+
+A semantic model is successful when:
+
+```text
+Every Measure supports a Signal.
+
+Every Signal supports a Business Question.
+
+Every Business Question supports a Decision.
+
+Every Decision supports Action.
+```
+
+---
+
+# SECTION 02 — DECISION TRACEABILITY
+
+## Purpose
+
+Maintain complete traceability from business intent to semantic design.
+
+---
+
+## Required Traceability Chain
+
+```text
+Decision
+↓
+Business Question
+↓
+Signal
+↓
+Measure
+↓
+Fact
+↓
+Dimension
+↓
+Visual
+```
+
+---
+
+## Required Traceability Rule
+
+Every measure must support:
+
+```text
+At Least One Signal
+```
+
+Every signal must support:
+
+```text
+At Least One Business Question
+```
+
+Every business question must support:
+
+```text
+At Least One Decision
+```
+
+---
+
+## Decision Traceability Example
+
+```text
+Decision
+
+Can this centre receive another animal?
+
+↓
+
+Signal
+
+Remaining Capacity
+
+↓
+
+Measure
+
+Available Spaces
+
+↓
+
+Fact
+
+Fact_Capacity
+
+↓
+
+Visual
+
+Intake Readiness
+```
+
+---
+
+# SECTION 03 — GRAIN-FIRST DESIGN
+
+## Governing Rule
+
+Always define grain before creating a fact table.
+
+Fact tables must never determine their own grain.
+
+---
+
+## Grain Definition
+
+Grain answers:
+
+```text
+What does one row represent?
+```
+
+---
+
+## Examples
+
+### Good
+
+```text
+Centre
++
+Date
++
+Animal Type
+```
+
+### Good
+
+```text
+Animal
++
+Centre
++
+Date
+```
+
+### Bad
+
+```text
+Capacity
++
+Occupancy
+```
+
+within the same row without explicit definition.
+
+---
+
+## Grain Declaration Rule
+
+Every fact table must document:
+
+```text
+Business Grain
+
+Business Purpose
+
+Example Row
+```
+
+---
+
+## Grain Validation Test
+
+Ask:
+
+```text
+Can every row be described in one sentence?
+```
+
+Example:
+
+```text
+One row represents centre capacity
+for a specific date and animal type.
+```
+
+---
+
+# SECTION 04 — DATA MODEL MATRIX STANDARD
+
+## Purpose
+
+Provide business-to-semantic traceability.
+
+---
+
+## Required Structure
+
+```text
+Decision
+↓
+Question
+↓
+Signal
+↓
+Measure
+↓
+Fact
+↓
+Dimension
+```
+
+---
+
+## Matrix Responsibilities
+
+Document:
+
+```text
+Supported Decisions
+
+Business Questions
+
+Signals
+
+Measures
+
+Fact Tables
+
+Dimension Tables
+```
+
+---
+
+## Matrix Rule
+
+No measure may exist without business justification.
+
+---
+
+# SECTION 05 — FACT IDENTIFICATION RULES
+
+## Fact Definition
+
+Facts contain measurable events or measurable states.
+
+---
+
+## Fact Qualification Test
+
+A table is a fact when it stores:
+
+```text
+Counts
+
+Volumes
+
+Quantities
+
+Capacities
+
+Utilization
+
+Transactions
+
+Snapshots
+
+Performance Metrics
+```
+
+---
+
+## Fact Characteristics
+
+Facts must:
+
+```text
+Have Declared Grain
+
+Contain Measurable Values
+
+Contain Foreign Keys
+
+Support Business Calculations
+
+Relate To Dimensions
+```
+
+---
+
+## Fact Naming Standards
+
+Physical Layer
+
+```text
+Fact_Capacity
+
+Fact_Occupancy
+
+Fact_Confirmation
+```
+
+Business Layer
+
+```text
+Capacity
+
+Occupancy
+
+Confirmation
+```
+
+---
+
+## Fact Design Rules
+
+Facts should:
+
+```text
+Be Narrow
+
+Be Additive Where Possible
+
+Avoid Free Text
+
+Avoid Commentary
+
+Avoid Descriptive Attributes
+```
+
+---
+
+## Fact Validation Test
+
+A fact table should answer:
+
+```text
+What Happened?
+
+How Many?
+
+How Much?
+
+How Often?
+```
+
+---
+
+# SECTION 06 — DIMENSION IDENTIFICATION RULES
+
+## Dimension Definition
+
+Dimensions provide business context.
+
+---
+
+## Dimension Qualification Test
+
+Users naturally ask:
+
+```text
+By Centre
+
+By Region
+
+By Date
+
+By Animal Type
+
+By Department
+```
+
+These are dimensions.
+
+---
+
+## Dimension Characteristics
+
+Dimensions should contain:
+
+```text
+Names
+
+Descriptions
+
+Classifications
+
+Hierarchies
+
+Grouping Attributes
+```
+
+---
+
+## Standard Shared Dimensions
+
+```text
+Dim_Date
+
+Dim_Region
+
+Dim_Centre
+
+Dim_AnimalType
+
+Dim_Location
+```
+
+---
+
+## Dimension Rules
+
+Dimensions must:
+
+```text
+Be Business Friendly
+
+Support Filtering
+
+Support Grouping
+
+Support Drill Down
+```
+
+---
+
+## Dimension Validation Test
+
+A dimension should answer:
+
+```text
+Who?
+
+What?
+
+Where?
+
+When?
+```
+
+---
+
+# SECTION 07 — MEASURE DESIGN RULES
+
+## Measure First Principle
+
+Before building facts:
+
+```text
+Define Measures First
+```
+
+---
+
+## Every Measure Must Define
+
+```text
+Measure Name
+
+Business Definition
+
+Decision Supported
+
+Signal Supported
+
+Threshold
+
+Action
+
+Visual Usage
+
+Fact Source
+```
+
+---
+
+## Example
+
+Measure
+
+```text
+Remaining Capacity
+```
+
+Business Definition
+
+```text
+Available Care Capacity
+```
+
+Decision Supported
+
+```text
+Can this centre receive another animal?
+```
+
+---
+
+## Explicit Measures Only
+
+Always create explicit measures.
+
+Avoid implicit aggregations.
+
+---
+
+## Measure Validation Test
+
+Ask:
+
+```text
+What decision becomes easier because of this measure?
+```
+
+If no answer exists:
+
+```text
+The measure should not exist.
+```
+
+---
+
+# SECTION 08 — RELATIONSHIP RULES
+
+## Standard Relationship Pattern
+
+```text
+Dimension
+      ↓
+Fact
+```
+
+---
+
+## Preferred Cardinality
+
+```text
+One-To-Many
+```
+
+---
+
+## Avoid
+
+```text
+Many-To-Many
+```
+
+unless justified.
+
+---
+
+## Filter Direction
+
+Default:
+
+```text
+Single Direction
+
+Dimension → Fact
+```
+
+---
+
+## Relationship Documentation
+
+Every relationship must define:
+
+```text
+Parent
+
+Child
+
+Cardinality
+
+Filter Direction
+
+Business Purpose
+```
+
+---
+
+# SECTION 09 — KIMBALL STANDARDS
+
+## Star Schema First
+
+Default architecture:
+
+```text
+Dimensions
+      ↓
+Fact
+```
+
+---
+
+## Conformed Dimensions
+
+Shared dimensions must be reused.
+
+Examples:
+
+```text
+Date
+
+Centre
+
+Region
+```
+
+---
+
+## Business-Focused Design
+
+Model for:
+
+```text
+Analysis
+```
+
+not:
+
+```text
+Source System Convenience
+```
+
+---
+
+## Grain Before Fact
+
+Kimball Rule:
+
+```text
+Declare Grain First
+```
+
+Always.
+
+---
+
+# SECTION 10 — MICROSOFT FABRIC STANDARDS
+
+## Semantic Model Principles
+
+Follow Microsoft Fabric semantic modeling guidance.
+
+---
+
+## Preferred Design
+
+```text
+Star Schema
+
+Explicit Measures
+
+Business Naming
+
+Reusable Dimensions
+```
+
+---
+
+## Lean Models
+
+Only include:
+
+```text
+Required Tables
+
+Required Columns
+
+Required Measures
+```
+
+---
+
+## Memory Optimization
+
+Avoid unnecessary:
+
+```text
+GUIDs
+
+Large Text Fields
+
+Unused Attributes
+
+High Cardinality Columns
+```
+
+---
+
+## Business Naming Standard
+
+Expose:
+
+```text
+Care Capacity
+
+Animals In Care
+
+Region
+```
+
+Rather than technical names.
+
+---
+
+# SECTION 11 — SQLBI STANDARDS
+
+## DAX Philosophy
+
+Use:
+
+```text
+Measures
+```
+
+before:
+
+```text
+Calculated Columns
+```
+
+---
+
+## Base Measure Pattern
+
+Preferred:
+
+```text
+Base Measure
+↓
+Derived Measure
+↓
+Presentation Measure
+```
+
+---
+
+## Context Awareness
+
+Measures should consider:
+
+```text
+Filter Context
+
+Row Context
+
+Evaluation Context
+```
+
+---
+
+## Reusability
+
+Measures should be reusable across reports.
+
+---
+
+# SECTION 12 — PERFORMANCE STANDARDS
+
+## Lean Models
+
+Only load required data.
+
+---
+
+## Column Reduction
+
+Remove:
+
+```text
+Unused Columns
+
+Duplicate Attributes
+
+Unused Flags
+```
+
+---
+
+## Cardinality Management
+
+Reduce:
+
+```text
+Free Text
+
+Long Strings
+
+GUIDs
+
+Unique Transaction Keys
+```
+
+where possible.
+
+---
+
+## Relationship Simplicity
+
+Prefer:
+
+```text
+One-To-Many
+
+Single Direction
+```
+
+---
+
+## Optimization Goals
+
+```text
+Performance
+
+Maintainability
+
+Simplicity
+```
+
+---
+
+# SECTION 13 — NAMING STANDARDS
+
+## Naming Philosophy
+
+Use business language.
+
+---
+
+## Good Examples
+
+```text
+Centre
+
+Region
+
+Care Capacity
+
+Remaining Capacity
+
+Capacity Utilization %
+```
+
+---
+
+## Bad Examples
+
+```text
+tblCentre
+
+FACT_OCCUPANCY
+
+spCapacity
+
+dim_region
+```
+
+---
+
+## Table Naming Rules
+
+Physical Layer
+
+```text
+Fact_Capacity
+
+Dim_Centre
+```
+
+Business Layer
+
+```text
+Capacity
+
+Centre
+```
+
+---
+
+# SECTION 14 — AI READINESS STANDARDS
+
+## Purpose
+
+Prepare semantic models for:
+
+```text
+Copilot
+
+Data Agents
+
+Semantic Search
+
+Natural Language Queries
+```
+
+---
+
+## Table Documentation
+
+Every table must include:
+
+```text
+Description
+
+Business Purpose
+
+Declared Grain
+```
+
+---
+
+## Column Documentation
+
+Every business column should include:
+
+```text
+Definition
+
+Business Meaning
+```
+
+---
+
+## Measure Documentation
+
+Every measure must include:
+
+```text
+Business Definition
+
+Decision Supported
+
+Business Owner
+```
+
+---
+
+## AI Readiness Goal
+
+An AI agent should explain:
+
+```text
+Why the table exists.
+
+Why the measure exists.
+
+Which decision is supported.
+
+Which business question is answered.
+```
+
+without external documentation.
+
+---
+
+# SECTION 15 — SEMANTIC MODEL SPEC STANDARD
+
+## Purpose
+
+Define detailed semantic architecture.
+
+---
+
+## Every Table Must Define
+
+```text
+Table Name
+
+Table Type
+
+Business Purpose
+
+Source System
+```
+
+---
+
+## Every Column Must Define
+
+```text
+Column Name
+
+Business Name
+
+Data Type
+
+Description
+```
+
+---
+
+## Every Relationship Must Define
+
+```text
+Parent
+
+Child
+
+Cardinality
+
+Filter Direction
+```
+
+---
+
+# SECTION 16 — MEASURE CONTRACT STANDARD
+
+## Purpose
+
+Govern business measures.
+
+---
+
+## Every Measure Contract Must Define
+
+```text
+Business Definition
+
+Calculation Logic
+
+Formatting Rules
+
+Thresholds
+
+Actions
+
+Supported Decisions
+
+Supported Visuals
+```
+
+---
+
+## Governance Goal
+
+Ensure measure consistency across:
+
+```text
+Reports
+
+Dashboards
+
+Power BI
+
+Fabric
+```
+
+---
+
+# SECTION 17 — INPUT STANDARDS
+
+## Required Inputs
+
+```text
+TRD_vX.X.md
+
+REPORT_STORY_vX.X.md
+```
+
+---
+
+## Reference Inputs
+
+```text
+BRD
+
+REPORT_STORY_MATRIX_vX.X.md
+```
+
+---
+
+## Input Priority
+
+```text
+1. REPORT_STORY
+
+2. TRD
+
+3. REPORT_STORY_MATRIX
+
+4. BRD
+```
+
+Decision intent remains the source of truth.
+
+---
+
+# SECTION 18 — OUTPUT STANDARDS
+
+The Semantic Design Agent must generate:
+
+```text
+DATA_MODEL_MATRIX_vX.X.md
+
+SEMANTIC_MODEL_SPEC_vX.X.md
+
+MEASURE_CONTRACT_vX.X.md
+```
+
+---
+
+## DATA_MODEL_MATRIX
+
+Purpose:
+
+```text
+Business To Semantic Traceability
+```
+
+---
+
+## SEMANTIC_MODEL_SPEC
+
+Purpose:
+
+```text
+Semantic Architecture Blueprint
+```
+
+---
+
+## MEASURE_CONTRACT
+
+Purpose:
+
+```text
+Measure Governance Contract
+```
+
+---
+
+# SECTION 19 — FINAL MODEL VALIDATION CHECKLIST
+
+Before approval:
+
+```text
+□ Decision Supported
+
+□ Business Questions Mapped
+
+□ Signals Identified
+
+□ Measures Defined
+
+□ Grain Defined
+
+□ Facts Identified
+
+□ Dimensions Identified
+
+□ Relationships Defined
+
+□ Star Schema Applied
+
+□ Fabric Standards Followed
+
+□ SQLBI Standards Followed
+
+□ Performance Reviewed
+
+□ Naming Standards Applied
+
+□ AI Readiness Verified
+```
+
+---
+
+# STANDARD SUCCESS STATEMENT
+
+A semantic model succeeds when:
+
+```text
+Every Measure
+supports a Signal
+
+Every Signal
+supports a Business Question
+
+Every Business Question
+supports a Decision
+
+Every Decision
+supports Business Action
+
+Every Fact
+supports Analysis
+
+Every Dimension
+provides Context
+```
+
+The semantic model is:
+
+```text
+A Decision Product
+
+not
+
+A Source-System Replica
+```

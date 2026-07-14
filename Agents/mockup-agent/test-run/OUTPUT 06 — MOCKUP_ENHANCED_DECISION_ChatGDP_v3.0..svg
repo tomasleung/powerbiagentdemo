@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080"
+viewBox="0 0 1920 1080"
+xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+
+<style>
+
+text{
+font-family:Inter,Segoe UI,sans-serif;
+}
+
+.background{
+fill:#F6F2EC;
+}
+
+.sidebar{
+fill:#2F2118;
+}
+
+.sidebarTitle{
+fill:white;
+font-size:26px;
+font-weight:700;
+}
+
+.menu{
+fill:#C7B9A8;
+font-size:15px;
+}
+
+.menuActive{
+fill:#6B4A2D;
+}
+
+.menuActiveText{
+fill:white;
+font-size:15px;
+font-weight:600;
+}
+
+.headerTitle{
+fill:#3F2E20;
+font-size:34px;
+font-weight:700;
+}
+
+.headerSubtitle{
+fill:#8A8076;
+font-size:15px;
+}
+
+.filter{
+fill:white;
+stroke:#E7DDD2;
+stroke-width:1;
+}
+
+.card{
+fill:white;
+stroke:#E7DDD2;
+stroke-width:1;
+}
+
+.cardTitle{
+fill:#8A8076;
+font-size:13px;
+font-weight:600;
+}
+
+.cardValue{
+fill:#3F2E20;
+font-size:42px;
+font-weight:800;
+}
+
+.cardDescription{
+fill:#A29A90;
+font-size:13px;
+}
+
+.good{
+fill:#6AA84F;
+}
+
+.warning{
+fill:#D6A741;
+}
+
+.danger{
+fill:#D65A5A;
+}
+
+.sectionTitle{
+fill:#3F2E20;
+font-size:22px;
+font-weight:700;
+}
+
+.small{
+fill:#8A8076;
+font-size:14px;
+}
+
+</style>
+
+<filter id="shadow">
+
+<feDropShadow
+dx="0"
+dy="8"
+stdDeviation="10"
+flood-opacity=".10"/>
+
+</filter>
+
+</defs>
+
+<!-- Background -->
+
+<rect class="background"
+width="1920"
+height="1080"/>
+
+<!-- Sidebar -->
+
+<rect
+class="sidebar"
+x="0"
+y="0"
+width="250"
+height="1080"/>
+
+<text
+class="sidebarTitle"
+x="40"
+y="60">
+
+BC SPCA
+
+</text>
+
+<rect
+x="20"
+y="110"
+width="210"
+height="48"
+rx="14"
+class="menuActive"/>
+
+<text
+x="45"
+y="140"
+class="menuActiveText">
+
+Live Capacity
+
+</text>
+
+<text class="menu" x="45" y="210">Animal Flow</text>
+<text class="menu" x="45" y="250">Intake</text>
+<text class="menu" x="45" y="290">Outcome</text>
+<text class="menu" x="45" y="330">Health</text>
+<text class="menu" x="45" y="370">Operations</text>
+
+<!-- Header -->
+
+<text
+class="headerTitle"
+x="290"
+y="60">
+
+Live Capacity Intelligence
+
+</text>
+
+<text
+class="headerSubtitle"
+x="290"
+y="90">
+
+Decision Story • Which centres can safely receive incoming animals?
+
+</text>
+
+<!-- Filters -->
+
+<rect
+class="filter"
+x="290"
+y="120"
+width="220"
+height="42"
+rx="12"/>
+
+<rect
+class="filter"
+x="530"
+y="120"
+width="220"
+height="42"
+rx="12"/>
+
+<rect
+class="filter"
+x="770"
+y="120"
+width="220"
+height="42"
+rx="12"/>
+
+<rect
+class="filter"
+x="1010"
+y="120"
+width="220"
+height="42"
+rx="12"/>
+
+<!-- KPI Cards -->
+
+<g filter="url(#shadow)">
+
+<rect class="card"
+x="290"
+y="210"
+width="270"
+height="150"
+rx="20"/>
+
+<text class="cardTitle"
+x="320"
+y="250">
+
+OPEN DOG SPACES
+
+</text>
+
+<text class="cardValue"
+x="320"
+y="305">
+
+320
+
+</text>
+
+<text
+class="cardDescription"
+x="320"
+y="335">
+
+Available across province
+
+</text>
+
+<circle
+cx="520"
+cy="245"
+r="10"
+class="good"/>
+
+</g>
+
+<g filter="url(#shadow)">
+
+<rect class="card"
+x="590"
+y="210"
+width="270"
+height="150"
+rx="20"/>
+
+<text class="cardTitle"
+x="620"
+y="250">
+
+DOG UTILIZATION
+
+</text>
+
+<text class="cardValue"
+x="620"
+y="305">
+
+74%
+
+</text>
+
+<text
+class="cardDescription"
+x="620"
+y="335">
+
+Healthy operating level
+
+</text>
+
+<circle
+cx="820"
+cy="245"
+r="10"
+class="warning"/>
+
+</g>
+
+<g filter="url(#shadow)">
+
+<rect class="card"
+x="890"
+y="210"
+width="270"
+height="150"
+rx="20"/>
+
+<text class="cardTitle"
+x="920"
+y="250">
+
+EMERGENCY CLOSURES
+
+</text>
+
+<text class="cardValue"
+x="920"
+y="305">
+
+3
+
+</text>
+
+<text
+class="cardDescription"
+x="920"
+y="335">
+
+Require immediate action
+
+</text>
+
+<circle
+cx="1120"
+cy="245"
+r="10"
+class="danger"/>
+
+</g>
+
+<g filter="url(#shadow)">
+
+<rect class="card"
+x="1190"
+y="210"
+width="270"
+height="150"
+rx="20"/>
+
+<text class="cardTitle"
+x="1220"
+y="250">
+
+READY CENTRES
+
+</text>
+
+<text class="cardValue"
+x="1220"
+y="305">
+
+12
+
+</text>
+
+<text
+class="cardDescription"
+x="1220"
+y="335">
+
+Available for intake
+
+</text>
+
+<circle
+cx="1420"
+cy="245"
+r="10"
+class="good"/>
+
+</g>
+
+<!-- Large Content Cards -->
+
+<rect
+class="card"
+filter="url(#shadow)"
+x="290"
+y="410"
+width="780"
+height="300"
+rx="22"/>
+
+<text
+class="sectionTitle"
+x="330"
+y="455">
+
+Placement Decision Board
+
+</text>
+
+<text
+class="small"
+x="330"
+y="485">
+
+Prioritized intake recommendations
+
+</text>
+
+<rect
+class="card"
+filter="url(#shadow)"
+x="1100"
+y="410"
+width="620"
+height="300"
+rx="22"/>
+
+<text
+class="sectionTitle"
+x="1140"
+y="455">
+
+Capacity Analysis
+
+</text>
+
+<text
+class="small"
+x="1140"
+y="485">
+
+Regional capacity comparison
+
+</text>
+
+<rect
+class="card"
+filter="url(#shadow)"
+x="290"
+y="740"
+width="1430"
+height="270"
+rx="22"/>
+
+<text
+class="sectionTitle"
+x="330"
+y="785">
+
+Operational Briefing
+
+</text>
+
+<text
+class="small"
+x="330"
+y="815">
+
+Recommended actions generated from current capacity
+
+</text>
+
+</svg>
