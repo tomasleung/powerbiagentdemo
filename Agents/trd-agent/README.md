@@ -1,49 +1,32 @@
-# TRD Agent v1.0
+# Semantic Design Agent
 ## Decision-Driven BI Framework
 
 ---
 
 # Purpose
 
-The TRD Agent converts approved business design artifacts into a Technical Requirements Document (TRD).
+The Semantic Design Agent transforms approved technical design artifacts into governed semantic design artifacts.
 
-The TRD serves as the implementation bridge between:
+The agent serves as the bridge between:
 
 ```text
-Business Design
-
-↓
-
 Technical Design
 
 ↓
 
 Semantic Design
+
+↓
+
+Semantic Implementation
 ```
 
-The TRD Agent documents:
+The Semantic Design Agent answers:
 
 ```text
-Sources
-
-Targets
-
-High-Level Data Model
-
-Measures
-
-Visual Requirements
-
-Interaction Requirements
-
-Security Requirements
-
-Validation Requirements
-
-Deployment Considerations
+What semantic model must exist
+to support the approved business decisions?
 ```
-
-before semantic modeling and development begin.
 
 ---
 
@@ -62,7 +45,7 @@ REPORT_STORY_MATRIX
 
 ↓
 
-REPORT_STORY (DSC)
+REPORT_STORY
 
 ↓
 
@@ -70,11 +53,11 @@ Mockup Agent
 
 ↓
 
-MOCKUP.md
+MOCKUP
 
 ↓
 
-MOCKUP.svg
+SVG
 
 ↓
 
@@ -87,244 +70,238 @@ TRD
 ↓
 
 Semantic Design Agent
+
+↓
+
+DATA_MODEL_MATRIX
+
+↓
+
+SEMANTIC_MODEL_SPEC
+
+↓
+
+MEASURE_CONTRACT
+
+↓
+
+Semantic Build Agent
+
+↓
+
+Microsoft Fabric Semantic Model
+
+↓
+
+Power BI Report
+```
+
+---
+
+# Core Philosophy
+
+The semantic model exists to support:
+
+```text
+Business Decisions
+```
+
+not:
+
+```text
+Source Systems
+```
+
+The Semantic Design Agent follows:
+
+```text
+Decision-Driven BI Principles
+
+Kimball Standards
+
+Microsoft Fabric Standards
+
+SQLBI Best Practices
+
+AI Readiness Standards
 ```
 
 ---
 
 # Inputs
 
-## Required Inputs
+## Required
 
 ```text
-BRD
+TRD_vX.X.md
 
-REPORT_STORY_MATRIX
+REPORT_STORY_vX.X.md
+```
 
-REPORT_STORY (DSC)
+---
 
-MOCKUP.md
+## Reference
 
-MOCKUP.svg
+```text
+INPUT_BRD_vX.X.md
+
+REPORT_STORY_MATRIX_vX.X.md
+```
+
+---
+
+# Outputs
+
+## Output 01
+
+```text
+DATA_MODEL_MATRIX_vX.X.md
+```
+
+Purpose:
+
+```text
+Business-to-Semantic Traceability
+```
+
+---
+
+## Output 02
+
+```text
+SEMANTIC_MODEL_SPEC_vX.X.md
+```
+
+Purpose:
+
+```text
+Semantic Architecture Blueprint
+```
+
+---
+
+## Output 03
+
+```text
+MEASURE_CONTRACT_vX.X.md
+```
+
+Purpose:
+
+```text
+Measure Governance Contract
 ```
 
 ---
 
 # Standards
 
-Located in:
-
 ```text
 standards/
+
+DATA_MODEL_STANDARDS_v1.0.md
 ```
 
-Files:
+Defines:
 
 ```text
-TRD_STANDARDS_v1.0.md
+Semantic Modeling Standards
+
+Fact Standards
+
+Dimension Standards
+
+Measure Standards
+
+Relationship Standards
+
+Fabric Standards
 ```
 
 ---
 
 # Templates
 
-Located in:
-
 ```text
-templates/
-```
+08_DATA_MODEL_MATRIX_TEMPLATE_v1.0.md
 
-Files:
+09_SEMANTIC_MODEL_SPEC_TEMPLATE_v1.0.md
 
-```text
-05_TRD_TEMPLATE_v1.0.md
+10_MEASURE_CONTRACT_TEMPLATE_v1.0.md
 ```
 
 ---
 
 # Guidelines
 
-Located in:
-
 ```text
-guidelines/
+SEMANTIC_DESIGN_GUIDELINES_v1.0.md
 ```
 
-Files:
+Defines:
 
 ```text
-TRD_GUIDELINES_v1.0.md
+Modeling Guidance
+
+Documentation Guidance
+
+Validation Guidance
+
+Handoff Guidance
 ```
-
----
-
-# Output
-
-## Output 01
-
-```text
-TRD_vX.X.md
-```
-
-Purpose:
-
-```text
-Technical Implementation Blueprint
-```
-
----
-
-# What The TRD Answers
-
-```text
-How will the approved solution be implemented?
-```
-
----
-
-# What The TRD Does Not Answer
-
-```text
-What story should be told?
-
-What should users see?
-
-How should the report look?
-```
-
-These questions were already answered by previous agents.
 
 ---
 
 # Workflow
 
 ```text
-Read Approved Inputs
+REPORT_STORY
+
++
+
+TRD
 
 ↓
 
-Validate Business Design
+DATA_MODEL_MATRIX
 
 ↓
 
-Identify Sources & Targets
+SEMANTIC_MODEL_SPEC
 
 ↓
 
-Build High-Level Data Model
-
-↓
-
-Build Measure Inventory
-
-↓
-
-Build Visual Mapping
-
-↓
-
-Build Interaction Design
-
-↓
-
-Build Security Design
-
-↓
-
-Build Validation Rules
-
-↓
-
-Build Deployment Considerations
-
-↓
-
-Generate TRD
+MEASURE_CONTRACT
 ```
 
 ---
 
-# Deliverables
+# Production Status
 
 ```text
-TRD_vX.X.md
-```
+Version: 1.0
 
----
+Status: Production Ready
 
-# Validation
-
-Before completion verify:
-
-```text
-✓ DSC Reviewed
-
-✓ Mockup Reviewed
-
-✓ SVG Reviewed
-
-✓ Sources Identified
-
-✓ Targets Identified
-
-✓ Measures Identified
-
-✓ Visual Mapping Complete
-
-✓ Security Defined
-
-✓ Validation Defined
-
-✓ Deployment Requirements Defined
-
-✓ Traceability Preserved
+Validation: Animal Flow Test Run Passed
 ```
 
 ---
 
 # Success Statement
 
-The TRD Agent succeeds when:
+The Semantic Design Agent succeeds when:
 
 ```text
-A developer can understand
-
-What must be built
-
-Why it must be built
-
-How it should behave
-```
-
-without revisiting:
-
-```text
-BRD
-
-REPORT_STORY_MATRIX
-
-REPORT_STORY (DSC)
-
-MOCKUP
-
-SVG
-```
-
-The result is:
-
-```text
-A Complete Technical Implementation Contract
-```
-
-between:
-
-```text
-Business Design
+Business Intent
 
 ↓
 
-Technical Design
+Semantic Architecture
 
 ↓
 
-Semantic Design
+Measure Governance
 ```
+
+remain fully traceable and implementation-ready.

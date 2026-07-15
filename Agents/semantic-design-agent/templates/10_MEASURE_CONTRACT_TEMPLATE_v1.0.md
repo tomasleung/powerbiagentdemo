@@ -43,24 +43,28 @@ Draft
 
 Purpose
 
-Define the business, semantic, and calculation governance rules for all measures within the semantic model.
+Define the business meaning, calculation governance, threshold logic, decision support, ownership, dependencies, formatting standards, and behavioral expectations for all measures within the semantic model.
 
 This document serves as the bridge between:
 
 ```text
-Semantic Model Design
+Business Decisions
 
 ↓
 
-Business Calculations
+Signals
 
 ↓
 
-Power BI Measures
+Measures
 
 ↓
 
-Decision Support
+Semantic Model
+
+↓
+
+Power BI / Fabric Implementation
 ```
 
 The Measure Contract prevents:
@@ -68,11 +72,13 @@ The Measure Contract prevents:
 ```text
 Metric Disputes
 
-Duplicate Logic
+Duplicate Business Logic
 
-Inconsistent Calculations
+Ambiguous Calculations
 
 Threshold Confusion
+
+Inconsistent Reporting
 
 Decision Misalignment
 ```
@@ -106,26 +112,30 @@ DATA_MODEL_STANDARDS_v1.0.md
 Every measure must support:
 
 ```text
-A Signal
+Decision
 
 ↓
 
-A Business Question
+Business Question
 
 ↓
 
-A Decision
+Signal
 
 ↓
 
-An Action
+Measure
+
+↓
+
+Action
 ```
 
 ---
 
 ## Measure Hierarchy
 
-Preferred design:
+Preferred structure:
 
 ```text
 Base Measure
@@ -148,20 +158,22 @@ Every measure should answer:
 ```text
 Why does this measure exist?
 
+Which signal does it support?
+
 Which decision does it support?
 
-Which action does it drive?
+What action does it drive?
 ```
 
 ---
 
 # SECTION 01 — MEASURE INVENTORY
 
-| Measure Name | Type | Decision Supported | Status |
-|-------------|-------------|-------------|-------------|
-| [Measure] | Base | [Decision] | Draft |
-| [Measure] | Derived | [Decision] | Draft |
-| [Measure] | Presentation | [Decision] | Draft |
+| Measure Name | Classification | Signal Supported | Decision Supported | Status |
+|-------------|-------------|-------------|-------------|-------------|
+| [Measure] | Base | [Signal] | [Decision] | Draft |
+| [Measure] | Derived | [Signal] | [Decision] | Draft |
+| [Measure] | Presentation | [Signal] | [Decision] | Draft |
 
 ---
 
@@ -209,6 +221,30 @@ Which action does it drive?
 
 ---
 
+### Traceability Path
+
+```text
+Decision
+
+↓
+
+Question
+
+↓
+
+Signal
+
+↓
+
+Measure
+
+↓
+
+Action
+```
+
+---
+
 Repeat for every measure.
 
 ---
@@ -225,7 +261,7 @@ Repeat for every measure.
 
 ---
 
-### Measure Classification
+### Classification
 
 ```text
 Base Measure
@@ -257,7 +293,7 @@ Base Measure
 
 ---
 
-### Source Column(s)
+### Source Columns
 
 ```text
 [List]
@@ -274,19 +310,37 @@ COUNT
 
 DISTINCTCOUNT
 
+AVERAGE
+
 MIN
 
 MAX
-
-AVERAGE
 ```
 
 ---
 
-### Business Rule
+### Business Logic
 
 ```text
-[Rule]
+Business Aggregation Logic
+
+(No DAX)
+```
+
+---
+
+### Dependencies
+
+```text
+Fact_Table.Column
+```
+
+---
+
+### Decision Supported
+
+```text
+[Decision]
 ```
 
 ---
@@ -299,7 +353,7 @@ AVERAGE
 
 ---
 
-Repeat for every base measure.
+Repeat for each base measure.
 
 ---
 
@@ -315,7 +369,7 @@ Repeat for every base measure.
 
 ---
 
-### Measure Classification
+### Classification
 
 ```text
 Derived Measure
@@ -347,7 +401,7 @@ Derived Measure
 
 ---
 
-### Calculation Logic
+### Business Formula
 
 ```text
 Business Formula
@@ -371,10 +425,22 @@ Animals In Care
 
 ---
 
-### Business Rule
+### Dependencies
 
 ```text
-[Rule]
+Base Measures
+
+Fact Tables
+
+Dimensions
+```
+
+---
+
+### Decision Supported
+
+```text
+[Decision]
 ```
 
 ---
@@ -387,7 +453,7 @@ Animals In Care
 
 ---
 
-Repeat for every derived measure.
+Repeat for each derived measure.
 
 ---
 
@@ -403,7 +469,7 @@ Repeat for every derived measure.
 
 ---
 
-### Measure Classification
+### Classification
 
 ```text
 Presentation Measure
@@ -419,14 +485,6 @@ Presentation Measure
 
 ---
 
-### Business Purpose
-
-```text
-[Purpose]
-```
-
----
-
 ### Parent Measure
 
 ```text
@@ -438,15 +496,15 @@ Presentation Measure
 ### Presentation Logic
 
 ```text
-Formatting
+Status Labels
 
 Icons
 
-Status Labels
-
-Threshold Labels
+RAG Logic
 
 Display Variants
+
+Formatted Output
 ```
 
 ---
@@ -454,7 +512,7 @@ Display Variants
 ### Example
 
 ```text
-Capacity Status
+Capacity Health
 
 Healthy
 
@@ -465,13 +523,21 @@ Critical
 
 ---
 
+### Decision Supported
+
+```text
+[Decision]
+```
+
+---
+
 Repeat for every presentation measure.
 
 ---
 
 # SECTION 06 — THRESHOLD CONTRACTS
 
-## Threshold Measure
+## Measure
 
 ### Measure Name
 
@@ -484,15 +550,15 @@ Repeat for every presentation measure.
 ### Green Threshold
 
 ```text
-[Rule]
+[Condition]
 ```
 
 ---
 
-### Yellow Threshold
+### Amber Threshold
 
 ```text
-[Rule]
+[Condition]
 ```
 
 ---
@@ -500,7 +566,7 @@ Repeat for every presentation measure.
 ### Red Threshold
 
 ```text
-[Rule]
+[Condition]
 ```
 
 ---
@@ -513,7 +579,7 @@ What each threshold means.
 
 ---
 
-### Action Required
+### Business Action
 
 ```text
 Healthy
@@ -533,7 +599,15 @@ Act
 
 ---
 
-Repeat as required.
+### Escalation Required
+
+```text
+Yes / No
+```
+
+---
+
+Repeat for every threshold-driven measure.
 
 ---
 
@@ -560,7 +634,7 @@ Repeat as required.
 ### Business Interpretation
 
 ```text
-[Interpretation]
+[Meaning]
 ```
 
 ---
@@ -573,15 +647,15 @@ Repeat as required.
 
 ---
 
-### Escalation Required
+### Escalation Path
 
 ```text
-Yes / No
+[List]
 ```
 
 ---
 
-Repeat as required.
+Repeat for every decision-support measure.
 
 ---
 
@@ -642,9 +716,9 @@ Thousands Separator
 
 Percentage Format
 
-Units
+Conditional Formatting
 
-Abbreviations
+Display Units
 ```
 
 ---
@@ -716,7 +790,7 @@ Repeat for every measure.
 ### Source Fact
 
 ```text
-[Fact]
+[Fact Name]
 ```
 
 ---
@@ -758,15 +832,19 @@ Repeat for every measure.
 ### Measure Name
 
 ```text
-[Measure]
+[Measure Name]
 ```
 
 ---
 
-### Depends On
+### Dependencies
 
 ```text
+Fact Tables
+
 Base Measures
+
+Derived Measures
 
 Dimensions
 
@@ -785,7 +863,23 @@ Indirect
 
 ---
 
-Repeat as required.
+### Dependency Diagram
+
+```text
+Base Measure
+
+↓
+
+Derived Measure
+
+↓
+
+Presentation Measure
+```
+
+---
+
+Repeat for every measure.
 
 ---
 
@@ -796,7 +890,7 @@ Repeat as required.
 ### Measure Name
 
 ```text
-[Measure]
+[Measure Name]
 ```
 
 ---
@@ -829,6 +923,18 @@ Annually
 
 ---
 
+### Approval Status
+
+```text
+Draft
+
+Approved
+
+Retired
+```
+
+---
+
 Repeat for every measure.
 
 ---
@@ -846,30 +952,42 @@ Verify:
 
 □ Decision Identified
 
+□ Action Defined
+
 □ Business Owner Assigned
 
-□ Action Defined
+□ Dependencies Documented
 ```
 
 ---
 
-## AI Readiness Goal
+## AI Summary
 
-An AI agent should explain:
+### Measure Name
 
 ```text
-What the measure means.
-
-Why it exists.
-
-How it is calculated.
-
-Which decision it supports.
-
-Which action it drives.
+[Measure Name]
 ```
 
-without external documentation.
+---
+
+### One Sentence Explanation
+
+```text
+Explain the measure in business language.
+```
+
+Example:
+
+```text
+Remaining Capacity represents
+the number of available care spaces
+after current occupancy is considered.
+```
+
+---
+
+Repeat for every measure.
 
 ---
 
@@ -877,10 +995,9 @@ without external documentation.
 
 ## Validation Matrix
 
-| Measure | Logic Reviewed | Threshold Reviewed | Owner Approved | Status |
-|----------|----------|----------|----------|----------|
-| [Measure] | Yes/No | Yes/No | Yes/No | Draft |
-| [Measure] | Yes/No | Yes/No | Yes/No | Draft |
+| Measure | Logic Reviewed | Threshold Reviewed | Fact Mapping Verified | Owner Approved | Status |
+|----------|----------|----------|----------|----------|----------|
+| [Measure] | Yes/No | Yes/No | Yes/No | Yes/No | Draft |
 
 ---
 
@@ -891,11 +1008,13 @@ Verify:
 ```text
 □ Business Definition Exists
 
-□ Measure Supports Signal
+□ Signal Supported
 
-□ Measure Supports Decision
+□ Decision Supported
 
-□ Measure Supports Action
+□ Action Defined
+
+□ Dependencies Documented
 
 □ Threshold Defined
 
@@ -904,11 +1023,43 @@ Verify:
 □ Fact Mapping Confirmed
 
 □ Visual Mapping Confirmed
+
+□ Ownership Assigned
 ```
 
 ---
 
-# SECTION 15 — HANDOFF TO BUILD PHASE
+# SECTION 15 — GOVERNANCE REVIEW
+
+## Governance Checklist
+
+```text
+□ No Duplicate Measures
+
+□ Business Names Approved
+
+□ Thresholds Approved
+
+□ Decision Mapping Complete
+
+□ Dependencies Reviewed
+
+□ Ownership Assigned
+
+□ Documentation Complete
+```
+
+---
+
+## Governance Notes
+
+```text
+[List]
+```
+
+---
+
+# SECTION 16 — HANDOFF TO BUILD PHASE
 
 ## Required Approvers
 
@@ -944,10 +1095,10 @@ Semantic Build Agent
 
 ---
 
-## Purpose
+## Implementation Purpose
 
 ```text
-Translate Measure Contracts
+Translate Business Logic
 
 ↓
 
@@ -955,12 +1106,16 @@ DAX Measures
 
 ↓
 
-Semantic Model Implementation
+Fabric Semantic Model
+
+↓
+
+Power BI Implementation
 ```
 
 ---
 
-# SECTION 16 — OBSERVATIONS
+# SECTION 17 — OBSERVATIONS
 
 ## Assumptions
 
@@ -1015,19 +1170,27 @@ Every Decision
 
 supports an Action.
 
+Every Measure
+
+has a documented dependency.
+
 Every Threshold
 
-is documented.
+is governed.
 
 Every Calculation
 
-is governed.
+is approved.
+
+Every Business Owner
+
+accepts accountability.
 ```
 
 The Measure Contract becomes:
 
 ```text
-The Metric Governance Contract
+The Measure Governance Contract
 ```
 
 between:
@@ -1038,6 +1201,10 @@ Business Design
 ↓
 
 Semantic Design
+
+↓
+
+Semantic Build
 
 ↓
 

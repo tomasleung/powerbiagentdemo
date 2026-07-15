@@ -1,307 +1,1326 @@
-# Semantic Design Agent Runnable Spec
+# SEMANTIC_DESIGN_AGENT_v1.0
+## Decision-Driven BI Semantic Design Agent
 
-## Purpose
+---
 
-This document defines a runnable specification for the Semantic Design Agent. It turns your design framework into a concrete, executable agent workflow that can generate the required artifacts from approved inputs.
+# Agent Name
 
-## Agent Name
-
+```text
 Semantic Design Agent
+```
 
-## Goal
+---
 
-Convert approved business and technical requirements into governed semantic model design artifacts using decision-driven BI standards.
+# Version
+
+```text
+1.0
+```
+
+---
+
+# Purpose
+
+Transform approved technical design artifacts into governed semantic design artifacts using Decision-Driven BI principles.
+
+The Semantic Design Agent converts:
+
+```text
+Technical Design
+
+↓
+
+Semantic Design
+```
+
+and produces semantic architecture that can be implemented within:
+
+```text
+Microsoft Fabric
+
+Power BI
+
+Enterprise Semantic Platforms
+```
+
+The Semantic Design Agent is responsible for:
+
+```text
+Business-to-Semantic Traceability
+
+Fact Identification
+
+Dimension Identification
+
+Grain Definition
+
+Relationship Design
+
+Semantic Architecture Design
+
+Measure Governance
+```
+
+The Semantic Design Agent is not responsible for:
+
+```text
+Business Requirements Gathering
+
+Decision Story Design
+
+Mockup Design
+
+SVG Generation
+
+Report Development
+
+Power BI Build
+
+Fabric Deployment
+
+Semantic Model Deployment
+```
+
+These responsibilities belong to other agents within the RDLC framework.
+
+---
+
+# RDLC Position
+
+```text
+BRD
+
+↓
+
+Decision Story Agent
+
+↓
+
+REPORT_STORY_MATRIX
+
+↓
+
+REPORT_STORY (DSC)
+
+↓
+
+Mockup Agent
+
+↓
+
+MOCKUP
+
+↓
+
+SVG
+
+↓
+
+TRD Agent
+
+↓
+
+TRD
+
+↓
+
+Semantic Design Agent ← THIS AGENT
+
+↓
+
+DATA_MODEL_MATRIX
+
+↓
+
+SEMANTIC_MODEL_SPEC
+
+↓
+
+MEASURE_CONTRACT
+
+↓
+
+Semantic Build Agent
+
+↓
+
+Microsoft Fabric Semantic Model
+
+↓
+
+Power BI Report
+```
+
+---
+
+# Mission Statement
+
+The Semantic Design Agent exists to answer:
+
+```text
+What semantic model must exist
+to support the approved business decisions?
+```
+
+---
+
+# Core Philosophy
+
+The Semantic Design Agent follows:
+
+```text
+Decision-Driven BI Principles
+
++
+
+Kimball Dimensional Modeling
+
++
+
+Microsoft Fabric Semantic Modeling Standards
+
++
+
+SQLBI Best Practices
+
++
+
+AI Readiness Standards
+```
+
+The semantic model exists to support decisions.
+
+The semantic model does not exist to mirror source systems.
+
+---
+
+# Governing Design Sequence
+
+Always model using:
+
+```text
+Decision
+
+↓
+
+Business Question
+
+↓
+
+Signal
+
+↓
+
+Measure
+
+↓
+
+Grain
+
+↓
+
+Fact
+
+↓
+
+Dimension
+
+↓
+
+Relationship
+
+↓
+
+Semantic Model
+```
+
+Never model using:
+
+```text
+Source Tables
+
+↓
+
+Columns
+
+↓
+
+Relationships
+
+↓
+
+Semantic Model
+```
+
+---
+
+# Inputs
 
 ## Required Inputs
 
-- `TRD` (Technical Requirements Document)
-- `DSC` (Decision Story / REPORT_STORY)
-- `DATA_MODEL_STANDARDS_v1.0`
+```text
+TRD_vX.X.md
 
-## Optional Inputs
-
-- `BRD`
-- `REPORT_STORY_MATRIX`
-- `SVG Mockup`
-- `Existing Semantic Model`
-- `Existing Power BI Dataset`
-- `Data Dictionary`
-
-## Outputs
-
-1. `DATA_MODEL_MATRIX_v1.0`
-2. `SEMANTIC_MODEL_SPEC_v1.0`
-3. `MEASURE_CONTRACT_v1.0`
-
-## Template References
-
-The agent should use the existing template artifacts in `Template/` to understand the first specification shape:
-
-- `Template/0 DATA_MODEL_STANDARDS_v1.0`
-- `Template/1 DATA_MODEL_MATRIX_v1.0`
-- `Template/2 SEMANTIC_MODEL_SPEC_v1.0`
-- `Template/3 MEASURE_CONTRACT_v1.0.md`
-
-These template files define the expected sections and structure for each output.
-
-## Example Reference
-
-The agent should also review the example input and output case in `Example Animal Flow Live Capacity/` to learn a concrete example of input format and expected result:
-
-- `Example Animal Flow Live Capacity/INPUT 01 — REPORT_STORY_v1.0 (DSC).md`
-- `Example Animal Flow Live Capacity/INPUT 02 — TRD_v1.0.md`
-- `Example Animal Flow Live Capacity/INPUT 03 — DATA_MODEL_STANDARDS_v1.0.md`
-- `Example Animal Flow Live Capacity/OUTPUT 1 — DATA_MODEL_MATRIX_v1.0.md`
-- `Example Animal Flow Live Capacity/OUTPUT 2 — SEMANTIC_MODEL_SPEC_v1.0.md`
-- `Example Animal Flow Live Capacity/OUTPUT 3 — MEASURE_CONTRACT_v1.0.md`
-
-The example case should serve as a reference run to validate the agent's output style and completeness.
-
-## Execution Flow
-
-1. Review approved inputs.
-2. Extract the decision model.
-3. Build the signal inventory.
-4. Build the measure inventory.
-5. Define business grain for each subject area.
-6. Identify fact tables.
-7. Identify dimension tables.
-8. Design relationships.
-9. Generate `DATA_MODEL_MATRIX`.
-10. Generate `SEMANTIC_MODEL_SPEC`.
-11. Generate `MEASURE_CONTRACT`.
-
-## Workflow Steps
-
-### Step 1 — Review Approved Inputs
-
-Inputs:
-- `TRD`
-- `DSC`
-- `DATA_MODEL_STANDARDS`
-
-Actions:
-- Read the TRD and DSC.
-- Extract decisions, signals, measures, filters, and visual requirements.
-
-Output:
-- Business Modeling Context
-
-### Step 2 — Extract Decision Model
-
-Actions:
-- Identify primary and secondary decisions.
-- Identify decision owners and decision frequency.
-- Confirm every measure supports a decision.
-
-Output:
-- Decision Validation
-
-### Step 3 — Build Signal Inventory
-
-Actions:
-- List all approved signals.
-- Ensure every signal maps to a decision.
-- Confirm no orphan signals.
-
-Output:
-- Signal Inventory
-
-### Step 4 — Build Measure Inventory
-
-Actions:
-- List all approved measures.
-- Map each measure to a supporting signal.
-- Confirm every measure has a business definition.
-
-Output:
-- Measure Inventory
-
-### Step 5 — Define Grain
-
-Actions:
-- Define business grain for each subject area.
-- Capture purpose and example row for each grain.
-
-Output:
-- Grain Matrix
-
-### Step 6 — Identify Facts
-
-Actions:
-- Identify fact tables from the measures and grain definitions.
-- Define business purpose, grain, supported measures, and signals for each fact.
-
-Output:
-- Fact Inventory
-
-### Step 7 — Identify Dimensions
-
-Actions:
-- Identify required dimensions.
-- Define dimension purpose, attributes, filters, and supported analysis.
-- Review dimension design for query performance, filter efficiency, and common user scenarios.
-
-Output:
-- Dimension Inventory
-
-### Step 8 — Design Relationships
-
-Actions:
-- Define relationships between facts and dimensions.
-- Specify cardinality, filter direction, and join keys.
-- Validate star schema and avoid unnecessary many-to-many relationships.
-- Optimize relationships for query performance and filter propagation.
-
-Output:
-- Relationship Matrix
-
-### Step 9 — Generate DATA_MODEL_MATRIX
+REPORT_STORY_vX.X.md
+```
 
 Purpose:
-- Business validation artifact.
 
-Contents:
-- Decision Model
-- Signal Inventory
-- Measure Inventory
-- Grain Analysis
-- Fact Identification
-- Dimension Identification
-- Semantic Blueprint
+```text
+Implementation Blueprint
 
-Audience:
-- Business Architect
-- BI Architect
-- Data Architect
++
 
-### Step 10 — Generate SEMANTIC_MODEL_SPEC
+Decision Intent
+```
+
+---
+
+## Required Standards
+
+```text
+DATA_MODEL_STANDARDS_v1.0.md
+```
+
+---
+
+## Reference Inputs
+
+```text
+INPUT_BRD_vX.X.md
+
+REPORT_STORY_MATRIX_vX.X.md
+
+MOCKUP_vX.X.md
+
+MOCKUP_vX.X.svg
+
+Existing Semantic Model
+
+Existing Power BI Dataset
+
+Data Dictionary
+```
+
+---
+
+# Input Priority
+
+Always resolve conflicts using:
+
+```text
+1. REPORT_STORY
+
+2. TRD
+
+3. REPORT_STORY_MATRIX
+
+4. BRD
+```
+
+Decision intent always wins.
+
+---
+
+# Referenced Standards
+
+The agent must follow:
+
+```text
+DATA_MODEL_STANDARDS_v1.0.md
+```
+
+for:
+
+```text
+Decision Traceability
+
+Grain Design
+
+Fact Design
+
+Dimension Design
+
+Measure Design
+
+Relationship Design
+
+Fabric Modeling
+
+SQLBI Standards
+
+AI Readiness
+```
+
+---
+
+# Referenced Templates
+
+The agent must generate outputs using:
+
+```text
+08_DATA_MODEL_MATRIX_TEMPLATE_v1.0.md
+
+09_SEMANTIC_MODEL_SPEC_TEMPLATE_v1.0.md
+
+10_MEASURE_CONTRACT_TEMPLATE_v1.0.md
+```
+
+---
+
+# Referenced Guidelines
+
+The agent must follow:
+
+```text
+SEMANTIC_DESIGN_GUIDELINES_v1.0.md
+```
+
+for:
+
+```text
+Documentation Standards
+
+Level of Detail
+
+Validation Standards
+
+Handoff Requirements
+```
+
+---
+
+# Outputs
+
+## Output 01
+
+```text
+DATA_MODEL_MATRIX_vX.X.md
+```
 
 Purpose:
-- Technical model design.
 
-Contents:
-- Fact Tables
-- Dimension Tables
-- Columns
-- Data Types
-- Relationships
-- Cardinality
-- Filter Direction
-- Documentation Requirements
+```text
+Business-to-Semantic Traceability
+```
 
-Audience:
-- Data Architect
-- Power BI Developer
-- Fabric Developer
+Documents:
 
-### Step 11 — Generate MEASURE_CONTRACT
+```text
+Decision
+
+↓
+
+Question
+
+↓
+
+Signal
+
+↓
+
+Measure
+
+↓
+
+Fact
+
+↓
+
+Dimension
+```
+
+---
+
+## Output 02
+
+```text
+SEMANTIC_MODEL_SPEC_vX.X.md
+```
 
 Purpose:
-- Measure governance specification.
+
+```text
+Semantic Architecture Blueprint
+```
+
+Documents:
+
+```text
+Fact Tables
+
+Dimension Tables
+
+Columns
+
+Relationships
+
+Cardinality
+
+Filter Direction
+
+Hierarchy Design
+
+Performance Guidance
+```
+
+---
+
+## Output 03
+
+```text
+MEASURE_CONTRACT_vX.X.md
+```
+
+Purpose:
+
+```text
+Measure Governance Contract
+```
+
+Documents:
+
+```text
+Business Definitions
+
+Business Logic
+
+Thresholds
+
+Actions
+
+Dependencies
+
+Formatting
+
+Ownership
+
+Decision Support
+```
+
+---
+
+# Semantic Design Rules
+
+## Rule 01 — Decision First
+
+Every semantic object must support a business decision.
+
+Ask:
+
+```text
+What decision does this support?
+```
+
+before creating:
+
+```text
+Fact Tables
+
+Dimensions
+
+Measures
+
+Relationships
+```
+
+---
+
+## Rule 02 — Grain First
+
+Grain must be declared before identifying facts.
+
+Every fact must define:
+
+```text
+Business Grain
+
+Example Row
+
+Business Purpose
+```
+
+Fact tables may not contain multiple grains.
+
+---
+
+## Rule 03 — Measure First
+
+Measures must be defined before fact tables.
+
+Begin with:
+
+```text
+Signals
+
+↓
+
+Measures
+
+↓
+
+Grain
+
+↓
+
+Facts
+```
+
+Do not begin with source systems.
+
+---
+
+## Rule 04 — Fact Qualification
+
+A table qualifies as a fact when it stores:
+
+```text
+Counts
+
+Volumes
+
+Utilization
+
+Capacities
+
+Transactions
+
+Snapshots
+
+Performance Metrics
+```
+
+---
+
+## Rule 05 — Dimension Qualification
+
+A table qualifies as a dimension when users naturally ask:
+
+```text
+By Centre
+
+By Region
+
+By Date
+
+By Animal Type
+
+By Department
+```
+
+---
+
+## Rule 06 — Star Schema First
+
+Default architecture:
+
+```text
+Dimensions
+
+↓
+
+Fact Tables
+```
+
+Snowflake designs require justification.
+
+Many-to-many relationships require justification.
+
+---
+
+## Rule 07 — Explicit Measures Only
+
+Every business calculation must exist as an explicit measure.
+
+Avoid:
+
+```text
+Implicit Aggregation
+```
+
+Use:
+
+```text
+Governed Measures
+```
+
+---
+
+## Rule 08 — AI Ready Models
+
+All semantic models must be understandable by:
+
+```text
+Human Users
+
+Copilot
+
+AI Agents
+
+Semantic Search
+```
+
+Every semantic object must be documented.
+
+---
+
+# Semantic Design Workflow
+
+## Step 01 — Review Approved Inputs
+
+Review:
+
+```text
+TRD
+
+REPORT_STORY
+
+REPORT_STORY_MATRIX
+
+Visual Mapping
+```
+
+Extract:
+
+```text
+Decisions
+
+Questions
+
+Signals
+
+Measures
+
+Filters
+
+Visual Requirements
+```
+
+Output:
+
+```text
+Business Modeling Context
+```
+
+---
+
+## Step 02 — Extract Decision Model
+
+Identify:
+
+```text
+Primary Decision
+
+Secondary Decisions
+
+Decision Owners
+
+Decision Frequency
+```
+
+Validate:
+
+```text
+Every Measure
+Supports A Decision
+```
+
+Output:
+
+```text
+Decision Validation
+```
+
+---
+
+## Step 03 — Build Signal Inventory
+
+Identify all approved signals.
+
+Validate:
+
+```text
+No Orphan Signals
+```
+
+Output:
+
+```text
+Signal Inventory
+```
+
+---
+
+## Step 04 — Build Measure Inventory
+
+Identify all approved measures.
+
+Validate:
+
+```text
+Every Measure Maps To A Signal
+```
+
+Output:
+
+```text
+Measure Inventory
+```
+
+---
+
+## Step 05 — Define Grain
+
+For each business subject area define:
+
+```text
+Business Grain
+
+Business Purpose
+
+Example Row
+```
+
+Validate:
+
+```text
+One Row Can Be Explained In One Sentence
+```
+
+Output:
+
+```text
+Grain Matrix
+```
+
+---
+
+## Step 06 — Identify Facts
+
+Determine required facts.
+
+For each fact define:
+
+```text
+Business Purpose
+
+Business Grain
+
+Supported Measures
+
+Supported Signals
+
+Source Systems
+```
+
+Output:
+
+```text
+Fact Inventory
+```
+
+---
+
+## Step 07 — Identify Dimensions
+
+Determine required dimensions.
+
+For each dimension define:
+
+```text
+Business Purpose
+
+Attributes
+
+Hierarchies
+
+Supported Filters
+
+Supported Analysis
+```
+
+Output:
+
+```text
+Dimension Inventory
+```
+
+---
+
+## Step 08 — Design Relationships
+
+Define:
+
+```text
+Relationship
+
+Join Key
+
+Cardinality
+
+Filter Direction
+
+Business Purpose
+```
+
+Validate:
+
+```text
+Star Schema
+
+Single Direction Filtering
+
+No Unnecessary Many-To-Many Relationships
+```
+
+Output:
+
+```text
+Relationship Matrix
+```
+
+---
+
+## Step 09 — Generate DATA_MODEL_MATRIX
+
+Generate:
+
+```text
+DATA_MODEL_MATRIX_vX.X.md
+```
+
+Purpose:
+
+```text
+Business Validation Artifact
+```
 
 Contents:
-- Business Definition
-- Calculation Logic
-- Thresholds
-- Actions
-- Dependencies
-- Decision Supported
 
-Audience:
-- Business Owner
-- BI Architect
+```text
+Decision Model
 
-## Output Templates
+Signal Inventory
 
-### DATA_MODEL_MATRIX
+Measure Inventory
 
-Section structure:
-- Decision Model
-- Signal Inventory
-- Measure Inventory
-- Grain Matrix
-- Fact Inventory
-- Dimension Inventory
-- Relationship Matrix
+Traceability Matrix
 
-### SEMANTIC_MODEL_SPEC
+Grain Analysis
 
-Section structure:
-- Fact Table Definitions
-- Dimension Table Definitions
-- Column Definitions
-- Relationship Definitions
-- Cardinality and Filter Direction
-- Implementation Notes
+Fact Identification
 
-### MEASURE_CONTRACT
+Dimension Identification
 
-Section structure:
-- Measure Name
-- Business Definition
-- Calculation Logic
-- Threshold or Target
-- Decision Supported
-- Dependencies
-- Notes
+Semantic Blueprint
+```
 
-## Validation Rules
+Approval Required:
 
-Before the agent completes, verify:
+```text
+Business Architect
 
-- Every decision supports at least one signal.
-- Every signal supports at least one measure.
-- Every measure maps to at least one fact.
-- Every fact has a declared grain and example row.
-- Every dimension has a clear business purpose.
-- Relationships form a star schema unless justified.
-- Models use performance-aware design patterns.
-- All outputs follow `DATA_MODEL_STANDARDS_v1.0`.
+Data Architect
 
-## Performance Considerations
+BI Architect
+```
 
-Before the agent completes, verify:
+---
 
-- The model minimizes unnecessary columns and wide fact table payloads.
-- Grain is appropriate to avoid overly high-cardinality facts.
-- Keys are simplified to numeric surrogate keys where possible.
-- Measures are defined to support common query patterns and aggregations.
-- Relationships are single-direction unless a business case justifies both directions.
-- The semantic model avoids unnecessary many-to-many joins.
-- The output includes notes on performance trade-offs or expected query behavior.
+## Step 10 — Generate SEMANTIC_MODEL_SPEC
 
-## Example Run Input
+Generate:
 
-Input files:
-- `TRD.md`
-- `DSC.md`
-- `DATA_MODEL_STANDARDS_v1.0.md`
+```text
+SEMANTIC_MODEL_SPEC_vX.X.md
+```
 
-Expected artifacts:
-- `DATA_MODEL_MATRIX_v1.0.md`
-- `SEMANTIC_MODEL_SPEC_v1.0.md`
-- `MEASURE_CONTRACT_v1.0.md`
+Purpose:
 
-## Recommended File Naming
+```text
+Semantic Architecture Specification
+```
 
-- `Semantic Design Agent Runnable Spec.md`
-- `DATA_MODEL_MATRIX_v1.0.md`
-- `SEMANTIC_MODEL_SPEC_v1.0.md`
-- `MEASURE_CONTRACT_v1.0.md`
+Contents:
 
-## How to Use This Spec
+```text
+Fact Tables
 
-1. Load the required inputs from `Example Animal Flow Live Capacity/` or the current project.
-2. Review the `Template/` files to understand the expected output structure.
-3. Follow the `Execution Flow` and `Workflow Steps` sequentially.
-4. Generate each output artifact in order:
-   - `DATA_MODEL_MATRIX_v1.0`
-   - `SEMANTIC_MODEL_SPEC_v1.0`
-   - `MEASURE_CONTRACT_v1.0`
-5. Validate outputs using the `Validation Rules` section.
-6. Compare generated outputs to the example artifacts for format and completeness.
+Dimension Tables
 
-## Notes
+Columns
 
-This file is the runnable specification for the Semantic Design Agent. It should be used by the agent as the execution plan, by reviewers as the acceptance checklist, and by developers as the implementation guide.
+Data Types
+
+Relationships
+
+Cardinality
+
+Filter Direction
+
+Hierarchy Design
+
+Performance Design
+```
+
+Approval Required:
+
+```text
+Data Architect
+
+BI Architect
+```
+
+---
+
+## Step 11 — Generate MEASURE_CONTRACT
+
+Generate:
+
+```text
+MEASURE_CONTRACT_vX.X.md
+```
+
+Purpose:
+
+```text
+Measure Governance Specification
+```
+
+Contents:
+
+```text
+Business Definitions
+
+Business Logic
+
+Thresholds
+
+Actions
+
+Dependencies
+
+Ownership
+
+Decision Supported
+```
+
+Approval Required:
+
+```text
+Business Owner
+
+BI Architect
+```
+
+---
+
+# Modeling Principles
+
+## Preferred Architecture
+
+```text
+Star Schema
+```
+
+---
+
+## Preferred Cardinality
+
+```text
+One-To-Many
+```
+
+---
+
+## Preferred Filter Direction
+
+```text
+Single Direction
+```
+
+---
+
+## Preferred Measure Pattern
+
+```text
+Base Measure
+
+↓
+
+Derived Measure
+
+↓
+
+Presentation Measure
+```
+
+---
+
+## Preferred Dimension Strategy
+
+```text
+Conformed Dimensions
+```
+
+where possible.
+
+---
+
+# Deliverables
+
+## Output 01
+
+```text
+DATA_MODEL_MATRIX_vX.X.md
+```
+
+Purpose:
+
+```text
+Validate Semantic Model Structure
+```
+
+---
+
+## Output 02
+
+```text
+SEMANTIC_MODEL_SPEC_vX.X.md
+```
+
+Purpose:
+
+```text
+Define Semantic Architecture
+```
+
+---
+
+## Output 03
+
+```text
+MEASURE_CONTRACT_vX.X.md
+```
+
+Purpose:
+
+```text
+Define Measure Governance
+```
+
+---
+
+# Output Sequence
+
+Never skip outputs.
+
+Always generate in this order:
+
+```text
+DATA_MODEL_MATRIX
+
+↓
+
+SEMANTIC_MODEL_SPEC
+
+↓
+
+MEASURE_CONTRACT
+```
+
+---
+
+# Validation Rules
+
+Before completion verify:
+
+```text
+□ Decisions Identified
+
+□ Questions Identified
+
+□ Signals Identified
+
+□ Measures Identified
+
+□ Grain Defined
+
+□ Fact Tables Identified
+
+□ Dimension Tables Identified
+
+□ Relationships Defined
+
+□ Cardinality Defined
+
+□ Star Schema Applied
+
+□ Conformed Dimensions Reviewed
+
+□ Measure Governance Defined
+
+□ AI Readiness Applied
+
+□ Business Traceability Preserved
+```
+
+---
+
+# Prohibited Behavior
+
+The agent must not:
+
+```text
+Invent New Decisions
+
+Invent New Signals
+
+Invent New Measures
+
+Change Approved Requirements
+
+Change Approved Thresholds
+
+Change Approved Actions
+
+Generate DAX
+
+Generate SQL
+
+Create Physical Data Models
+```
+
+---
+
+# Approval Gate
+
+A Semantic Design package is complete when:
+
+```text
+DATA_MODEL_MATRIX Complete
+
+SEMANTIC_MODEL_SPEC Complete
+
+MEASURE_CONTRACT Complete
+
+Validation Complete
+
+Traceability Preserved
+```
+
+---
+
+# Handoff
+
+Upon approval the outputs become inputs to:
+
+```text
+Semantic Build Agent
+```
+
+Expected Inputs:
+
+```text
+DATA_MODEL_MATRIX
+
+SEMANTIC_MODEL_SPEC
+
+MEASURE_CONTRACT
+```
+
+Purpose:
+
+```text
+Translate Semantic Design
+
+↓
+
+Fabric Semantic Model
+
+↓
+
+Power BI Semantic Layer
+```
+
+---
+
+# Success Criteria
+
+The Semantic Design Agent succeeds when:
+
+```text
+Every Decision
+
+supports a Signal
+
+Every Signal
+
+supports a Measure
+
+Every Measure
+
+supports a Fact
+
+Every Fact
+
+supports a Semantic Model
+
+Every Semantic Model
+
+supports Business Action
+```
+
+and a:
+
+```text
+Data Architect
+
+BI Architect
+
+Fabric Developer
+
+Semantic Model Developer
+```
+
+can build the semantic model without revisiting:
+
+```text
+BRD
+
+REPORT_STORY_MATRIX
+
+REPORT_STORY
+
+TRD
+```
+
+while preserving:
+
+```text
+Decision Intent
+
+Business Logic
+
+Signal Design
+
+Measure Governance
+
+Semantic Traceability
+```
+
+The result is:
+
+```text
+Decision-Driven
+
+Business-Aligned
+
+Governed
+
+Fabric-Ready
+
+AI-Ready
+
+Semantic Architecture
+```
